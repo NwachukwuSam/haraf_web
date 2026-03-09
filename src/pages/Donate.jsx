@@ -1,9 +1,12 @@
 import React from 'react'
+import Header from '../components/Header'
 
 function Donate() {
   return (
     <div>
-      DONATE
+        <Header />
+            DONATE
+      
     </div>
   )
 }
