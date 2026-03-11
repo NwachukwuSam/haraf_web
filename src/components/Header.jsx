@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import harafLogo from '../assets/harafLogo.png';
 
 function Header() {
@@ -16,11 +16,22 @@ function Header() {
   }, [isMobileMenuOpen]);
 
   const navItems = [
+    { name: "HOME", path: "/" },
     { name: "ABOUT US", path: "/about_us" },
     { name: "OUR WORK", path: "/our_work" },
     { name: "IDEAS", path: "/ideas" },
-    { name: "GET INVOLVED", path: "#" }
+    // { name: "GET INVOLVED", path: "#" }
   ];
+
+  const activeStyle = ({ isActive }) => 
+    `relative font-medium text-sm tracking-wide transition-colors ${
+      isActive ? 'text-harafBlue after:content-[""] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-harafYellow' : 'text-midBrown hover:text-harafBlue transition-colors'
+    }`;
+
+  const mobileActiveStyle = ({ isActive }) => 
+    `relative text-xl font-dm-sans font-medium tracking-wide transition-colors text-center uppercase ${
+      isActive ? 'text-harafBlue after:content-[""] after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-8 after:h-[2px] after:bg-harafYellow' : 'text-midBrown hover:text-harafBlue transition-colors'
+    }`;
 
   return (
     <>
@@ -41,13 +52,13 @@ function Header() {
         <nav className="hidden lg:flex items-center space-x-8 lg:space-x-12">
           <div className="flex items-center space-x-10">
             {navItems.map((item) => (
-              <Link
+              <NavLink
                 key={item.name}
                 to={item.path}
-                className="text-midBrown font-medium text-sm tracking-wide hover:text-harafBlue transition-colors"
+                className={activeStyle}
               >
                 {item.name}
-              </Link>
+              </NavLink>
             ))}
           </div>
           
@@ -97,22 +108,15 @@ function Header() {
 
         {/* Navigation Links */}
         <div className="flex flex-col items-center justify-center flex-grow space-y-12 pb-24">
-          <Link 
-            to="/"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-midBrown text-xl font-dm-sans font-medium tracking-wide hover:text-harafBlue transition-colors"
-          >
-            HOME
-          </Link>
           {navItems.map((item) => (
-            <Link
+            <NavLink
               key={item.name}
               to={item.path}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-midBrown text-xl font-dm-sans font-medium tracking-wide hover:text-harafBlue transition-colors text-center uppercase"
+              className={mobileActiveStyle}
             >
               {item.name.replace(" US", "")}
-            </Link>
+            </NavLink>
           ))}
           
           {/* Donate Item */}
