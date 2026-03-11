@@ -16,56 +16,73 @@ const images = [
 ];
 
 const HeadlineCarousel = () => {
+  const containerRef = useRef(null);
   const itemsRef = useRef([]);
-  const isHovered = useRef(false);
 
   useEffect(() => {
     let progress = 0;
     let rafId;
 
     const render = () => {
-      // Only advance progress if the user is hovering over the carousel
-      if (isHovered.current) {
-        progress -= 0.0008; // Significantly reduced speed
-      }
+      // Automatic constant motion from Left to Right
+      progress += 0.0006; 
       
-      if (itemsRef.current) {
-        itemsRef.current.forEach((el, i) => {
-          if (!el) return;
-          
-          // Smooth seamless infinite mapping from -0.5 to 0.5
-          let t = (((i / 6) + progress) % 1 + 1) % 1;
-          if (t > 0.5) t -= 1;
-          
-          let angle = t * Math.PI * 2;
-          
-          // 3D positioning
-          let x = Math.sin(angle) * 700; 
-          let z = Math.cos(angle) * 350 - 350; // Convex depth: 0 at center, -700 at back
-          
-          // Rotation mapping. Standard cover flow usually faces the center slightly.
-          let rotateY = t * 200; 
-          
-          // Widen and wrap around at the edges
-          let absT = Math.abs(t);
-          let widen = Math.pow(Math.sin(absT * Math.PI), 2); // 0 at center, 1 at edges
-          let scaleX = 1 + widen * 1.5; 
-          let scaleY = 1 + widen * 0.1;
-          
-          // Fade out nicely as they cycle behind
-          let opacity = 1;
-          if (absT > 0.25) {
-              opacity = 1 - ((absT - 0.25) * 3.5);
-          }
-          if (opacity < 0) opacity = 0;
-          
-          let zIndex = Math.round((1 - absT) * 100);
+      const containerWidth = containerRef.current?.offsetWidth || window.innerWidth;
+      const centerX = containerWidth / 2;
+      
+      // Total span for the 6 images to follow each other in a line
+      // Using a large span so they follow linearly without overlapping
+      const totalSpan = containerWidth * 2.5; 
+      const itemSpacing = totalSpan / images.length;
 
-          el.style.transform = `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${rotateY}deg) scale(${scaleX}, ${scaleY})`;
-          el.style.opacity = opacity;
-          el.style.zIndex = zIndex;
-        });
-      }
+      itemsRef.current.forEach((el, i) => {
+        if (!el) return;
+        
+        // Linear position calculation with seamless wrap
+        let xPos = (i * itemSpacing + progress * totalSpan) % totalSpan;
+        // Shift so 0 is center, ranges from -totalSpan/2 to totalSpan/2
+        let x = xPos - totalSpan / 2;
+        
+        // Normalized X relative to the viewport center (-1 to 1 at viewport edges roughly)
+        // We use centerX (half viewport) as the unit
+        let normalizedX = x / (containerWidth / 2);
+        
+        // Vertical center is "Zero Distortion Line"
+        // distortionFactor is 0 at center, peaks, and then should taper at edges
+        // Using a function that peaks around 0.5 and returns 0 at 1
+        // We'll use a modified sine or gaussian for tapering
+        let absX = Math.abs(normalizedX);
+        
+        // Wider perspective (fanning) - peaks then tapers
+        // This function handles the "at side closer to screen side should have wider perspective"
+        // and "closer it gets to side, the smaller it becomes till it gets normal"
+        let distortionFactor = Math.sin(Math.min(absX, 1) * Math.PI); // Peaks at absX=0.5, 0 at 0 and 1
+        
+        // Zero distortion at center (absX=0)
+        // Fan out (wider perspective) by rotating towards the viewer
+        // On right (x>0), rotateY is negative to face the right edge toward center? 
+        // No, user says "side closer to edge should have wider perspective"
+        // Let's rotate it such that the outer side comes forward.
+        let rotateY = Math.sign(normalizedX) * distortionFactor * -40;
+
+        // "Smaller that side becomes" - applying a subtle perspective scale or z-recession
+        // We'll use a small Z offset based on distortion
+        let z = distortionFactor * 50; // Come forward as it fans out
+
+        // Linear movement (no overlapping in rank)
+        // We use translate3d(x, -50%, z)
+        el.style.transform = `translate3d(${x}px, -50%, ${z}px) rotateY(${rotateY}deg)`;
+        
+        // Opacity: Fade out near the wrap points
+        let opacity = 1;
+        if (absX > 1.2) {
+          opacity = Math.max(0, 1 - (absX - 1.2) * 4);
+        }
+        el.style.opacity = opacity;
+        
+        // Linear order z-index (though since they don't overlap, z-index matters less)
+        el.style.zIndex = Math.round((2 - absX) * 10);
+      });
 
       rafId = requestAnimationFrame(render);
     };
@@ -88,22 +105,27 @@ const HeadlineCarousel = () => {
         </h2>
       </div>
 
-      {/* 3D Carousel Container */}
+      {/* Container with Perspective for the 3D effect */}
       <div 
+        ref={containerRef}
         className="relative w-full h-[350px] md:h-[500px] mb-8"
-        style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
-        onMouseEnter={() => isHovered.current = true}
-        onMouseLeave={() => isHovered.current = false}
-        onTouchStart={() => isHovered.current = true}
-        onTouchEnd={() => isHovered.current = false}
+        style={{ 
+          perspective: '1200px', 
+          perspectiveOrigin: '50% 50%',
+          transformStyle: 'preserve-3d' 
+        }}
       >
         <div className="absolute top-1/2 left-1/2 w-full h-full" style={{ transformStyle: 'preserve-3d' }}>
           {images.map((img, idx) => (
             <div 
               key={idx} 
               ref={el => itemsRef.current[idx] = el}
-              className="absolute left-0 top-0 w-[280px] h-[280px] md:w-[450px] md:h-[450px] rounded-[12px] overflow-hidden shadow-2xl will-change-transform"
-              style={{ transformOrigin: 'center center' }}
+              className="absolute left-0 top-0 w-[240px] h-[240px] md:w-[420px] md:h-[420px] rounded-[12px] overflow-hidden shadow-2xl will-change-transform"
+              style={{ 
+                transformOrigin: 'center center',
+                left: '-120px', // Adjusted to center relative to MD width
+                marginLeft: '0px'
+              }}
             >
               <img 
                 src={img} 
