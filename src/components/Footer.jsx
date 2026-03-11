@@ -11,7 +11,7 @@ function Footer() {
         <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8 mb-16">
           
           {/* Column 1: Logo & Slogan */}
-          <div className="flex flex-col lg:w-1/4">
+          <div className="flex flex-col w-full lg:w-1/4">
             <Link to="/" className="mb-4 inline-block">
             <div className='flex space-x-2'>
               <img src={harafLogo} alt="HARAF Logo" className="h-12 w-auto object-contain border border-harafBlue rounded-full" />
@@ -40,75 +40,78 @@ function Footer() {
             </div>
           </div>
 
-          {/* Column 2: ABOUT */}
-          <div className="flex flex-col">
-            <h4 className="font-dm-sans text-harafYellow text-[11px] font-bold tracking-widest uppercase mb-6">
-              ABOUT
-            </h4>
-            <ul className="space-y-4 font-dm-sans text-[14px]" style={{ color: 'rgba(235, 244, 252, 0.55)' }}>
-              <li><Link to="/about_us" className="hover:text-harafYellow transition-colors">Our Story</Link></li>
-              <li><Link to="#" className="hover:text-harafYellow transition-colors">Our Team</Link></li>
-              <li><Link to="#" className="hover:text-harafYellow transition-colors">Annual Reports</Link></li>
-              <li><Link to="#" className="hover:text-harafYellow transition-colors">Press & Media</Link></li>
-              <li><Link to="#" className="hover:text-harafYellow transition-colors">Careers</Link></li>
-            </ul>
+          <div className='grid md:grid-cols-4 sm:grid-cols-3 sm:space-y-6 grid-cols-2 space-y-6'>
+            {/* Column 2: ABOUT */}
+            <div className="flex flex-col">
+              <h4 className="font-dm-sans text-harafYellow text-[11px] font-bold tracking-widest uppercase mb-6">
+                ABOUT
+              </h4>
+              <ul className="space-y-4 font-dm-sans text-[14px]" style={{ color: 'rgba(235, 244, 252, 0.55)' }}>
+                <li><Link to="/about_us" className="hover:text-harafYellow transition-colors">Our Story</Link></li>
+                <li><Link to="#" className="hover:text-harafYellow transition-colors">Our Team</Link></li>
+                <li><Link to="#" className="hover:text-harafYellow transition-colors">Annual Reports</Link></li>
+                <li><Link to="#" className="hover:text-harafYellow transition-colors">Press & Media</Link></li>
+                <li><Link to="#" className="hover:text-harafYellow transition-colors">Careers</Link></li>
+              </ul>
+            </div>
+
+            {/* Column 3: PROGRAMS */}
+            <div className="flex flex-col">
+              <h4 className="font-dm-sans text-harafYellow text-[11px] font-bold tracking-widest uppercase mb-6">
+                PROGRAMS
+              </h4>
+              <ul className="space-y-4 font-dm-sans text-[14px]" style={{ color: 'rgba(235, 244, 252, 0.55)' }}>
+                <li><Link to="/our_work" className="hover:text-harafYellow transition-colors">Food Security</Link></li>
+                <li><Link to="/our_work" className="hover:text-harafYellow transition-colors">Clean Water</Link></li>
+                <li><Link to="/our_work" className="hover:text-harafYellow transition-colors">Education</Link></li>
+                <li><Link to="/our_work" className="hover:text-harafYellow transition-colors">Healthcare</Link></li>
+                <li><Link to="/our_work" className="hover:text-harafYellow transition-colors">Livelihoods</Link></li>
+              </ul>
+            </div>
+
+            {/* Column 4: GET INVOLVED */}
+            <div className="flex flex-col">
+              <h4 className="font-dm-sans text-harafYellow text-[11px] font-bold tracking-widest uppercase mb-6">
+                GET INVOLVED
+              </h4>
+              <ul className="space-y-4 font-dm-sans text-[14px]" style={{ color: 'rgba(235, 244, 252, 0.55)' }}>
+                <li><Link to="/donate" className="hover:text-harafYellow transition-colors">Donate</Link></li>
+                <li><Link to="#" className="hover:text-harafYellow transition-colors">Volunteer</Link></li>
+                <li><Link to="#" className="hover:text-harafYellow transition-colors">Partner With Us</Link></li>
+                <li><Link to="#" className="hover:text-harafYellow transition-colors">Corporate Giving</Link></li>
+                <li><Link to="#" className="hover:text-harafYellow transition-colors">In Memoriam Giving</Link></li>
+              </ul>
+            </div>
+
+            {/* Column 5: CONTACT */}
+            <div className="flex flex-col">
+              <h4 className="font-dm-sans text-harafYellow text-[11px] font-bold tracking-widest uppercase mb-6">
+                CONTACT
+              </h4>
+              <ul className="space-y-4 font-dm-sans text-[13px]" style={{ color: 'rgba(235, 244, 252, 0.55)' }}>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  info@haraf.org.ng
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  0806 960 1527
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-4 h-4 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span>Jimeta 640101, Adamawa</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          {/* Column 3: PROGRAMS */}
-          <div className="flex flex-col">
-            <h4 className="font-dm-sans text-harafYellow text-[11px] font-bold tracking-widest uppercase mb-6">
-              PROGRAMS
-            </h4>
-            <ul className="space-y-4 font-dm-sans text-[14px]" style={{ color: 'rgba(235, 244, 252, 0.55)' }}>
-              <li><Link to="/our_work" className="hover:text-harafYellow transition-colors">Food Security</Link></li>
-              <li><Link to="/our_work" className="hover:text-harafYellow transition-colors">Clean Water</Link></li>
-              <li><Link to="/our_work" className="hover:text-harafYellow transition-colors">Education</Link></li>
-              <li><Link to="/our_work" className="hover:text-harafYellow transition-colors">Healthcare</Link></li>
-              <li><Link to="/our_work" className="hover:text-harafYellow transition-colors">Livelihoods</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 4: GET INVOLVED */}
-          <div className="flex flex-col">
-            <h4 className="font-dm-sans text-harafYellow text-[11px] font-bold tracking-widest uppercase mb-6">
-              GET INVOLVED
-            </h4>
-            <ul className="space-y-4 font-dm-sans text-[14px]" style={{ color: 'rgba(235, 244, 252, 0.55)' }}>
-              <li><Link to="/donate" className="hover:text-harafYellow transition-colors">Donate</Link></li>
-              <li><Link to="#" className="hover:text-harafYellow transition-colors">Volunteer</Link></li>
-              <li><Link to="#" className="hover:text-harafYellow transition-colors">Partner With Us</Link></li>
-              <li><Link to="#" className="hover:text-harafYellow transition-colors">Corporate Giving</Link></li>
-              <li><Link to="#" className="hover:text-harafYellow transition-colors">In Memoriam Giving</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 5: CONTACT */}
-          <div className="flex flex-col">
-            <h4 className="font-dm-sans text-harafYellow text-[11px] font-bold tracking-widest uppercase mb-6">
-              CONTACT
-            </h4>
-            <ul className="space-y-4 font-dm-sans text-[13px]" style={{ color: 'rgba(235, 244, 252, 0.55)' }}>
-              <li className="flex items-center">
-                <svg className="w-4 h-4 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                info@haraf.org.ng
-              </li>
-              <li className="flex items-center">
-                <svg className="w-4 h-4 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                0806 960 1527
-              </li>
-              <li className="flex items-start">
-                <svg className="w-4 h-4 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span>Jimeta 640101, Adamawa</span>
-              </li>
-            </ul>
-          </div>
 
         </div>
 
