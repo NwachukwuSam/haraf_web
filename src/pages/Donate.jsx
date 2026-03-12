@@ -6,7 +6,7 @@ function Donate() {
   return (
     <div>
         
-          <DonateHero />
+        <DonateHero />
       
     </div>
   )
