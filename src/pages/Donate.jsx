@@ -1,11 +1,12 @@
 import React from 'react'
-import Header from '../components/Header'
+
+import DonateHero from '../components/donate/DonateHero'
 
 function Donate() {
   return (
     <div>
-        <Header />
-            DONATE
+        
+          <DonateHero />
       
     </div>
   )
