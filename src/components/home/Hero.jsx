@@ -9,7 +9,7 @@ import p3 from '../../assets/heroSubImage3.jpg';
 
 function Hero() {
   return (
-    <section className="relative w-full overflow-hidden bg-white py-16 lg:py-24 px-8 lg:px-16 flex items-center min-h-[85vh]">
+    <section className="relative w-full overflow-hidden bg-white py-16 lg:py-10 px-8 lg:px-16 flex items-center min-h-[85vh]">
       {/* Background Map */}
       <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-20">
         <img 

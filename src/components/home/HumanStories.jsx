@@ -33,7 +33,7 @@ const HumanStories = () => {
           <p className="text-[#8CB4D6] text-sm tracking-[0.2em] font-dm-sans font-bold uppercase mb-4">
             HUMAN STORIES
           </p>
-          <h2 className="text-primary text-4xl md:text-5xl lg:text-[56px] font-playfair font-bold leading-tight">
+          <h2 className="text-primary text-4xl md:text-5xl font-playfair font-bold leading-tight">
             Behind Every<br />
             Number Is a Name.
           </h2>

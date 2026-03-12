@@ -20,7 +20,7 @@ const Partners = () => {
           <p className="text-[#8CB4D6] text-sm tracking-[0.2em] font-dm-sans font-bold uppercase mb-4">
             THOSE WHO MAKE IT POSSIBLE
           </p>
-          <h2 className="text-primary text-4xl md:text-5xl lg:text-[56px] font-playfair font-bold leading-tight mb-6">
+          <h2 className="text-primary text-4xl md:text-5xl font-playfair font-bold leading-tight mb-6">
             We Don't Do This Alone.
           </h2>
           <p className="text-[#4B5563] font-dm-sans text-lg md:text-[20px] max-w-3xl mx-auto leading-relaxed">
