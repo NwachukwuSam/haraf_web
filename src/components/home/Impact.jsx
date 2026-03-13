@@ -16,7 +16,7 @@ const Impact = () => {
       </div>
 
       {/* Hero Image with Stats Overlay */}
-      <div className="relative w-full h-[312px]">
+      <div className="relative w-full min-h-[400px] flex items-center py-20 md:py-32">
         {/* Background Image */}
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
@@ -26,44 +26,44 @@ const Impact = () => {
         {/* Navy Blue Overlay (#0A3D6B at 30% opacity) */}
         <div
           className="absolute inset-0 w-full h-full"
-          style={{ backgroundColor: 'rgba(10, 61, 107, 0.3)' }}
+          style={{ backgroundColor: 'rgba(10, 61, 107, 0.4)' }}
         />
 
         {/* Content Overlay */}
-        <div className="absolute inset-0 w-full h-full flex flex-col justify-between pt-24 pb-12 px-4 md:px-12 lg:px-24">
+        <div className="relative z-10 w-full h-full flex flex-col justify-between px-6 md:px-12 lg:px-24">
 
           {/* Stats Grid */}
-          <div className="flex flex-col md:flex-row justify-evenly items-center w-full max-w-6xl mx-auto space-y-12 md:space-y-0">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 justify-items-center w-full max-w-7xl mx-auto">
             {/* Stat 1 */}
             <div className="flex flex-col items-center text-white text-center">
               <div className="flex items-start">
-                <span className="font-playfair font-bold text-[72px] leading-none">14K</span>
-                <span className="text-harafYellow text-5xl font-light ml-1">+</span>
+                <span className="font-playfair font-bold text-6xl md:text-[72px] leading-none">14K</span>
+                <span className="text-harafYellow text-4xl md:text-5xl font-light ml-1">+</span>
               </div>
-              <p className="font-dm-sans text-lg mt-2">Families Reached</p>
+              <p className="font-dm-sans text-base md:text-lg mt-4 uppercase tracking-widest opacity-90">Families Reached</p>
             </div>
 
             {/* Stat 2 */}
             <div className="flex flex-col items-center text-white text-center">
               <div className="flex items-start">
-                <span className="font-playfair font-bold text-[72px] leading-none">87</span>
+                <span className="font-playfair font-bold text-6xl md:text-[72px] leading-none">87</span>
               </div>
-              <p className="font-dm-sans text-lg mt-2">Communities Served</p>
+              <p className="font-dm-sans text-base md:text-lg mt-4 uppercase tracking-widest opacity-90">Communities Served</p>
             </div>
 
             {/* Stat 3 */}
             <div className="flex flex-col items-center text-white text-center">
               <div className="flex items-start">
-                <span className="font-playfair font-bold text-[72px] leading-none">40</span>
-                <span className="text-harafYellow text-5xl font-light ml-1">+</span>
+                <span className="font-playfair font-bold text-6xl md:text-[72px] leading-none">40</span>
+                <span className="text-harafYellow text-4xl md:text-5xl font-light ml-1">+</span>
               </div>
-              <p className="font-dm-sans text-lg mt-2">Livelihood Programs Running</p>
+              <p className="font-dm-sans text-base md:text-lg mt-4 uppercase tracking-widest opacity-90">Livelihoods Running</p>
             </div>
           </div>
 
           {/* Footer Note */}
-          <div className="w-full text-center mt-auto">
-            <p className="text-white text-xs font-dm-sans opacity-80 uppercase tracking-wider">
+          <div className="w-full text-center mt-16 md:mt-24">
+            <p className="text-white text-[10px] font-dm-sans opacity-60 uppercase tracking-[0.2em]">
               *DATA UPDATED QUARTERLY. LAST UPDATED MARCH 2026.
             </p>
           </div>

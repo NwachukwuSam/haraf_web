@@ -1,13 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import fao from '../../assets/fao.svg';
+import unicef from '../../assets/unicef.svg';
+import unhcr from '../../assets/unhcr.svg';
+import wfo from '../../assets/wfo.svg';
+import ubec from '../../assets/ubec.png';
+import vso from '../../assets/vso.png';
 
 const partnersData = [
-  { id: 1, name: "Volunteer Service Organisation", imageUrl: "" },
-  { id: 2, name: "World Food Programme", imageUrl: "" },
-  { id: 3, name: "UNHCR", imageUrl: "" },
-  { id: 4, name: "UNICEF", imageUrl: "" },
-  { id: 5, name: "Food and Agriculture Organisation", imageUrl: "" },
-  { id: 6, name: "Universal Basic Education Board", imageUrl: "" }
+  { id: 1, name: "Volunteer Service Organisation", imageUrl: vso },
+  { id: 2, name: "World Food Programme", imageUrl: wfo },
+  { id: 3, name: "UNHCR", imageUrl: unhcr },
+  { id: 4, name: "UNICEF", imageUrl: unicef },
+  { id: 5, name: "Food and Agriculture Organisation", imageUrl: fao },
+  { id: 6, name: "Universal Basic Education Board", imageUrl: ubec }
 ];
 
 const Partners = () => {
@@ -33,7 +39,7 @@ const Partners = () => {
           {partnersData.map((partner) => (
             <div 
               key={partner.id} 
-              className="bg-white h-[160px] flex flex-col items-center justify-center p-4 rounded shadow-sm text-center"
+              className="bg-transparent h-[160px] flex flex-col items-center justify-center p-4 text-center"
             >
               {partner.imageUrl ? (
                 <img 
@@ -46,9 +52,9 @@ const Partners = () => {
                   Logo Placeholder
                 </div>
               )}
-              <span className="text-primary font-dm-sans text-xs font-bold leading-tight">
+              {/* <span className="text-primary font-dm-sans text-xs font-bold leading-tight">
                 {partner.name}
-              </span>
+              </span> */}
             </div>
           ))}
         </div>
