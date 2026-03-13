@@ -48,10 +48,10 @@ function Footer() {
               </h4>
               <ul className="space-y-4 font-dm-sans text-[14px]" style={{ color: 'rgba(235, 244, 252, 0.55)' }}>
                 <li><Link to="/about_us" className="hover:text-harafYellow transition-colors">Our Story</Link></li>
-                <li><Link to="#" className="hover:text-harafYellow transition-colors">Our Team</Link></li>
-                <li><Link to="#" className="hover:text-harafYellow transition-colors">Annual Reports</Link></li>
-                <li><Link to="#" className="hover:text-harafYellow transition-colors">Press & Media</Link></li>
-                <li><Link to="#" className="hover:text-harafYellow transition-colors">Careers</Link></li>
+                <li><Link to="about_us" className="hover:text-harafYellow transition-colors">Our Team</Link></li>
+                <li><Link to="/ideas" className="hover:text-harafYellow transition-colors">Essay</Link></li>
+                <li><Link to="/media" className="hover:text-harafYellow transition-colors">Press & Media</Link></li>
+                <li><Link to="/contact-us" className="hover:text-harafYellow transition-colors">Contact Us</Link></li>
               </ul>
             </div>
 
@@ -76,10 +76,10 @@ function Footer() {
               </h4>
               <ul className="space-y-4 font-dm-sans text-[14px]" style={{ color: 'rgba(235, 244, 252, 0.55)' }}>
                 <li><Link to="/donate" className="hover:text-harafYellow transition-colors">Donate</Link></li>
-                <li><Link to="#" className="hover:text-harafYellow transition-colors">Volunteer</Link></li>
-                <li><Link to="#" className="hover:text-harafYellow transition-colors">Partner With Us</Link></li>
-                <li><Link to="#" className="hover:text-harafYellow transition-colors">Corporate Giving</Link></li>
-                <li><Link to="#" className="hover:text-harafYellow transition-colors">In Memoriam Giving</Link></li>
+                <li><Link to="/contact-us" className="hover:text-harafYellow transition-colors">Volunteer</Link></li>
+                <li><Link to="/contact_us" className="hover:text-harafYellow transition-colors">Partner With Us</Link></li>
+                <li><Link to="donate" className="hover:text-harafYellow transition-colors">Corporate Giving</Link></li>
+                <li><Link to="/donate" className="hover:text-harafYellow transition-colors">In Memoriam Giving</Link></li>
               </ul>
             </div>
 

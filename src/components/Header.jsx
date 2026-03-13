@@ -5,8 +5,7 @@ import harafLogo from '../assets/harafLogo.png';
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Prevent scrolling when mobile menu is open
-  useEffect(() => {
+    useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -20,6 +19,7 @@ function Header() {
     { name: "ABOUT US", path: "/about_us" },
     { name: "OUR WORK", path: "/our_work" },
     { name: "IDEAS", path: "/ideas" },
+    { name: "MEDIA GALLERY", path: "/press-media" },
     // { name: "GET INVOLVED", path: "#" }
   ];
 
