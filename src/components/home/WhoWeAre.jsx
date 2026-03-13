@@ -7,14 +7,14 @@ import bottomLeftEclipse from '../../assets/ourMissionBottomLeftEclipse.jpg';
 
 function WhoWeAre() {
   return (
-    <section className="relative w-full bg-white py-20 px-8 lg:px-16 overflow-hidden">
+    <section className="relative w-full bg-white py-10 px-8 lg:px-16 overflow-hidden">
       
       {/* Top Headings */}
       <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 lg:mb-24">
-        <span className="text-harafBlue text-[11px] sm:text-xs font-dm-sans font-bold tracking-widest uppercase mb-4">
+        <span className="text-harafBlue text-sm font-dm-sans font-bold tracking-widest uppercase mb-4">
           Who We Are
         </span>
-        <h2 className="font-playfair font-semibold text-4xl sm:text-5xl lg:text-[3.25rem] leading-[1.15] text-primary">
+        <h2 className="font-playfair font-semibold text-4xl md:text-5xl leading-[1.15] text-primary">
           A Foundation Built on <br className="hidden sm:block" /> Compassion and Action
         </h2>
       </div>

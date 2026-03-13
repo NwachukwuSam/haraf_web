@@ -9,7 +9,7 @@ const Impact = () => {
         <p className="text-harafBlue text-sm tracking-[0.2em] font-dm-sans font-bold uppercase mb-4">
           Our Impact In Numbers
         </p>
-        <h2 className="text-primary text-4xl md:text-5xl lg:text-6xl font-playfair font-bold leading-tight max-w-4xl">
+        <h2 className="text-primary text-4xl md:text-5xl font-playfair font-bold leading-tight max-w-4xl">
           Real Change.<br />
           Measurable Results.
         </h2>
