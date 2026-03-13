@@ -4,8 +4,15 @@ import heroImage from '../../assets/heroImage.jpg';
 import p1 from '../../assets/heroSubImage1.jpg';
 import p2 from '../../assets/heroSubImage2.jpg';
 import p3 from '../../assets/heroSubImage3.jpg';
+import { useNavigate } from 'react-router-dom';
 
 function Hero() {
+  const navigate = useNavigate();
+
+  const handleCTAClick = () => {
+    navigate('/ideas');
+  };
+
   return (
     <section className="relative w-full overflow-hidden bg-white py-16 lg:py-10 px-8 lg:px-16 flex items-center min-h-[85vh]">
       {/* Background Map */}
@@ -36,7 +43,7 @@ function Hero() {
           </h1>
 
           {/* CTA */}
-          <button className="mt-2 bg-harafBlue hover:bg-blue-700 text-white font-dm-sans font-bold text-xs tracking-wider px-6 py-2.5 flex items-center gap-2 transition-colors">
+          <button onClick={handleCTAClick} className="mt-2 bg-harafBlue hover:bg-blue-700 text-white font-dm-sans font-bold text-xs tracking-wider px-6 py-2.5 flex items-center gap-2 transition-colors">
             READ IT HERE
             <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
