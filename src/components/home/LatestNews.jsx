@@ -46,7 +46,7 @@ const LatestNews = () => {
           <p className="text-[#8CB4D6] text-sm tracking-[0.2em] font-dm-sans font-bold uppercase mb-4">
             LATEST FROM HARAF
           </p>
-          <h2 className="text-primary text-4xl md:text-5xl lg:text-[56px] font-playfair font-bold leading-tight max-w-3xl mx-auto">
+          <h2 className="text-primary text-4xl md:text-5xl font-playfair font-bold leading-tight max-w-3xl mx-auto">
             Headline: Stories,<br/>Reports & Field Dispatches.
           </h2>
         </div>

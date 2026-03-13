@@ -4,7 +4,7 @@ import aboutUsMainImage from '../../assets/aboutUsMainImage.jpg';
 const AboutHero = () => {
   return (
     <section 
-      className="relative w-full h-[680px] flex items-center bg-cover bg-center"
+      className="relative w-full h-[90vh] flex items-center bg-cover bg-center"
       style={{ backgroundImage: `url(${aboutUsMainImage})` }}
     >
       {/* Linear Gradient Overlay */}

@@ -68,7 +68,7 @@ const SixPillars = () => {
         <p className="text-[#8CB4D6] text-sm tracking-[0.2em] font-dm-sans font-bold uppercase mb-4">
           WHAT WE DO
         </p>
-        <h2 className="text-primary text-4xl md:text-5xl lg:text-5xl font-playfair font-bold leading-tight max-w-2xl mb-6">
+        <h2 className="text-primary text-4xl md:text-5xl font-playfair font-bold leading-tight max-w-2xl mb-6">
           Six Pillars of Rural Transformation.
         </h2>
         <p className="text-[#333333] font-dm-sans text-lg md:text-[20px] max-w-3xl mx-auto leading-relaxed">
