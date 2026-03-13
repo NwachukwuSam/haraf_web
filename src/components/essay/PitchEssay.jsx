@@ -1,6 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const PitchEssay = () => {
+  const navigate = useNavigate();
+  
+  const handlePitchClick = () => {
+    navigate('/contact-us');
+  }
+
   return (
     <section className="bg-[#1D70B8] py-24 px-6 text-center text-white">
       <div className="max-w-3xl mx-auto flex flex-col items-center">
@@ -24,7 +31,7 @@ const PitchEssay = () => {
         </p>
 
         {/* CTA Button */}
-        <button className="bg-[#FEE600] hover:bg-[#ebd400] text-[#1D70B8] px-10 py-5 w-full md:w-auto font-bold text-sm tracking-widest uppercase transition-colors flex items-center justify-center gap-3">
+        <button onClick={handlePitchClick} className="bg-[#FEE600] hover:bg-[#ebd400] text-[#1D70B8] px-10 py-5 w-full md:w-auto font-bold text-sm tracking-widest uppercase transition-colors flex items-center justify-center gap-3">
           Pitch Us An Essay
           <svg 
             width="18" 
