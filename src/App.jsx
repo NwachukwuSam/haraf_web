@@ -6,6 +6,7 @@ import Ideas from './pages/Ideas';
 import Home from './pages/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Essay from './pages/Essay';
 
 function App() {
 
@@ -20,6 +21,8 @@ function App() {
           <Route path="/our_work" element={<OurWork />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/ideas" element={<Ideas />} />
+          <Route path="/essay" element={<Essay />} />
+
         </Routes>
       </div>
       <Footer />
