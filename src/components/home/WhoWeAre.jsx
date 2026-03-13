@@ -29,7 +29,7 @@ function WhoWeAre() {
             <img 
               src={worldMap} 
               alt="" 
-              className="w-[140%] max-w-none h-auto object-contain opacity-[0.5]" 
+              className="w-[140%] max-w-none h-auto object-contain" 
             />
           </div>
 

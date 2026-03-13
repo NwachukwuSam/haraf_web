@@ -16,7 +16,7 @@ function Hero() {
   return (
     <section className="relative w-full overflow-hidden bg-white py-16 lg:py-10 px-8 lg:px-16 flex items-center min-h-[85vh]">
       {/* Background Map */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-15">
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none ">
         <img src={worldMap} alt="" aria-hidden="true" className="w-full h-full object-cover lg:object-contain object-center" />
       </div>
 
