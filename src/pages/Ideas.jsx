@@ -1,8 +1,15 @@
+import FeaturedEssay from "../components/ideas/FeaturedEssay"
+import IdeasHero from "../components/ideas/IdeasHero"
+import IdeaCard from "../components/ideas/IdeaCard" 
+import AuthorsSection from "../components/ideas/AuthorsSection"
 
 function Ideas() {
   return (
     <div>
-      IDEAS
+      <IdeasHero />
+      <FeaturedEssay />
+      <IdeaCard />
+      <AuthorsSection />
     </div>
   )
 }
