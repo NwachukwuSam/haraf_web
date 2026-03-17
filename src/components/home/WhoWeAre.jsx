@@ -124,50 +124,30 @@ const PILLARS = [
 
 function WhoWeAre() {
   return (
-    <>
-      <style>{`
-        @keyframes wwaFadeUp {
-          from { opacity: 0; transform: translateY(24px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes wwaSlideIn {
-          from { opacity: 0; transform: translateX(-20px); }
-          to   { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes circleFloat {
-          0%, 100% { transform: translateY(0px); }
-          50%       { transform: translateY(-6px); }
-        }
-        .wwa-left  { animation: wwaSlideIn 0.8s ease 0.1s both; }
-        .wwa-right { animation: wwaFadeUp  0.8s ease 0.3s both; }
-        .wwa-pill  { animation: wwaFadeUp  0.5s ease var(--d, 0s) both; }
-      `}</style>
+    <section className="relative w-full bg-white py-10 px-8 lg:px-16 overflow-hidden">
+      
+      {/* Top Headings */}
+      <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 lg:mb-24">
+        <span className="text-harafBlue text-sm font-dm-sans font-bold tracking-widest uppercase mb-4">
+          Who We Are
+        </span>
+        <h2 className="font-playfair font-semibold text-4xl md:text-5xl leading-[1.15] text-primary">
+          A Foundation Built on <br className="hidden sm:block" /> Compassion and Action
+        </h2>
+      </div>
 
-      {/* ── Diagonal bridge from Hero ─────────────────────────────────── */}
-      {/* <div className="relative w-full overflow-hidden" style={{ height: 80, marginBottom: -2 }}>
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
-          <polygon points="0,0 1440,0 1440,80 0,30" fill="#F4EDE4" />
-          <polygon points="0,30 1440,80 1440,80 0,80" fill="#0A1929" />
-        </svg>
-      </div> */}
-
-      <section className="relative w-full overflow-hidden bg-[#0A1929]">
-
-        {/* World map — ghosted dark */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-[0.04]">
-          <img src={worldMap} alt="" aria-hidden="true" className="w-full h-full object-contain brightness-200" />
-        </div>
-
-        {/* Top fine line accent */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-harafBlue/40 to-transparent" />
-
-        <div className="relative z-10 max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16 py-20 lg:py-28">
-
-          {/* ── SECTION LABEL ─────────────────────────────────────────── */}
-          <div className="flex items-center gap-4 mb-4">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-harafBlue/30 max-w-[60px]" />
-            <span className="font-dm-sans font-bold text-harafBlue text-[11px] uppercase tracking-[0.25em]">Who We Are</span>
-            <div className="h-px flex-1 bg-gradient-to-r from-harafBlue/30 to-transparent" />
+      <div className="max-w-[1250px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
+        
+        {/* Left Side: Image Collage */}
+        <div className="relative w-full flex justify-center lg:justify-start">
+          
+          {/* Faded Background Map */}
+          <div className="absolute inset-0 flex items-center ml-40 justify-center pointer-events-none -translate-x-[10%] translate-y-[5%]">
+            <img 
+              src={worldMap} 
+              alt="" 
+              className="w-[140%] max-w-none h-auto object-contain" 
+            />
           </div>
 
           {/* ── MAIN GRID ─────────────────────────────────────────────── */}
