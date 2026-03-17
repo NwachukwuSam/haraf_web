@@ -62,7 +62,7 @@ const pillarsData = [
 
 const SixPillars = () => {
   return (
-    <section className="w-full py-24 bg-white relative overflow-hidden">
+    <section className="w-full py-15 bg-white relative overflow-hidden">
       {/* Header Section */}
       <div className="w-full flex flex-col items-center justify-center text-center px-4 mb-20 relative z-10">
         <p className="text-[#8CB4D6] text-sm tracking-[0.2em] font-dm-sans font-bold uppercase mb-4">
@@ -77,7 +77,7 @@ const SixPillars = () => {
       </div>
 
       {/* Desktop Layout - absolute positioning for tree */}
-      <div className="hidden xl:block relative w-full mb-12" style={{ height: '1250px' }}>
+      <div className="hidden xl:block relative w-full mb-[-55px]" style={{ height: '1250px' }}>
         {/* Main central path */}
         {/* It has an intrinsic height of 969px and width of 173px */}
         <div className="absolute left-[50%] transform -translate-x-[50%] top-0 h-[969px] z-0">

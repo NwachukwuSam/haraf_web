@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImage from '../../assets/heroImage.jpg';
+import heroImage from '../../assets/load.JPG';
 
 const Impact = () => {
   return (
@@ -19,9 +19,9 @@ const Impact = () => {
       <div className="relative w-full min-h-[400px] flex items-center py-20 md:py-32">
         {/* Background Image */}
         <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
+  className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat brightness-50"
+  style={{ backgroundImage: `url(${heroImage})` }}
+/>
 
         {/* Navy Blue Overlay (#0A3D6B at 30% opacity) */}
         <div

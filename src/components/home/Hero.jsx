@@ -1,3 +1,4 @@
+import React from 'react';
 import worldMap from '../../assets/WorldMap.svg';
 import heroImage from '../../assets/heroImage.jpg';
 import p1 from '../../assets/heroSubImage1.jpg';
@@ -9,23 +10,86 @@ function Hero() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative w-full overflow-hidden bg-white py-16 lg:py-10 px-8 lg:px-16 flex items-center min-h-[85vh]">
-      {/* Background Map */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none ">
-        <img src={worldMap} alt="" aria-hidden="true" className="w-full h-full object-cover lg:object-contain object-center" />
-      </div>
+    <>
+      <style>{`
+        @keyframes heroFadeUp {
+          from { opacity: 0; transform: translateY(28px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes heroFadeIn {
+          from { opacity: 0; transform: scale(1.04); }
+          to   { opacity: 1; transform: scale(1); }
+        }
+        @keyframes floatA {
+          0%, 100% { transform: translateY(0px) rotate(-3deg); }
+          50%       { transform: translateY(-10px) rotate(-3deg); }
+        }
+        @keyframes floatB {
+          0%, 100% { transform: translateY(0px) rotate(2deg); }
+          50%       { transform: translateY(-8px) rotate(2deg); }
+        }
+        @keyframes pulseRing {
+          0%   { transform: translate(-50%, -50%) scale(1);    opacity: 0.35; }
+          100% { transform: translate(-50%, -50%) scale(1.5);  opacity: 0; }
+        }
+        @keyframes pingDot {
+          0%, 100% { transform: scale(1); opacity: 1; }
+          50%       { transform: scale(1.5); opacity: 0.5; }
+        }
+        .h-w1 { animation: heroFadeUp 0.7s ease 0.05s both; }
+        .h-w2 { animation: heroFadeUp 0.7s ease 0.2s  both; }
+        .h-w3 { animation: heroFadeUp 0.7s ease 0.35s both; }
+        .h-sub{ animation: heroFadeUp 0.7s ease 0.45s both; }
+        .h-cta{ animation: heroFadeUp 0.7s ease 0.55s both; }
+        .h-st { animation: heroFadeUp 0.7s ease 0.65s both; }
+        .h-img{ animation: heroFadeIn 1s   ease 0.2s  both; }
+        .h-c1 { animation: heroFadeUp 0.6s ease 0.8s  both; }
+        .h-c2 { animation: heroFadeUp 0.6s ease 0.95s both; }
+        .h-c3 { animation: heroFadeUp 0.6s ease 1.1s  both; }
+      `}</style>
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-8">
+      <div className="relative w-full overflow-hidden bg-white" style={{ minHeight: '34vh' }}>
 
-        {/* Left: Text */}
-        <div className="w-full lg:w-1/2 flex flex-col items-start gap-4">
+        {/* Diagonal cream wedge on the right */}
+        <div
+          className="absolute inset-0 pointer-events-none z-0"
+          style={{ background: 'linear-gradient(108deg, transparent 46%, #F4EDE4 46.8%)' }}
+        />
 
-          {/* Badge pill */}
-          <div className="flex items-center gap-2 flex-wrap">
-            <div className="flex -space-x-2">
-              {[p3, p2, p1].map((src, i) => (
-                <img key={i} src={src} alt="community" className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-black object-cover" />
-              ))}
+        {/* World map — ghosted */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-[0.06]">
+          <img src={worldMap} alt="" aria-hidden="true" className="w-full h-full object-contain" />
+        </div>
+
+        {/* Subtle top-left accent block */}
+        <div className="absolute top-0 left-0 w-1.5 h-32 bg-harafBlue z-10" />
+
+        {/* Main layout */}
+        <div className="relative z-10 max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-6" style={{ minHeight: '94vh', paddingTop: '1rem', paddingBottom: '1rem' }}>
+
+          {/* ── LEFT: Text ─────────────────────────────────── */}
+          <div className="w-full lg:w-[52%] flex flex-col items-start">
+
+            {/* Eyebrow */}
+            <div className="h-w1 flex items-center gap-3 mb-7 flex-wrap">
+              <div className="flex -space-x-2.5">
+                {[p3, p2, p1].map((src, i) => (
+                  <img key={i} src={src} alt="community member"
+                    className="w-8 h-8 rounded-full border-[2.5px] border-white object-cover"
+                    style={{ zIndex: 3 - i, boxShadow: '0 1px 4px rgba(0,0,0,0.15)' }}
+                  />
+                ))}
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-harafBlue opacity-60"
+                    style={{ animation: 'pingDot 1.5s ease-in-out infinite' }} />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-harafBlue" />
+                </span>
+                <span className="text-harafBlue font-dm-sans font-bold text-[11px] uppercase tracking-[0.2em]">
+                  Serving rural communities since 2012
+                </span>
+              </div>
             </div>
 
             {/* Headline */}
@@ -51,7 +115,7 @@ function Hero() {
             </p>
 
             {/* CTAs */}
-            <div className="h-cta flex flex-wrap items-center gap-4 mb-10">
+            <div className="h-cta flex flex-wrap items-center gap-4 mb-1">
               <button
                 onClick={() => navigate('/ideas')}
                 className="group relative overflow-hidden bg-harafBlue text-white font-dm-sans font-bold text-[11px] uppercase tracking-[0.2em] px-7 py-3.5 flex items-center gap-2 transition-all duration-300"
@@ -65,18 +129,9 @@ function Hero() {
                 </span>
                 <span className="absolute inset-0 bg-[#0A3D6B] -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
               </button>
-
-              <a href="#impact"
-                className="group font-dm-sans font-bold text-[11px] uppercase tracking-[0.2em] text-[#6B4C32] flex items-center gap-2 transition-colors hover:text-harafBlue">
-                See Our Impact
-                <span className="w-6 h-px bg-current transition-all group-hover:w-8" />
-                <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" className="w-3 h-3 transition-transform group-hover:translate-x-1">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
-                </svg>
-              </a>
             </div>
 
-      
+           
 
           </div>
 
@@ -171,7 +226,7 @@ function Hero() {
           </div>
         </div>
 
-      </section>
+      </div>
     </>
   );
 }
