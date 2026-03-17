@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 
@@ -93,11 +93,16 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const set = (k, v) => setForm(p => ({ ...p, [k]: v }));
 
+  useEffect(() => {
+  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => { setLoading(false); setSent(true); }, 1200);
   };
+  
 
   return (
     <main className="bg-white overflow-x-hidden">
@@ -409,7 +414,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
     </main>
   );
 }
