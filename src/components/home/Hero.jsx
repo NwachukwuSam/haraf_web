@@ -1,3 +1,4 @@
+import React from 'react';
 import worldMap from '../../assets/WorldMap.svg';
 import heroImage from '../../assets/heroImage.jpg';
 import p1 from '../../assets/heroSubImage1.jpg';
@@ -47,7 +48,7 @@ function Hero() {
         .h-c3 { animation: heroFadeUp 0.6s ease 1.1s  both; }
       `}</style>
 
-      <section className="relative w-full overflow-hidden bg-white" style={{ minHeight: '14vh' }}>
+      <div className="relative w-full overflow-hidden bg-white" style={{ minHeight: '34vh' }}>
 
         {/* Diagonal cream wedge on the right */}
         <div
@@ -64,7 +65,7 @@ function Hero() {
         <div className="absolute top-0 left-0 w-1.5 h-32 bg-harafBlue z-10" />
 
         {/* Main layout */}
-        <div className="relative z-10 max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-6" style={{ minHeight: '14vh', paddingTop: '2rem', paddingBottom: '1rem' }}>
+        <div className="relative z-10 max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-6" style={{ minHeight: '94vh', paddingTop: '1rem', paddingBottom: '1rem' }}>
 
           {/* ── LEFT: Text ─────────────────────────────────── */}
           <div className="w-full lg:w-[52%] flex flex-col items-start">
@@ -114,7 +115,7 @@ function Hero() {
             </p>
 
             {/* CTAs */}
-            <div className="h-cta flex flex-wrap items-center gap-4 mb-10">
+            <div className="h-cta flex flex-wrap items-center gap-4 mb-1">
               <button
                 onClick={() => navigate('/ideas')}
                 className="group relative overflow-hidden bg-harafBlue text-white font-dm-sans font-bold text-[11px] uppercase tracking-[0.2em] px-7 py-3.5 flex items-center gap-2 transition-all duration-300"
@@ -128,18 +129,9 @@ function Hero() {
                 </span>
                 <span className="absolute inset-0 bg-[#0A3D6B] -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
               </button>
-
-              <a href="#impact"
-                className="group font-dm-sans font-bold text-[11px] uppercase tracking-[0.2em] text-[#6B4C32] flex items-center gap-2 transition-colors hover:text-harafBlue">
-                See Our Impact
-                <span className="w-6 h-px bg-current transition-all group-hover:w-8" />
-                <svg fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" className="w-3 h-3 transition-transform group-hover:translate-x-1">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
-                </svg>
-              </a>
             </div>
 
-      
+           
 
           </div>
 
@@ -234,7 +226,7 @@ function Hero() {
           </div>
         </div>
 
-      </section>
+      </div>
     </>
   );
 }

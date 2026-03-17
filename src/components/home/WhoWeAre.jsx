@@ -35,8 +35,6 @@ function WhoWeAre() {
         .wwa-pill  { animation: wwaFadeUp  0.5s ease var(--d, 0s) both; }
       `}</style>
 
-      
-
       <div className="relative w-full overflow-hidden bg-[#0A1929]">
 
         {/* World map — ghosted dark */}
@@ -50,7 +48,7 @@ function WhoWeAre() {
         <div className="relative z-10 max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16 py-20 lg:py-28">
 
           {/* ── SECTION LABEL ─────────────────────────────────────────── */}
-          <div className="flex items-center gap-4 mb-4">
+          <div className="flex items-center gap-4 mb-1">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-harafBlue/30 max-w-[60px]" />
             <span className="font-dm-sans font-bold text-harafBlue text-[11px] uppercase tracking-[0.25em]">Who We Are</span>
             <div className="h-px flex-1 bg-gradient-to-r from-harafBlue/30 to-transparent" />
@@ -179,7 +177,7 @@ function WhoWeAre() {
                   <span
                     key={label}
                     className="wwa-pill flex items-center gap-1.5 bg-white/[0.06] border border-white/10 text-white/70 font-dm-sans text-[11px] px-3 py-1.5 rounded-full hover:bg-harafBlue/20 hover:border-harafBlue/40 hover:text-white transition-all cursor-default"
-                    style={{ '--d': `${0.4 + i * 0.07}s` }}
+                    style={{ '--d': `${0.4 + i * 0.07}s` } }
                   >
                     <span>{icon}</span> {label}
                   </span>
