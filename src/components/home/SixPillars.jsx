@@ -76,10 +76,8 @@ const SixPillars = () => {
         </p>
       </div>
 
-      {/* Desktop Layout - absolute positioning for tree */}
       <div className="hidden xl:block relative w-full mb-[-55px]" style={{ height: '1250px' }}>
-        {/* Main central path */}
-        {/* It has an intrinsic height of 969px and width of 173px */}
+        
         <div className="absolute left-[50%] transform -translate-x-[50%] top-0 h-[969px] z-0">
           <img src={pathSvg} alt="Path" className="h-full w-auto object-contain" />
         </div>
