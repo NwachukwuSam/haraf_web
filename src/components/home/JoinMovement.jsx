@@ -19,7 +19,7 @@ const JoinMovement = () => {
       title: 'Give Your Time',
       description: 'Join our field teams, offer professional skills remotely, or lead community workshops. Every hour matters.',
       linkText: 'Volunteer With Us',
-      linkUrl: '#'
+      linkUrl: '/contact-us'
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ const JoinMovement = () => {
       title: 'Give Your Voice',
       description: 'Follow, share, and advocate for rural communities. Awareness creates action. Help us reach more people.',
       linkText: 'Share Our Mission',
-      linkUrl: '#'
+      linkUrl: '/contact-us'
     },
     {
       id: 4,
@@ -37,7 +37,7 @@ const JoinMovement = () => {
       title: 'Give Resources',
       description: 'Partner with us as a corporate sponsor, in-kind donor, or institutional ally to scale our community impact.',
       linkText: 'Explore Partnership',
-      linkUrl: '#'
+      linkUrl: '/contact-us'
     }
   ];
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImage from '../../assets/load.JPG';
+import heroImage from '../../assets/load.jpg';
 
 const Impact = () => {
   return (
