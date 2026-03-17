@@ -252,6 +252,10 @@ export default function DonationPage() {
     setCustom("");
   };
 
+  useEffect(() => {
+  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+}, []);
+
   const impactText = IMPACT[displayAmount] || null;
 
   return (
