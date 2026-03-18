@@ -16,7 +16,7 @@ const WorkSection = ({
   testimonialBg = '#F8FAFC'
 }) => {
   return (
-    <section className="w-full py-24 bg-white overflow-hidden">
+    <section className="w-full py-8 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-16">
         <div className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 lg:items-stretch items-center`}>
           

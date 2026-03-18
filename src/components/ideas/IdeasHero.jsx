@@ -15,12 +15,12 @@ function IdeasHero () {
                }}
              />
        
-             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+             <div className="max-w-7xl mx-auto px-4 md:px-10 sm:px-6 lg:px-8 relative z-10 w-full">
                <div className="max-w-3xl">
                  <p className="text-harafYellow text-sm font-dm-sans font-bold tracking-[0.2em] uppercase mb-4">
                    WHERE WE THINK OUT LOUD
                  </p>
-                 <h1 className="text-white text-6xl md:text-[80px] italic font-playfair font-black leading-tight mb-8">
+                 <h1 className="text-white text-6xl lg:text-[80px] italic font-playfair font-black leading-tight mb-8">
                    Ideas That <br />Change How <br />We See Rural.
                  </h1>
                  <p className="text-white text-xl md:text-[22px] font-cormorant italic leading-relaxed max-w-xl">

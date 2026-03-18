@@ -153,9 +153,20 @@ export default function IdeaCard() {
       
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {articles.map((art, index) => (
-          <ArticleCard key={index} article={art} />
-        ))}
+        {articles.map((art, index) => {
+          // In a 9 item array, the 9th item (index 8) is the odd one out on a 2 column grid
+          const isOddCardOnMd = index === 8;
+          return (
+            <div 
+              key={index} 
+              className={isOddCardOnMd ? 'md:col-span-2 lg:col-span-1 flex justify-center' : ''}
+            >
+              <div className={isOddCardOnMd ? 'w-full md:w-[calc(50%-12px)] lg:w-full' : 'w-full'}>
+                <ArticleCard article={art} />
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
     <div className='bg-blue-400 w-full h-55 items-center justify-center '>

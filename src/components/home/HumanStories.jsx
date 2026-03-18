@@ -25,7 +25,7 @@ const storiesData = [
 
 const HumanStories = () => {
   return (
-    <section className="w-full py-24 bg-white">
+    <section className="w-full py-6 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
@@ -39,15 +39,20 @@ const HumanStories = () => {
           </h2>
         </div>
 
-        {/* Stories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {storiesData.map((story) => (
-            <StoryCard 
-              key={story.id}
-              location={story.location}
-              quote={story.quote}
-              author={story.author}
-            />
+          {storiesData.map((story, index) => (
+            <div 
+              key={story.id} 
+              className={index === 2 ? 'md:col-span-2 lg:col-span-1 flex justify-center' : ''}
+            >
+              <div className={index === 2 ? 'w-full md:w-[calc(50%-16px)] lg:w-full' : 'w-full'}>
+                <StoryCard 
+                  location={story.location}
+                  quote={story.quote}
+                  author={story.author}
+                />
+              </div>
+            </div>
           ))}
         </div>
 

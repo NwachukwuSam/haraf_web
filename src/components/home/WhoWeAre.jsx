@@ -19,7 +19,7 @@ function WhoWeAre() {
         </h2>
       </div>
 
-      <div className="max-w-[1250px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
+      <div className="max-w-[1250px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-8 items-center justify-center">
         
         {/* Left Side: Image Collage */}
         <div className="relative w-full flex justify-center lg:justify-start">
@@ -66,7 +66,7 @@ function WhoWeAre() {
         </div>
 
         {/* Right Side: Text & Mission */}
-        <div className="w-full lg:pl-10 xl:pl-20 mt-8 lg:mt-0 z-10 relative">
+        <div className="w-full lg:pl-10 xl:pl-20 mt-8 lg:mt-0 z-10 text-center flex flex-col items-center relative">
           <h3 className="font-playfair font-bold text-3xl sm:text-[2rem] text-primary mb-6">
             OUR MISSION
           </h3>

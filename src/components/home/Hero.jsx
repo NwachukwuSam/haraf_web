@@ -13,7 +13,7 @@ function Hero() {
         <img src={worldMap} alt="" aria-hidden="true" className="w-full h-full object-cover lg:object-contain object-center" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-8">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-8">
 
         {/* Left: Text */}
         <div className="w-full lg:w-1/2 flex flex-col items-start gap-4">
@@ -31,8 +31,8 @@ function Hero() {
           </div>
 
           {/* Heading */}
-          <h1 className="font-playfair font-medium italic text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] leading-[1.08] text-primary tracking-tight">
-            Reaching the <br /> Unreached <br /> Without Barriers<span className="tracking-widest">...</span>
+          <h1 className="font-playfair font-medium italic text-4xl sm:text-5xl md:text-[52px] lg:text-[4.75rem] leading-[1.08] text-primary tracking-tight">
+            Reaching the <br /> Unreached <br /> Without <br className='hidden md:block lg:hidden'/> Barriers<span className="tracking-widest">...</span>
           </h1>
 
           {/* CTA */}

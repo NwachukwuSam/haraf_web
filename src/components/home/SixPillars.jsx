@@ -77,7 +77,7 @@ const SixPillars = () => {
       </div>
 
       {/* Desktop Layout - absolute positioning for tree */}
-      <div className="hidden xl:block relative w-full mb-12" style={{ height: '1250px' }}>
+      <div className="hidden lg:block relative w-full mb-12" style={{ height: '1250px' }}>
         {/* Main central path */}
         {/* It has an intrinsic height of 969px and width of 173px */}
         <div className="absolute left-[50%] transform -translate-x-[50%] top-0 h-[969px] z-0">
@@ -88,7 +88,7 @@ const SixPillars = () => {
         <div className="absolute top-[30px] left-[calc(50%+37px)] z-0">
           <img src={branchOne} alt="branch" className="object-contain" />
         </div>
-        <div className="absolute top-[10px] left-[calc(50%+250px)] z-10">
+        <div className="absolute top-[10px] left-[calc(50%+200px)] xl:left-[calc(50%+250px)] z-10 w-fit">
           <PillarCard {...pillarsData[0]} />
         </div>
 
@@ -96,7 +96,7 @@ const SixPillars = () => {
         <div className="absolute top-[230px] right-[calc(50%-50px)] z-0">
           <img src={branchTwo} alt="branch" className="object-contain" />
         </div>
-        <div className="absolute top-[200px] right-[calc(50%+210px)] z-10">
+        <div className="absolute top-[200px] right-[calc(50%+150px)] xl:right-[calc(50%+210px)] z-10 w-fit">
           <PillarCard {...pillarsData[1]} />
         </div>
 
@@ -104,7 +104,7 @@ const SixPillars = () => {
         <div className="absolute top-[520px] left-[calc(50%-70px)] z-0">
           <img src={branchThree} alt="branch" className="object-contain" />
         </div>
-        <div className="absolute top-[410px] left-[calc(50%+170px)] z-10">
+        <div className="absolute top-[410px] left-[calc(50%+110px)] xl:left-[calc(50%+170px)] z-10 w-fit">
           <PillarCard {...pillarsData[2]} />
         </div>
 
@@ -112,7 +112,7 @@ const SixPillars = () => {
         <div className="absolute top-[650px] right-[calc(50%-30px)] z-0">
           <img src={branchFour} alt="branch" className="object-contain" />
         </div>
-        <div className="absolute top-[610px] right-[calc(50%+225px)] z-10">
+        <div className="absolute top-[610px] right-[calc(50%+200px)] xl:right-[calc(50%+225px)] z-10 w-fit">
           <PillarCard {...pillarsData[3]} />
         </div>
 
@@ -120,18 +120,18 @@ const SixPillars = () => {
         <div className="absolute top-[880px] left-[calc(50%+45px)] z-0">
           <img src={branchFive} alt="branch" className="object-contain" />
         </div>
-        <div className="absolute top-[800px] left-[calc(50%+245px)] z-10">
+        <div className="absolute top-[800px] left-[calc(50%+210px)] xl:left-[calc(50%+245px)] z-10 w-fit">
           <PillarCard {...pillarsData[4]} />
         </div>
 
         {/* Card 6 - Bottom Left - Rural Schools */}
-        <div className="absolute top-[969px] right-[calc(50%+10px)] z-10">
+        <div className="absolute top-[969px] right-[calc(50%+10px)] z-10 w-fit">
           <PillarCard {...pillarsData[5]} />
         </div>
       </div>
 
       {/* Mobile/Tablet Fallback Layout */}
-      <div className="xl:hidden flex flex-col items-center space-y-12 px-4 relative z-10">
+      <div className="lg:hidden flex flex-col items-center space-y-12 px-4 relative z-10">
         {pillarsData.map((pillar) => (
           <PillarCard key={pillar.id} {...pillar} />
         ))}

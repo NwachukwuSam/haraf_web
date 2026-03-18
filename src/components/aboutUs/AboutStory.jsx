@@ -4,7 +4,7 @@ import worldMap from '../../assets/WorldMap.svg';
 const AboutStory = () => {
   return (
     <section 
-      className="relative w-full py-24 bg-white overflow-hidden"
+      className="relative w-full py-8 bg-white overflow-hidden"
       style={{ 
         backgroundImage: `url(${worldMap})`,
         backgroundSize: '1100px',
