@@ -34,9 +34,9 @@ export default function ShareContact() {
             INSTAGRAM
           </button>
 
-          <button className="bg-yellow-400 text-black px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm tracking-wider font-semibold hover:bg-yellow-500 hover:scale-105 transition-all duration-200">
+          {/* <button className="bg-yellow-400 text-black px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm tracking-wider font-semibold hover:bg-yellow-500 hover:scale-105 transition-all duration-200">
             COPY LINK
-          </button>
+          </button> */}
 
         </div>
 

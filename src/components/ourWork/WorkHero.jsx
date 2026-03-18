@@ -54,7 +54,7 @@ const WorkHero = () => {
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-6 py-2 rounded-full text-[10px] font-dm-sans font-bold tracking-wider uppercase transition-all whitespace-nowrap border ${
+                className={`px-6 py-2 self-center cursor-pointer rounded-full text-[10px] font-dm-sans font-bold tracking-wider uppercase transition-all whitespace-nowrap border ${
                   activeFilter === filter
                     ? 'bg-harafBlue text-white border-harafBlue shadow-md'
                     : 'bg-white text-harafBlue border-harafBlue/20 hover:border-harafBlue/50'

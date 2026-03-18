@@ -1,6 +1,13 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const FeaturedEssay = () => {
+  const navigate = useNavigate();
+
+  const handleReadEssayClick = () => {
+    navigate('/essay');
+  }
+  
       const [activeFilter, setActiveFilter] = useState('ALL PROGRAMMES');
       
         const filters = [
@@ -67,7 +74,7 @@ const FeaturedEssay = () => {
           </div>
 
           {/* CTA Button */}
-          <button className="bg-[#FEE600] hover:bg-[#ebd400] text-[#0A3D6B] px-8 py-4 font-bold text-xs tracking-widest uppercase transition-all flex items-center gap-3">
+          <button  onClick={handleReadEssayClick} className="bg-[#FEE600] hover:bg-[#ebd400] text-[#0A3D6B] px-8 py-4 font-bold text-xs tracking-widest uppercase transition-all flex items-center gap-3">
             Read the Full Essay
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>

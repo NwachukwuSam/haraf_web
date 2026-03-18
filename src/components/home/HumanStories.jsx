@@ -25,11 +25,11 @@ const storiesData = [
 
 const HumanStories = () => {
   return (
-    <section className="w-full py-6 bg-white">
+    <section className="w-full bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-1 ]">
           <p className="text-[#8CB4D6] text-sm tracking-[0.2em] font-dm-sans font-bold uppercase mb-4">
             HUMAN STORIES
           </p>

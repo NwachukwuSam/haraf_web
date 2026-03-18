@@ -58,7 +58,7 @@ const AuthorCard = ({ author }) => (
     </p>
 
     {/* Divider */}
-    <div className="w-10 h-[2px] bg-[#FEE600] mb-6"></div>
+    <div className="w-10 h-[2px] bg-[#FEE600] mb-6 mt-auto"></div>
 
     {/* Stats */}
     <p className="text-[#1a1a1a] text-xs font-bold uppercase tracking-[0.15em] mb-4">
@@ -99,9 +99,9 @@ const AuthorsSection = () => {
             return (
               <div 
                 key={index}
-                className={isOddCardOnSm ? 'sm:col-span-2 lg:col-span-1 flex justify-center' : ''}
+                className={isOddCardOnSm ? 'sm:col-span-2 lg:col-span-1 flex justify-center h-full' : 'h-full'}
               >
-                <div className={isOddCardOnSm ? 'w-full sm:w-[calc(50%-8px)] lg:w-full' : 'w-full'}>
+                <div className={isOddCardOnSm ? 'w-full sm:w-[calc(50%-8px)] lg:w-full h-full' : 'w-full h-full'}>
                   <AuthorCard author={author} />
                 </div>
               </div>

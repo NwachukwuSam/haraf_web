@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Essay from './pages/Essay';
+import ContactPage from './pages/ContactUs';
+import PressMedia from './pages/PressMedia';
 
 function App() {
 
@@ -22,7 +24,8 @@ function App() {
           <Route path="/donate" element={<Donate />} />
           <Route path="/ideas" element={<Ideas />} />
           <Route path="/essay" element={<Essay />} />
-
+          <Route path="/contact-us" element={<ContactPage />} />
+          <Route path="/press-media" element={<PressMedia />} />
         </Routes>
       </div>
       <Footer />
