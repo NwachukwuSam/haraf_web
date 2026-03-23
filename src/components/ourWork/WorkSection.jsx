@@ -23,7 +23,14 @@ const WorkSection = ({
           {/* Image Side */}
           <div className="w-full lg:w-[45%] relative flex">
             <div className="w-full overflow-hidden rounded-sm shadow-lg aspect-4/5 lg:aspect-auto lg:h-full">
-              <img src={image} alt={title} className="w-full h-full object-cover" />
+              <img 
+                src={image} 
+                alt={title} 
+                className="w-full h-full object-cover" 
+                width="600"
+                height="750"
+                loading="lazy"
+              />
             </div>
             {/* Number Badge */}
             <div className="absolute top-6 left-6 w-12 h-12 bg-harafYellow flex items-center justify-center rounded-sm">

@@ -39,7 +39,15 @@ function WhoWeAre() {
 
         {/* World map — ghosted dark */}
         <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-[0.04]">
-          <img src={worldMap} alt="" aria-hidden="true" className="w-full h-full object-contain brightness-200" />
+          <img 
+            src={worldMap} 
+            alt="" 
+            aria-hidden="true" 
+            className="w-full h-full object-contain brightness-200" 
+            width="1320" 
+            height="500" 
+            loading="lazy" 
+          />
         </div>
 
         {/* Top fine line accent */}
@@ -85,8 +93,14 @@ function WhoWeAre() {
                     height: 'clamp(220px, 28vw, 320px)',
                     boxShadow: '0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08)',
                   }}>
-                  <img src={middleEclipse} alt="Women holding hands and smiling"
-                    className="w-full h-full object-cover object-center" />
+                  <img 
+                    src={middleEclipse} 
+                    alt="Women holding hands and smiling"
+                    className="w-full h-full object-cover object-center" 
+                    width="320" 
+                    height="320" 
+                    loading="lazy" 
+                  />
                 </div>
 
                 {/* Year badge — overlapping */}
@@ -107,8 +121,14 @@ function WhoWeAre() {
                   boxShadow: '0 12px 32px rgba(0,0,0,0.4)',
                   animation: 'circleFloat 5s ease-in-out 1s infinite',
                 }}>
-                <img src={topRightEclipse} alt="Smiling woman in pink hijab"
-                  className="w-full h-full object-cover" />
+                <img 
+                  src={topRightEclipse} 
+                  alt="Smiling woman in pink hijab"
+                  className="w-full h-full object-cover" 
+                  width="165" 
+                  height="165" 
+                  loading="lazy" 
+                />
               </div>
 
               {/* Bottom-left satellite circle */}
@@ -121,8 +141,14 @@ function WhoWeAre() {
                   boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
                   animation: 'circleFloat 4.5s ease-in-out 0.5s infinite',
                 }}>
-                <img src={bottomLeftEclipse} alt="Woman holding tray"
-                  className="w-full h-full object-cover" />
+                <img 
+                  src={bottomLeftEclipse} 
+                  alt="Woman holding tray"
+                  className="w-full h-full object-cover" 
+                  width="130" 
+                  height="130" 
+                  loading="lazy" 
+                />
               </div>
 
               {/* Communities stat chip */}

@@ -240,7 +240,14 @@ function EssayReader({ article, index, onClose }) {
             {article.title}
           </h1>
           <div className="flex items-center gap-3">
-            <img src={article.avatar} alt={article.author} className="w-11 h-11 rounded-full object-cover grayscale" />
+            <img 
+              src={article.avatar} 
+              alt={article.author} 
+              className="w-11 h-11 rounded-full object-cover grayscale" 
+              width="44" 
+              height="44" 
+              loading="lazy" 
+            />
             <div>
               <p className="font-dm-sans font-bold text-sm text-primary">{article.author}</p>
               <p className="font-dm-sans text-[11px] text-orange-700 uppercase tracking-tight font-medium">{article.role}</p>
@@ -347,7 +354,14 @@ function EssayReader({ article, index, onClose }) {
           <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
             <h3 className="text-[11px] tracking-[0.3em] text-harafBlue font-dm-sans font-bold uppercase mb-4">Written By</h3>
             <div className="flex items-center gap-3">
-              <img src={article.avatar} alt={article.author} className="w-12 h-12 rounded-full object-cover grayscale flex-shrink-0" />
+              <img 
+                src={article.avatar} 
+                alt={article.author} 
+                className="w-12 h-12 rounded-full object-cover grayscale flex-shrink-0" 
+                width="48" 
+                height="48" 
+                loading="lazy" 
+              />
               <div>
                 <p className="font-dm-sans font-bold text-sm text-primary">{article.author}</p>
                 <p className="font-dm-sans text-[11px] text-orange-700 uppercase tracking-tight font-medium mt-0.5">{article.role}</p>
@@ -419,7 +433,14 @@ function ArticleCard({ article, index, onClick }) {
 
       <div className="pt-5 border-t border-gray-100">
         <div className="flex items-center gap-3 mb-5">
-          <img src={article.avatar} alt={article.author} className="w-10 h-10 rounded-full object-cover grayscale" />
+          <img 
+            src={article.avatar} 
+            alt={article.author} 
+            className="w-10 h-10 rounded-full object-cover grayscale" 
+            width="40" 
+            height="40" 
+            loading="lazy" 
+          />
           <div>
             <p className="text-sm font-bold text-gray-800 leading-none font-dm-sans">{article.author}</p>
             <p className="text-[11px] text-orange-700 font-medium mt-1 uppercase tracking-tight font-dm-sans">{article.role}</p>

@@ -79,7 +79,13 @@ const AboutAccountability = () => {
           {accountabilityData.map((item, idx) => (
             <div key={idx} className="flex flex-col space-y-6 items-center">
               <div className='flex flex-col justify-center items-center gap-2'>
-                <img src={button} alt="accountabilityButton" />
+                <img 
+                  src={button} 
+                  alt="accountabilityButton" 
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
                 <h4 className="text-harafYellow text-xs font-dm-sans font-bold tracking-[0.2em] uppercase mb-2">
                   {item.title}
                 </h4>

@@ -46,6 +46,9 @@ const Partners = () => {
                   src={partner.imageUrl} 
                   alt={partner.name} 
                   className="max-h-20 w-auto object-contain mb-2" 
+                  width="120"
+                  height="80"
+                  loading="lazy"
                 />
               ) : (
                 <div className="w-full h-20 bg-gray-100 flex items-center justify-center rounded mb-2 text-xs text-gray-400 font-dm-sans">

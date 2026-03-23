@@ -46,6 +46,9 @@ const AuthorCard = ({ author }) => (
         src={author.image} 
         alt={author.name} 
         className="w-24 h-24 rounded-full object-cover grayscale"
+        width="96"
+        height="96"
+        loading="lazy"
       />
     </div>
 

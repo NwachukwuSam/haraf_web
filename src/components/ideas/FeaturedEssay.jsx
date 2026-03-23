@@ -57,6 +57,9 @@ const FeaturedEssay = () => {
               src="https://i.pravatar.cc/150?u=grace" 
               alt="Mrs. Grace Titus" 
               className="w-12 h-12 rounded-full border-2 border-[#FFDD00]/20"
+              width="48"
+              height="48"
+              loading="lazy"
             />
             <div>
               <p className="text-base font-bold leading-none">Mrs. Grace Titus</p>

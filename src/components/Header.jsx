@@ -39,7 +39,15 @@ function Header() {
         <div className="flex items-center">
           <Link to="/">
             <div className='flex space-x-2 items-center'>
-              <img src={harafLogo} alt="Haraf Logo" className="h-10 sm:h-12 w-auto" />
+              <img 
+                src={harafLogo} 
+                alt="Haraf Logo" 
+                className="h-10 sm:h-12 w-auto" 
+                width="48" 
+                height="48" 
+                fetchpriority="high" 
+                loading="eager"
+              />
               <div className='text-harafBlue flex flex-col space-y-0'>
                 <span className="text-xl sm:text-2xl font-playfair font-bold tracking-wide leading-tight">HARAF</span>
                 <span className="text-[10px] sm:text-xs font-dm-sans tracking-widest hidden sm:block">HOPE & RURAL AID FOUNDATION</span>

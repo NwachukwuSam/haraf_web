@@ -65,6 +65,9 @@ const NewsCard = ({ image, badgeText, title, date, description, onClick, catColo
           src={image} 
           alt={title}
           className="w-full h-[280px] object-cover transform group-hover:scale-105 transition-transform duration-500"
+          width="400"
+          height="280"
+          loading="lazy"
         />
         <span 
           className="absolute top-4 left-4 text-xs font-bold px-3 py-1.5 tracking-wider"

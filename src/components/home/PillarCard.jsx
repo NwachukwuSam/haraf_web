@@ -10,6 +10,9 @@ const PillarCard = ({ image, tag, title, description, link }) => {
           src={image}
           alt={title}
           className="w-full h-full object-cover transition-all duration-500 grayscale-0 hover:grayscale hover:cursor-pointer"
+          width="160"
+          height="200"
+          loading="lazy"
         />
       </div>
 

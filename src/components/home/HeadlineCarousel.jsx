@@ -74,6 +74,9 @@ const HeadlineCarousel = () => {
                 src={img} 
                 alt={`Field ${idx % 6 + 1}`} 
                 className="w-full h-full object-cover" 
+                width="400"
+                height="400"
+                loading="lazy"
               />
             </div>
           ))}
