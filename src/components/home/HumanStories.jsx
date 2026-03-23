@@ -29,7 +29,7 @@ const HumanStories = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
-        <div className="text-center mb-1 ]">
+        <div className="text-center mb-12 ">
           <p className="text-[#8CB4D6] text-sm tracking-[0.2em] font-dm-sans font-bold uppercase mb-4">
             HUMAN STORIES
           </p>
@@ -39,19 +39,18 @@ const HumanStories = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {storiesData.map((story, index) => (
+        {/* Grid Section - Using Flex Wrap for Centering Spillage and Equal Heights */}
+        <div className="flex flex-wrap justify-center gap-8 mb-16">
+          {storiesData.map((story) => (
             <div 
               key={story.id} 
-              className={index === 2 ? 'md:col-span-2 lg:col-span-1 flex justify-center' : ''}
+              className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)] flex"
             >
-              <div className={index === 2 ? 'w-full md:w-[calc(50%-16px)] lg:w-full' : 'w-full'}>
-                <StoryCard 
-                  location={story.location}
-                  quote={story.quote}
-                  author={story.author}
-                />
-              </div>
+              <StoryCard 
+                location={story.location}
+                quote={story.quote}
+                author={story.author}
+              />
             </div>
           ))}
         </div>

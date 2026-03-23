@@ -5,7 +5,7 @@ import harafLogo from '../assets/harafLogo.png';
 function Footer() {
   return (
     <footer className="w-full bg-navyDark pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 xl:px-16">
         
         {/* Main Footer Content */}
         <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8 mb-16">

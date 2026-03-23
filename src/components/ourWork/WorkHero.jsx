@@ -26,17 +26,17 @@ const WorkHero = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 grow flex items-start pt-16">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
           <div className="max-w-2xl py-8 md:py-0 relative space-y-10">
             <p className="text-harafYellow text-sm font-dm-sans font-bold tracking-[0.2em] uppercase">
               OUR PROGRAMMES
             </p>
-            <h1 className="text-white text-5xl md:text-[80px] font-playfair font-bold ">
+            <h1 className="text-white text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-playfair font-bold ">
               Six Ways We<br />
               Change Rural<br />
               Lives.
             </h1>
-            <p className="text-white text-lg md:text-xl font-dm-sans leading-relaxed opacity-90 italic max-w-lg">
+            <p className="text-white text-lg lg:text-xl font-dm-sans leading-relaxed opacity-90 italic max-w-lg">
               Every programme at HARAF is co-designed with communities, independently evaluated, and built for long-term impact. We don't parachute in — we stay.
             </p>
           </div>

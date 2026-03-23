@@ -15,15 +15,15 @@ const AboutHero = () => {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 w-full">
         <div className="max-w-3xl">
           <p className="text-harafYellow text-sm font-dm-sans font-bold tracking-[0.2em] uppercase mb-4">
             OUR STORY
           </p>
-          <h1 className="text-white text-6xl md:text-[80px] font-playfair font-black leading-tight mb-8">
+          <h1 className="text-white text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-playfair font-black leading-tight mb-8">
             We Are HARAF.
           </h1>
-          <p className="text-white text-xl md:text-[22px] font-cormorant italic leading-relaxed max-w-xl">
+          <p className="text-white text-lg md:text-xl xl:text-[22px] font-cormorant italic leading-relaxed max-w-xl">
             A foundation born not in a boardroom — but on a dusty village path in rural Nigeria.
           </p>
         </div>

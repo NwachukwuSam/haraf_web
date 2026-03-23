@@ -35,7 +35,7 @@ const AboutAccountability = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-20">
         
         {/* Left Column: Text & CTA */}
-        <div className="flex flex-col">
+        <div className="flex flex-col lg:text-left lg:place-self-start text-center place-self-center">
           <p className="text-harafYellow text-sm font-dm-sans font-bold tracking-[0.2em] uppercase mb-4">
             ACCOUNTABILITY & GOVERNANCE
           </p>
@@ -58,8 +58,8 @@ const AboutAccountability = () => {
             </p>
           </div>
 
-          <div className="space-y-6">
-            <button className="bg-harafYellow text-navyDark font-dm-sans font-medium text-sm tracking-widest uppercase px-10 py-4 flex items-center space-x-3 hover:opacity-90 transition-opacity">
+          <div className="space-y-6 flex lg:block flex-col items-center ">
+            <button className="bg-harafYellow  text-navyDark font-dm-sans font-medium text-sm tracking-widest uppercase px-6 py-4 flex items-center space-x-3 hover:opacity-90 transition-opacity">
               <span>DOWNLOAD OUR 2025 ANNUAL REPORT</span>
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path d="M12 5v14M5 12l7 7 7-7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

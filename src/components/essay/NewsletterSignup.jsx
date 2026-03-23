@@ -10,7 +10,7 @@ function NewsletterSignup() {
   };
 
   return (
-    <section className="w-full bg-[#EEF5FC] py-14 md:py-20 px-6 sm:px-8">
+    <section className="w-full bg-[#EEF5FC] py-14 md:py-20 px-6 sm:px-8 md:px-12">
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
 

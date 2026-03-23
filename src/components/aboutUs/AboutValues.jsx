@@ -53,9 +53,7 @@ const AboutValues = () => {
           {valuesData.map((value) => (
             <div 
               key={value.number}
-              // Calculate width based on gap (24px) to perfectly mimic grid columns
-              // Mobile: 1 col (100%), md: 3 cols (~33.3%), lg: 5 cols (~20%)
-              className="w-full md:w-[calc(33.333%-16px)] lg:w-[calc(20%-19.2px)]"
+              className="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(20%-1.2rem)] flex"
             >
               <div className="w-full h-full">
                 <ValueCard 

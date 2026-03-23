@@ -536,7 +536,7 @@ function ArticleCard({ article, index, onClick }) {
   return (
     <div
       onClick={() => onClick(index)}
-      className="bg-[#F8FBFF] border border-blue-50/50 p-8 flex flex-col h-full hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 cursor-pointer group"
+      className="bg-[#F8FBFF] border border-blue-50/50 p-8 flex flex-col h-full w-full hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 cursor-pointer group"
     >
       <div className="mb-5">
         <span
@@ -589,14 +589,15 @@ export default function IdeaCard() {
   return (
     <div>
       <section className="bg-white py-20 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {articles.map((art, index) => (
-            <ArticleCard
-              key={index}
-              article={art}
-              index={index}
-              onClick={setOpenIndex}
-            />
+            <div key={index} className="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] flex">
+              <ArticleCard
+                article={art}
+                index={index}
+                onClick={setOpenIndex}
+              />
+            </div>
           ))}
         </div>
       </section>

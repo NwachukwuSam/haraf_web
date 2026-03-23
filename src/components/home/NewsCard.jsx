@@ -54,13 +54,13 @@
 
 import React from 'react';
 
-const NewsCard = ({ image, badgeText, title, date, description, onClick, catColors }) => {
+const NewsCard = ({ image, badgeText, title, date, description, onClick, catColors, className }) => {
   return (
     <div 
       onClick={onClick}
-      className="group cursor-pointer bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+      className={`group cursor-pointer bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full ${className || ''}`}
     >
-      <div className="relative overflow-hidden mb-6">
+      <div className="relative overflow-hidden mb-6 shrink-0">
         <img 
           src={image} 
           alt={title}
@@ -74,7 +74,7 @@ const NewsCard = ({ image, badgeText, title, date, description, onClick, catColo
         </span>
       </div>
       
-      <div className="space-y-4 px-2 pb-6">
+      <div className="flex flex-col flex-grow px-2 pb-6 space-y-4">
         <h3 className="text-primary text-2xl font-playfair font-bold leading-tight group-hover:text-harafYellow transition-colors">
           {title}
         </h3>
@@ -83,11 +83,11 @@ const NewsCard = ({ image, badgeText, title, date, description, onClick, catColo
           {date}
         </p>
         
-        <p className="text-gray-700 font-dm-sans leading-relaxed">
+        <p className="text-gray-700 font-dm-sans leading-relaxed flex-grow">
           {description}
         </p>
         
-        <div className="inline-flex items-center text-harafYellow font-dm-sans text-sm font-bold tracking-wider uppercase hover:text-primary transition-colors group-hover:gap-2">
+        <div className="inline-flex items-center text-harafYellow font-dm-sans text-sm font-bold tracking-wider uppercase hover:text-primary transition-colors group-hover:gap-2 mt-auto pt-2">
           READ FULL STORY <span className="ml-2 text-lg leading-none transition-transform group-hover:translate-x-1">→</span>
         </div>
       </div>

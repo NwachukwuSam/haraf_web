@@ -194,14 +194,18 @@ const LatestNews = () => {
 
           {/* News Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {newsData.map((news, index) => (
-              <NewsCard 
-                key={news.id} 
-                {...news} 
-                onClick={() => setOpenStoryIndex(index)}
-                catColors={CAT_COLORS[news.badgeText]}
-              />
-            ))}
+            {newsData.map((news, index) => {
+              const isLastOdd = newsData.length % 2 !== 0 && index === newsData.length - 1;
+              return (
+                <NewsCard 
+                  key={news.id} 
+                  {...news} 
+                  onClick={() => setOpenStoryIndex(index)}
+                  catColors={CAT_COLORS[news.badgeText]}
+                  className={isLastOdd ? "md:col-span-2 md:w-[calc(50%-1rem)] md:mx-auto lg:col-span-1 lg:w-full lg:mx-0" : ""}
+                />
+              );
+            })}
           </div>
 
           {/* Footer Link */}
