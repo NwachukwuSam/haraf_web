@@ -4,7 +4,14 @@ const TeamCard = ({ image, name, role, description }) => {
   return (
     <div className="flex flex-col h-full">
       <div className="aspect-[5/5] w-full overflow-hidden mb-6">
-        <img src={image} alt={name} className="w-full h-full object-cover object-top rounded-md" />
+        <img 
+          src={image} 
+          alt={name} 
+          className="w-full h-full object-cover object-top rounded-md" 
+          width="400"
+          height="400"
+          loading="lazy"
+        />
       </div>
       <div className="flex flex-col flex-grow">
         <h3 className="text-primary text-2xl font-playfair font-bold mb-2">

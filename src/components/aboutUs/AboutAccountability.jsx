@@ -35,7 +35,7 @@ const AboutAccountability = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-20">
         
         {/* Left Column: Text & CTA */}
-        <div className="flex flex-col">
+        <div className="flex flex-col lg:text-left lg:place-self-start text-center place-self-center">
           <p className="text-harafYellow text-sm font-dm-sans font-bold tracking-[0.2em] uppercase mb-4">
             ACCOUNTABILITY & GOVERNANCE
           </p>
@@ -58,8 +58,8 @@ const AboutAccountability = () => {
             </p>
           </div>
 
-          <div className="space-y-6">
-            <button className="bg-harafYellow text-navyDark font-dm-sans font-medium text-sm tracking-widest uppercase px-10 py-4 flex items-center space-x-3 hover:opacity-90 transition-opacity">
+          <div className="space-y-6 flex lg:block flex-col items-center ">
+            <button className="bg-harafYellow  text-navyDark font-dm-sans font-medium text-sm tracking-widest uppercase px-6 py-4 flex items-center space-x-3 hover:opacity-90 transition-opacity">
               <span>DOWNLOAD OUR 2025 ANNUAL REPORT</span>
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path d="M12 5v14M5 12l7 7 7-7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -79,7 +79,13 @@ const AboutAccountability = () => {
           {accountabilityData.map((item, idx) => (
             <div key={idx} className="flex flex-col space-y-6 items-center">
               <div className='flex flex-col justify-center items-center gap-2'>
-                <img src={button} alt="accountabilityButton" />
+                <img 
+                  src={button} 
+                  alt="accountabilityButton" 
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
                 <h4 className="text-harafYellow text-xs font-dm-sans font-bold tracking-[0.2em] uppercase mb-2">
                   {item.title}
                 </h4>

@@ -58,7 +58,16 @@ function Hero() {
 
         {/* World map — ghosted */}
         <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-[0.06]">
-          <img src={worldMap} alt="" aria-hidden="true" className="w-full h-full object-contain" />
+          <img 
+            src={worldMap} 
+            alt="" 
+            aria-hidden="true" 
+            className="w-full h-full object-contain" 
+            width="1320" 
+            height="500" 
+            loading="eager" 
+            fetchpriority="high"
+          />
         </div>
 
         {/* Subtle top-left accent block */}
@@ -74,9 +83,16 @@ function Hero() {
             <div className="h-w1 flex items-center gap-3 mb-7 flex-wrap">
               <div className="flex -space-x-2.5">
                 {[p3, p2, p1].map((src, i) => (
-                  <img key={i} src={src} alt="community member"
+                  <img 
+                    key={i} 
+                    src={src} 
+                    alt="community member"
                     className="w-8 h-8 rounded-full border-[2.5px] border-white object-cover"
                     style={{ zIndex: 3 - i, boxShadow: '0 1px 4px rgba(0,0,0,0.15)' }}
+                    width="32"
+                    height="32"
+                    loading="eager"
+                    fetchpriority="high"
                   />
                 ))}
               </div>
@@ -169,8 +185,15 @@ function Hero() {
                 filter: 'drop-shadow(0 20px 40px rgba(10,61,107,0.22))',
               }}
             >
-              <img src={heroImage} alt="HARAF rural community outreach"
-                className="w-full h-full object-cover object-[25%_center]" />
+              <img 
+                src={heroImage} 
+                alt="HARAF rural community outreach"
+                className="w-full h-full object-cover object-[25%_center]" 
+                width="390" 
+                height="390" 
+                fetchpriority="high" 
+                loading="eager" 
+              />
             </div>
 
             {/* Pulse ring */}
@@ -216,7 +239,16 @@ function Hero() {
                 style={{ boxShadow: '0 6px 20px rgba(26,120,194,0.4)' }}>
                 <div className="flex -space-x-1.5">
                   {[p1, p2].map((s, i) => (
-                    <img key={i} src={s} alt="" className="w-6 h-6 rounded-full border-2 border-harafBlue object-cover" />
+                    <img 
+                      key={i} 
+                      src={s} 
+                      alt="" 
+                      className="w-6 h-6 rounded-full border-2 border-harafBlue object-cover" 
+                      width="24" 
+                      height="24" 
+                      loading="eager" 
+                      fetchpriority="high"
+                    />
                   ))}
                 </div>
                 <span className="font-dm-sans font-bold text-white text-[11px] whitespace-nowrap">+14,000 families</span>

@@ -401,7 +401,15 @@ export default function DonationPage() {
         {/* ── RIGHT PANEL ───────────────────────────────────────────────── */}
         <div className="w-full lg:w-1/2 bg-harafBlue flex flex-col px-6 sm:px-10 py-10">
           <div className="w-full rounded-xl overflow-hidden mb-8 aspect-video lg:aspect-auto lg:h-64">
-            <img src={DonateImage} alt="Donation Impact" className="object-cover w-full h-full" />
+            <img 
+              src={DonateImage} 
+              alt="Donation Impact" 
+              className="object-cover w-full h-full" 
+              width="800"
+              height="600"
+              fetchpriority="high"
+              loading="eager"
+            />
           </div>
           <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold font-playfair italic mb-4">
             Join 4,200+ Donors Making a Difference

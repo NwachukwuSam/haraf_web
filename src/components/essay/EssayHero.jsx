@@ -55,6 +55,10 @@ export default function EssayHero() {
               src={GraceTitus}
               alt="Grace Titus"
               className="w-12 h-12 rounded-full border"
+              width="48"
+              height="48"
+              fetchpriority="high"
+              loading="eager"
             />
 
             <div>

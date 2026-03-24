@@ -115,6 +115,9 @@ const NewsReader = ({ news, storyContent, catColors, onClose }) => {
               src={news.image} 
               alt={news.title}
               className="w-full h-[300px] md:h-[400px] object-cover"
+              width="800"
+              height="400"
+              loading="lazy"
             />
           </div>
         </div>

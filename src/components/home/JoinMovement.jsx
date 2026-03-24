@@ -42,7 +42,7 @@ const JoinMovement = () => {
   ];
 
   return (
-    <section className="w-full py-24 bg-[#F8FAFC]">
+    <section className="w-full py-8 bg-[#F8FAFC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}

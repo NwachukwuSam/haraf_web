@@ -46,6 +46,9 @@ const AuthorCard = ({ author }) => (
         src={author.image} 
         alt={author.name} 
         className="w-24 h-24 rounded-full object-cover grayscale"
+        width="96"
+        height="96"
+        loading="lazy"
       />
     </div>
 
@@ -58,7 +61,7 @@ const AuthorCard = ({ author }) => (
     </p>
 
     {/* Divider */}
-    <div className="w-10 h-[2px] bg-[#FEE600] mb-6"></div>
+    <div className="w-10 h-[2px] bg-[#FEE600] mb-6 mt-auto"></div>
 
     {/* Stats */}
     <p className="text-[#1a1a1a] text-xs font-bold uppercase tracking-[0.15em] mb-4">
@@ -75,7 +78,7 @@ const AuthorCard = ({ author }) => (
 
 const AuthorsSection = () => {
   return (
-    <section className="bg-[#F8FBFF] py-24 px-6 md:px-12 lg:px-24">
+    <section className="bg-[#F8FBFF] py-24 px-6 md:px-12 lg:px-14">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <header className="max-w-2xl mb-16">
@@ -92,10 +95,17 @@ const AuthorsSection = () => {
           </p>
         </header>
 
-        {/* Grid - Scrollable on mobile, 5 cols on large screens */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        {/* Grid - Flex layout for centering any spillage */}
+        <div className="flex flex-wrap justify-center gap-4">
           {authors.map((author, index) => (
-            <AuthorCard key={index} author={author} />
+            <div 
+              key={index}
+              className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)] flex"
+            >
+              <div className="w-full h-full">
+                <AuthorCard author={author} />
+              </div>
+            </div>
           ))}
         </div>
       </div>

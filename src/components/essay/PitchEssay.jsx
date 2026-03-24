@@ -18,7 +18,7 @@ const PitchEssay = () => {
         </p>
 
         {/* Main Heading */}
-        <h2 className="text-5xl md:text-7xl font-serif font-bold leading-tight mb-8">
+        <h2 className="text-5xl xl:text-7xl md:text-6xl font-serif font-bold leading-tight mb-8">
           Have an Idea <br /> Worth Sharing?
         </h2>
 

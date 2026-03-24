@@ -35,11 +35,19 @@ function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[60] w-full flex items-center justify-between px-6 md:px-8 lg:px-16 py-4 border-b border-b-[rgba(26,120,194,0.12)] bg-[#F8FAFC] font-dm-sans" style={{ height: '88px' }}>
+      <header className="fixed top-0 left-0 right-0 z-[60] w-full flex items-center justify-between px-6 md:px-8 xl:px-16 py-4 border-b border-b-[rgba(26,120,194,0.12)] bg-[#F8FAFC] font-dm-sans" style={{ height: '88px' }}>
         <div className="flex items-center">
           <Link to="/">
             <div className='flex space-x-2 items-center'>
-              <img src={harafLogo} alt="Haraf Logo" className="h-10 sm:h-12 w-auto" />
+              <img 
+                src={harafLogo} 
+                alt="Haraf Logo" 
+                className="h-10 sm:h-12 w-auto" 
+                width="48" 
+                height="48" 
+                fetchpriority="high" 
+                loading="eager"
+              />
               <div className='text-harafBlue flex flex-col space-y-0'>
                 <span className="text-xl sm:text-2xl font-playfair font-bold tracking-wide leading-tight">HARAF</span>
                 <span className="text-[10px] sm:text-xs font-dm-sans tracking-widest hidden sm:block">HOPE & RURAL AID FOUNDATION</span>
@@ -49,7 +57,7 @@ function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-8 lg:space-x-12">
+        <nav className="hidden xl:flex items-center space-x-8 xl:space-x-12">
           <div className="flex items-center space-x-10">
             {navItems.map((item) => (
               <NavLink
@@ -71,7 +79,7 @@ function Header() {
 
         {/* Mobile Hamburger Icon */}
         <button 
-          className="lg:hidden text-harafBlue p-2 focus:outline-none"
+          className="xl:hidden text-harafBlue p-2 focus:outline-none cursor-pointer"
           onClick={() => setIsMobileMenuOpen(true)}
           aria-label="Open Menu"
         >
@@ -83,13 +91,13 @@ function Header() {
 
       {/* Mobile Menu Backdrop */}
       <div 
-        className={`fixed inset-0 backdrop-blur-sm z-[70] lg:hidden transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 backdrop-blur-sm z-[70] xl:hidden transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setIsMobileMenuOpen(false)}
       />
 
       {/* Mobile Menu Drawer */}
       <div 
-        className={`fixed top-0 right-0 h-full w-[80%] max-w-sm bg-[#F8FAFC] z-[80] lg:hidden transform transition-transform duration-300 ease-in-out flex flex-col ${
+        className={`fixed top-0 right-0 h-full w-[80%] max-w-sm bg-[#F8FAFC] z-[80] xl:hidden transform transition-transform duration-300 ease-in-out flex flex-col ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -97,7 +105,7 @@ function Header() {
         <div className="flex justify-end p-6 pr-8 mt-2">
           <button 
             onClick={() => setIsMobileMenuOpen(false)}
-            className="text-harafYellow hover:text-harafBlue focus:outline-none transition-colors"
+            className="text-harafYellow hover:text-harafBlue focus:outline-none transition-colors cursor-pointer"
             aria-label="Close Menu"
           >
             <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">

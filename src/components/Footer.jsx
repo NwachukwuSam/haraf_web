@@ -5,7 +5,7 @@ import harafLogo from '../assets/harafLogo.png';
 function Footer() {
   return (
     <footer className="w-full bg-navyDark pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 xl:px-16">
         
         {/* Main Footer Content */}
         <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8 mb-16">
@@ -14,7 +14,14 @@ function Footer() {
           <div className="flex flex-col w-full lg:w-1/4">
             <Link to="/" className="mb-4 inline-block">
             <div className='flex space-x-2'>
-              <img src={harafLogo} alt="HARAF Logo" className="h-12 w-auto object-contain border border-harafBlue rounded-full" />
+              <img 
+                src={harafLogo} 
+                alt="HARAF Logo" 
+                className="h-12 w-auto object-contain border border-harafBlue rounded-full" 
+                width="160"
+                height="48"
+                loading="lazy"
+              />
               <div className='flex flex-col text-white space-y-0'>
                 <span className="text-2xl font-playfair font-bold  tracking-wide">HARAF</span>
                 <span className="text-xs font-dm-sans tracking-widest text-[#EBF4F6] opacity-60 font-light">HOPE & RURAL AID FOUNDATION</span>

@@ -186,6 +186,9 @@ function PhotoTile({ image, onClick, index }) {
         onLoad={() => setLoaded(true)}
         onError={() => { setLoaded(true); setError(true); }}
         className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-105 ${loaded && !error ? 'opacity-100' : 'opacity-0 absolute inset-0'}`}
+        width="400"
+        height="300"
+        loading="lazy"
       />
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

@@ -15,6 +15,9 @@ export default function AuthorSection() {
           <img
             src={GraceTitus}
             className="w-16 h-16 rounded-full"
+            width="64"
+            height="64"
+            loading="lazy"
           />
 
           <div>

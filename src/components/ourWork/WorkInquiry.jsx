@@ -2,10 +2,9 @@ import React from 'react';
 
 const WorkInquiry = () => {
   return (
-    <section className="w-full py-24 bg-harafBlue text-white relative overflow-hidden">
-        {/* Decorative corner border similar to hero */}
-        <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-0">
-            <div className="p-12 md:py-16 md:px-8 relative flex flex-col md:flex-row items-center justify-between gap-12">
+    <section className="w-full py-12 bg-harafBlue text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-0 md:px-8 lg:px-0">
+            <div className="p-6 md:py-16 md:px-8 relative flex flex-col md:flex-row items-center justify-between gap-12">
                 <div className="max-w-xl space-y-8">
                     <p className="text-harafYellow text-sm font-dm-sans font-bold tracking-[0.2em] uppercase">
                         WORK WITH US

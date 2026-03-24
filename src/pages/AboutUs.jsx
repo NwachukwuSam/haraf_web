@@ -14,7 +14,7 @@ function AboutUs() {
   }, []);
 
   return (
-    <div className="flex flex-col w-full min-h-screen pt-7.5 md:pt-0">
+    <div className="flex flex-col w-full min-h-screen">
       <AboutHero />
       <AboutStory />
       <AboutValues />

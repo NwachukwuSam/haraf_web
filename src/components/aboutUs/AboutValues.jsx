@@ -31,7 +31,7 @@ const valuesData = [
 
 const AboutValues = () => {
   return (
-    <section className="w-full py-24 bg-white relative overflow-hidden">
+    <section className="w-full py-8 bg-white relative overflow-hidden">
         {/* Decorative Quote Mark */}
         <div className="absolute top-0 left-[20%] opacity-[0.03] select-none pointer-events-none">
             <span className="text-[300px] font-playfair font-bold">“</span>
@@ -48,14 +48,21 @@ const AboutValues = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {/* Using flex layout allows perfect centering of odd rows on any breakpoint */}
+        <div className="flex flex-wrap justify-center gap-6">
           {valuesData.map((value) => (
-            <ValueCard 
+            <div 
               key={value.number}
-              number={value.number}
-              title={value.title}
-              description={value.description}
-            />
+              className="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(20%-1.2rem)] flex"
+            >
+              <div className="w-full h-full">
+                <ValueCard 
+                  number={value.number}
+                  title={value.title}
+                  description={value.description}
+                />
+              </div>
+            </div>
           ))}
         </div>
       </div>

@@ -21,7 +21,7 @@ const FeaturedEssay = () => {
         ];
   return (
     <div>
-    <section className="bg-[#0A3D6B] text-white py-20 px-6 md:px-16 lg:px-24 overflow-hidden">
+    <section className="bg-[#0A3D6B] text-white py-20 px-4 sm:px-6 md:px-8 lg:px-24 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
         
         {/* Left Content Area */}
@@ -57,6 +57,9 @@ const FeaturedEssay = () => {
               src="https://i.pravatar.cc/150?u=grace" 
               alt="Mrs. Grace Titus" 
               className="w-12 h-12 rounded-full border-2 border-[#FFDD00]/20"
+              width="48"
+              height="48"
+              loading="lazy"
             />
             <div>
               <p className="text-base font-bold leading-none">Mrs. Grace Titus</p>
@@ -104,7 +107,7 @@ const FeaturedEssay = () => {
           <span className="text-harafBlue text-[10px] font-dm-sans font-bold tracking-[0.2em] uppercase mb-4 md:mb-0">
             EXPLORE BY
           </span>
-          <div className="flex flex-wrap md:flex-nowrap justify-center gap-2 md:gap-4">
+          <div className="flex flex-wrap xl:flex-nowrap justify-center gap-2 md:gap-4">
             {filters.map((filter) => (
               <button
                 key={filter}
