@@ -24,7 +24,7 @@ const AboutHero = () => {
             We Are HARAF.
           </h1>
           <p className="text-white text-lg md:text-xl xl:text-[22px] font-cormorant italic leading-relaxed max-w-xl">
-            A foundation born not in a boardroom — but on a dusty village path in rural Nigeria.
+           Rooted in the heart of rural Nigeria, where stories are written in earth and resilience
           </p>
         </div>
       </div>

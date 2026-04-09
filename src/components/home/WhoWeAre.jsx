@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import worldMap from '../../assets/WorldMap.svg';
 import middleEclipse from '../../assets/ourMissionMiddleEclipse.jpg';
 import topRightEclipse from '../../assets/ourMissionTopRightEclipse.jpg';
-import bottomLeftEclipse from '../../assets/ourMissionBottomLeftEclipse.jpg';
+import bottomLeftEclipse from '../../assets/mamaBaby.jpeg';
 
 const PILLARS = [
-  { icon: '💧', label: 'Clean Water' },
+  { icon: '💧', label: 'ANC & PNC' },
   { icon: '🌾', label: 'Food Security' },
   { icon: '📚', label: 'Education' },
   { icon: '🏥', label: 'Healthcare' },
@@ -193,7 +193,7 @@ function WhoWeAre() {
                   "Every community we serve already knows what it needs. We simply walk alongside them."
                 </p>
                 <cite className="block font-dm-sans text-[#8CB4D6] text-[11px] uppercase tracking-wider mt-2 not-italic">
-                  — Mrs. Grace Titus, Founder
+                  — MADAM GALAXY THAMI, Founder
                 </cite>
               </blockquote>
 

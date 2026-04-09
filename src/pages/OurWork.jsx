@@ -89,10 +89,10 @@ const programmeData = [
     tagBg: "rgba(46, 158, 72, 0.15)",
     tagColor: "#2E9E48",
     title: "Farming for Today and Tomorrow.",
-    challenge: "Climate change is rewriting the farming calendar in rural Nigeria. Rains come late or not at all. Droughts last longer. Floods arrive without warning. Farmers who have worked the same land for generations are watching their yields collapse — and they have no safety net when they do.",
+    challenge: "HARAF Livelihood empowerment initiatives have been instrumental in helping farming communities, especially girls, women, and youth, adapt to climate change in Nigeria. By providing access to resources, education, and sustainable farming practices, HARAF has enabled these groups to enhance their resilience to climate-related shocks. For instance, rural women have reported improved farming outcomes and increased income after adopting climate-smart techniques. Through training and support, HARAF has helped farmers adopt methods like composting, agroforestry, and organic soil conservation, leading to improved crop yields and food security.",
     response: "We train farmers in climate-resilient agricultural practices — drought-resistant crops, water harvesting, agroforestry, and soil restoration — so communities can protect their food security against a changing climate.",
     testimonial: "Last year the rains failed completely. Every other farmer in my village lost everything. My farm survived because of what HARAF taught me about water harvesting.",
-    testimonialAuthor: "MUSA A., BORNO STATE",
+    testimonialAuthor: "Rakiya Mohammed., BORNO STATE",
     testimonialBg: "#FDFAF6",
     isReversed: true
   }

@@ -18,8 +18,8 @@ const storiesData = [
   {
     id: 3,
     location: 'ADAMAWA STATE',
-    quote: 'Before HARAF came to our village, my children walked 6km for water every morning. Now we have a borehole and my daughters are back in school.',
-    author: 'Hauwa M.',
+    quote: 'For the first time, I felt like I was in good hands. The midwives were kind, and the facility was clean. I didn’t have to worry about anything. It’s a completely different experience from my previous deliveries.',
+    author: 'MARYAM BABAGIDA.',
   }
 ];
 
