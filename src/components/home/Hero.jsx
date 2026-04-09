@@ -115,7 +115,7 @@ function Hero() {
               </span>
               <span className="h-w2 block font-bold relative" style={{ fontSize: 'clamp(2.3rem, 5vw, 4.6rem)' }}>
                 {/* Outlined text */}
-                <span style={{ WebkitTextStroke: '2px #0A3D6B', color: 'transparent' }}>Unreached</span>
+                <span style={{ WebkitTextStroke: '1px', color: 'rgba(10, 113, 192, 0.73)' }}>Unreached</span>
                 {/* Yellow underline accent */}
                 <span className="absolute bottom-0 left-0 h-[5px] bg-harafYellow" style={{ width: '55%', bottom: '-4px', borderRadius: 2 }} />
               </span>
@@ -213,8 +213,8 @@ function Hero() {
                 style={{ boxShadow: '0 8px 30px rgba(26,120,194,0.12)' }}>
                 <div className="w-10 h-10 rounded-xl bg-[#EEF5FC] flex items-center justify-center text-xl flex-shrink-0">💧</div>
                 <div>
-                  <p className="font-playfair font-bold text-primary text-sm leading-tight">Clean Water</p>
-                  <p className="font-dm-sans text-[#8CB4D6] text-[10px] mt-0.5">320+ boreholes</p>
+                  <p className="font-playfair font-bold text-primary text-sm leading-tight">Livelihood Empowerment</p>
+                  <p className="font-dm-sans text-[#8CB4D6] text-[10px] mt-0.5">50,000+ Youths</p>
                 </div>
               </div>
             </div>

@@ -3,21 +3,21 @@ import React, { useEffect, useRef } from 'react';
 const statesData = [
   {
     name: "Adamawa State",
-    programmes: ["Clean Water", "Food Security"],
+    programmes: ["SRH-R", "Livelihood Empowerment", "Education"],
     communities: 11,
     coords: [9.3265, 12.3984],
     color: "#1A78C2",
   },
   {
-    name: "Yobe State",
-    programmes: ["Clean Water", "Education"],
+    name: "Borno State",
+    programmes: ["Health", "SRH-R", "Livelihood Empowerment"],
     communities: 7,
     coords: [12.2939, 11.4390],
     color: "#22C55E",
   },
   {
-    name: "Borno State",
-    programmes: ["Food Security", "Healthcare"],
+    name: "Sokoto State",
+    programmes: ["SRH-R"],
     communities: 8,
     coords: [11.8846, 13.1520],
     color: "#F59E0B",
@@ -25,10 +25,10 @@ const statesData = [
 ];
 
 const PROG_COLORS = {
-  "Clean Water":   { bg: "#EEF5FC", text: "#1A78C2" },
+  "Livelihood Empowerment":   { bg: "#EEF5FC", text: "#1A78C2" },
   "Food Security": { bg: "#FEF9EC", text: "#B45309" },
   "Education":     { bg: "#F0FDF4", text: "#166534" },
-  "Healthcare":    { bg: "#FFF1F2", text: "#9F1239" },
+  "SRH-R":    { bg: "#FFF1F2", text: "#9F1239" },
 };
 
 const AboutMap = () => {

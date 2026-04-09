@@ -3,8 +3,8 @@ import PillarCard from './PillarCard';
 
 import climateSmart from '../../assets/branchOneImage.jpg';
 import ruralFood from '../../assets/branchTwoImage.jpg';
-import safeWater from '../../assets/branchThreeImage.jpg';
-import womensEmpow from '../../assets/branchFourImage.jpg';
+import safeWater from '../../assets/menstralHygn.jpeg';
+import womensEmpow from '../../assets/womenEco.jpeg';
 import healthOutreach from '../../assets/branchFiveImage.jpg';
 import ruralSchools from '../../assets/ruralSchoolsAndScholarshipFund.png';
 
@@ -33,9 +33,9 @@ const pillarsData = [
   {
     id: 3,
     image: safeWater,
-    tag: 'CLEAN WATER',
-    title: 'Safe Water for All Initiative',
-    description: 'From borehole drilling to community water governance, we ensure that every household has access to clean, safe drinking water.',
+    tag: 'MENSTRUAL HYGIENE',
+    title: 'Flowing Forward: Empowering Women through Menstrual Hygiene',
+    description: 'From hygiene awareness to sanitary solutions, we ensure that girls and women have access to safe, dignified menstrual care.',
   },
   {
     id: 4,
