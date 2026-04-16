@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import harafLogo from '../assets/harafLogo.png';
+import harafLogo from '../assets/haraf-logo.png';
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,7 +20,7 @@ function Header() {
     { name: "OUR WORK", path: "/our_work" },
     { name: "IDEAS", path: "/ideas" },
     { name: "MEDIA GALLERY", path: "/press-media" },
-    // { name: "GET INVOLVED", path: "#" }
+    { name: "CAREER", path: "/career" }
   ];
 
   const activeStyle = ({ isActive }) => 

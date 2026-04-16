@@ -115,7 +115,7 @@ function Hero() {
               </span>
               <span className="h-w2 block font-bold relative" style={{ fontSize: 'clamp(2.3rem, 5vw, 4.6rem)' }}>
                 {/* Outlined text */}
-                <span style={{ WebkitTextStroke: '1px', color: 'rgba(10, 113, 192, 0.73)' }}>Unreached</span>
+                <span style={{ WebkitTextStroke: '2px blue', color: 'transparent', fontFamily: 'Inter, Poppins, system-ui, -apple-system, sans-serif' }}>Unreached</span>
                 {/* Yellow underline accent */}
                 <span className="absolute bottom-0 left-0 h-[5px] bg-harafYellow" style={{ width: '55%', bottom: '-4px', borderRadius: 2 }} />
               </span>

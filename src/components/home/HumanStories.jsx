@@ -19,7 +19,19 @@ const storiesData = [
     id: 3,
     location: 'ADAMAWA STATE',
     quote: 'For the first time, I felt like I was in good hands. The midwives were kind, and the facility was clean. I didn’t have to worry about anything. It’s a completely different experience from my previous deliveries.',
-    author: 'MARYAM BABAGIDA.',
+    author: 'MARYAM BABAGANA.',
+  },
+  {
+    id: 3,
+    location: 'ADAMAWA STATE',
+    quote: 'I don\'t want my children to go through the fear I went through. Now I will teach them before their first experience. ',
+    author: 'ROSEMARY.',
+  },
+  {
+    id: 3,
+    location: 'ADAMAWA STATE',
+    quote: 'Before, I was shy to ask questions about my body or my choices. At the Adolescents’ Corner, I felt safe. They listened to me. Now I understand myself better, and I can plan for my business and my life" ',
+    author: 'Girei.',
   }
 ];
 

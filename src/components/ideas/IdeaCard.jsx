@@ -1,647 +1,717 @@
-import { useState, useEffect, useRef } from 'react';
-import graceTitus from '../../assets/graceTitus.jpg';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-// ─── Essay content per article ────────────────────────────────────────────────
-const ESSAY_BODY = {
+// ──────────────────────────────────────────────────────────────────
+// ASSET IMPORTS (update paths to match your project structure)
+// ──────────────────────────────────────────────────────────────────
+import rosemaryImage from "../../assets/rosemaryImage.png";
+import hajjaImage from "../../assets/hajjaImage.png";
+import hauwauImage from "../../assets/hauwauImage.png";
+import fatimaImage from "../../assets/fatimaImage.png";
+import palsImage from "../../assets/ourMissionMiddleEclipse.jpg";
+import mobileClinicImage from "../../assets/heroSubImage3.jpg";
+
+// ──────────────────────────────────────────────────────────────────
+// STORY CONTENT DATA FIELD (using all your provided write-ups)
+// ──────────────────────────────────────────────────────────────────
+const STORY_CONTENT = {
   0: {
+    title: "Breaking the Silence: Rosemary's Journey to Menstrual Health Education",
+    category: "IMPACT STORY",
+    date: "FEBRUARY 26, 2026",
+    readTime: "4 min read",
+    location: "Modire, Yolde Pate, Yola South, Adamawa State",
+    heroImage: rosemaryImage,
     sections: [
       {
-        heading: null,
+        heading: "A Mother's Transformation",
         paragraphs: [
-          "Every community we work in already knows what it needs. The borehole, the school, the cooperative — these are just the visible outputs of something much harder to measure: trust. This is a story about what it actually takes to earn it.",
-          "We arrived in Guyuk in March 2021 with a plan. Clean water access within 90 days. The community listened politely. Two elders nodded. One woman in the back of the room said nothing and left early. Six months later, that woman — Hajiya Rakiya — became the person who kept the entire project from collapsing.",
-          "The borehole was ready in week ten. By week fourteen, three of the five community liaison members we had appointed had stopped showing up to maintenance meetings. The pump handle was broken. Children were collecting water from the same stream we had been trying to replace.",
+          "Rosemary Jacob Joseph, 39, mother of six, has transformed her approach to menstrual health. As a beneficiary of HARAF's menstrual education initiative, Rosemary gained vital knowledge on menstrual health and hygiene, boosting her confidence to guide her daughters and promote healthy practices at home and in her community.",
+          "Previously, Rosemary's own traumatic first menstrual experience led her to avoid discussing menstruation with her children due to stigma. The project's sensitization sessions changed this, helping her understand the importance of preparing children for their first cycle and fostering openness.",
+          "Now, Rosemary educates her children about menstruation, ensuring they're informed and emotionally supported. Her story showcases the project's success in strengthening attitudes and improving caregiver practices, breaking the silence on menstrual health in Yolde Pate community.",
         ],
       },
       {
-        heading: "The Infrastructure Was Never the Hard Part",
+        heading: "A Mother's Promise",
         paragraphs: [
-          "Infrastructure fails when trust has not been built first. Not because communities don't want clean water — they do, desperately — but because the handover of ownership requires something that no logframe captures: the belief that this thing is theirs, not ours.",
-          "Hajiya Rakiya taught us this. When we finally sat with her — not in a meeting room but at her compound at dusk — she told us that the community had seen NGOs come and go for fifteen years. Everyone drills a borehole, takes photos, and leaves. No one has ever come back.",
-          "We came back. That is all it took. Not a second borehole. Not more funding. Just the act of returning, and of asking what went wrong rather than explaining why it went right.",
-        ],
-      },
-      {
-        heading: "What We Changed After Guyuk",
-        paragraphs: [
-          "We now spend the first three months of any community engagement doing nothing except listening. No deliverables. No visible outputs. Just presence, questions, and the slow work of demonstrating that we are not going to disappear.",
-          "Our donors find this difficult to report on. 'Trust-building' does not have a standard indicator. You cannot photograph it. But every durable piece of infrastructure we have built in the last four years has had this phase underneath it, invisible and essential.",
-          "The borehole is not the point. The point is the relationship that makes the borehole mean something. We are still learning how to build that — and how to explain its value to a sector that mostly only counts what it can count.",
+          "\"I don't want my children to go through the fear I went through. Now I will teach them before their first experience.\" – Rosemary",
+          "The Sang Pour Sang Project is a menstrual health initiative designed to address menstrual discrimination practices through advocacy, education, and community engagement. The project is funded by Agence Française de Développement (AFD).",
+          "HARAF is implementing the initiative across four communities: Badrisa, Bole Yolde Pate, Namtari, and Vunoklang, targeting women aged 35 years and above.",
         ],
       },
     ],
-    meta: { topic: "Community Trust & Field Practice", published: "February 20, 2026", length: "~2,100 words", category: "Field Reflection" },
-    toc: ["The Infrastructure Was Never the Hard Part", "What We Changed After Guyuk", "What Donors Don't See"],
+    meta: { topic: "Menstrual Health & Education", category: "IMPACT STORY" },
   },
   1: {
-    sections: [
-      {
-        heading: null,
-        paragraphs: [
-          "In the summer of 2019, I sat in a meeting room in Abuja with twelve representatives from international donor organisations, each of whom had flown in from a different continent to discuss rural poverty in Nigeria. Not one of them had ever spent a night in a rural Nigerian community. I remember thinking: this is the frame. This is exactly the problem.",
-          "The word \"beneficiary\" entered the development sector's vocabulary sometime in the 1970s, borrowed from the legal world of trusts and wills. A beneficiary, in that context, is someone who receives something they did not earn — a windfall, an inheritance, a gift from someone with more. The word carries within it an assumption of passivity. You do not work to become a beneficiary. You simply are one.",
-          "When we apply this word to communities — living, breathing, working, striving communities of human beings — we make a category error so fundamental that it shapes every decision that follows. Who decides what they need? Who designs the programme? Who evaluates success? The answer, in almost every case, is not the \"beneficiary.\" And this is not an accident. It is the logic of the frame.",
-        ],
-      },
-      {
-        heading: "The Language We Use Is the Policy We Make",
-        paragraphs: [
-          "There is a concept in linguistics called the Sapir-Whorf hypothesis — the idea that the language we use shapes the reality we perceive. I am not a linguist, and I am not making a purely academic argument. I am saying something more practical: the words we use in the development sector determine what we see, what we measure, and ultimately what we build. And right now, the words are wrong.",
-          "Consider how differently a programme feels when it is designed for \"community members\" versus designed for \"beneficiaries.\" The first implies that the people involved have a stake in the outcome — that they belong to something, and that their belonging gives them voice. The second implies they are fortunate to be included at all.",
-        ],
-      },
-      {
-        heading: "The Evidence We're Building",
-        paragraphs: [
-          "None of this is easy. Changing language inside large institutions is slow, political work. Donors have reporting templates that use the word \"beneficiary.\" Governments have policies that use it. We ourselves have ten years of documents that use it.",
-          "But I believe — and our field experience increasingly supports this — that the communities we work with change faster, sustain more, and build more when they are approached as partners rather than recipients. The evidence is not merely anecdotal. We have been tracking it. We will publish it.",
-        ],
-      },
-    ],
-    meta: { topic: "Language & Framing in Development", published: "December 20, 2025", length: "~2,400 words", category: "Aid Reform" },
-    toc: ["The Language We Use", "What Communities Told Us", "Three Words That Work Better", "The Evidence We're Building"],
-  },
-  9: {
-    sections: [
-      {
-        heading: null,
-        paragraphs: [
-          "There is a village in Adamawa State called Wuro Ngaoje. It sits 47 kilometres from the nearest tarred road. The closest health facility is a two-hour walk through farmland. The nearest school with a qualified teacher is in the next local government area. When we first visited in 2017, the community elder told us: 'We have heard about development. It always stops at the main road.'",
-          "That sentence has stayed with me for eight years. Not because it is unusual — we have heard versions of it in nearly every community we have ever worked in — but because it is so precisely, so devastatingly accurate. Development, as it is currently structured and funded, stops at the main road. It follows the path of least resistance: the communities that are easiest to access, easiest to photograph, easiest to count. The rest — the ones sitting 47 kilometres down an unpaved track — wait.",
-          "HARAF was founded on a simple, uncomfortable premise: that the communities most excluded from development are not excluded by accident. They are excluded by design — by funding models that reward scale over depth, by reporting systems that value visible outputs over invisible processes, and by a sector-wide assumption that 'hard to reach' is a logistical problem rather than a moral one.",
-        ],
-      },
-      {
-        heading: "What 'Unreached' Actually Means",
-        paragraphs: [
-          "The development sector uses the word 'unreached' as though it describes a property of communities — as though some villages are simply, inherently, far away. But distance is only one dimension of exclusion. In our ten years of field work, we have identified at least five distinct barriers that together constitute what it means to be unreached.",
-          "The first is geographic: physical distance from infrastructure, markets, and services. The second is institutional: communities that have no registered structures, no formal land tenure, and no legal pathway to access government programmes. The third is linguistic: communities where the dominant language of government and development organisations is not spoken, where forms cannot be filled, where meetings cannot be fully understood.",
-          "The fourth barrier is historical: communities that have been promised things before and been let down so consistently that they have built a rational, evidence-based distrust of outside organisations. And the fifth — the one least talked about in development circles — is the barrier of perceived unimportance. Communities that have been told, implicitly and explicitly and for generations, that their problems are too small, too remote, or too complicated to be worth solving.",
-        ],
-      },
-      {
-        heading: "The Cost of the Last Mile",
-        paragraphs: [
-          "Working in truly remote communities is expensive. A borehole that costs ₦800,000 in a peri-urban area can cost ₦2.4 million in a remote one. A community health outreach that serves 200 people near a main road might serve 40 people in a remote village — at the same cost. Per-unit cost calculations, which dominate donor reporting, make remote communities look inefficient.",
-          "This is not a trivial observation. It shapes everything. When donors require organisations to demonstrate cost-effectiveness, the rational response is to work where things are cheaper and easier. The communities that are hardest to reach generate the worst numbers on the metrics that funding decisions are based on. They fall out of the portfolio. They remain unreached.",
-          "We have spent the last four years building an alternative model: one that accepts higher per-unit costs as the price of genuine inclusion, that reports not just on outputs but on the depth of exclusion that was overcome to produce them, and that treats the remoteness of a community not as a problem to be managed but as evidence of the very failure the sector exists to address.",
-        ],
-      },
-      {
-        heading: "Without Barriers — What It Actually Takes",
-        paragraphs: [
-          "Reaching unreached communities without barriers requires three things that are easy to say and very hard to fund. The first is time. Genuinely excluded communities do not trust quickly. The first six months of any programme in a remote community should be budgeted as relationship-building, with no deliverable except presence. Most funding cycles do not permit this.",
-          "The second is flexibility. Communities that have been excluded from formal systems have often developed their own informal systems — governance structures, resource-sharing arrangements, conflict resolution mechanisms — that are invisible to standard needs assessments but absolutely essential to programme design. Reaching these communities requires the ability to adapt constantly, which most logframes explicitly prohibit.",
-          "The third is permanence. Or at least the credible promise of it. The community elder in Wuro Ngaoje was not asking us to fix everything. He was asking us to come back. To be the kind of organisation that does not vanish after the project period ends. We have been going back to Wuro Ngaoje for eight years. There is now a functioning water system, a women's cooperative with 34 members, and a community school that the village built themselves with HARAF's technical support. None of this happened in a project cycle. All of it happened because we did not stop at the main road.",
-        ],
-      },
-      {
-        heading: "A Different Way of Counting",
-        paragraphs: [
-          "If we are serious about reaching the unreached, we need a different way of measuring success. Not cost per beneficiary, but depth of exclusion overcome. Not number of communities served, but whether the communities served were the ones most in need. Not speed of delivery, but durability of outcome.",
-          "This is not romantic idealism. It is practical necessity. The communities that are easiest to serve are, increasingly, being served — by government programmes, by larger NGOs, by corporate social responsibility initiatives. The gap that remains, the gap that is growing, is the gap at the very edge of the map. That is where HARAF chooses to work. Not because it is easier. Because it is where the need is greatest, where the failure of the sector is most visible, and where genuine change — when it finally comes — has the deepest roots.",
-          "The village in Wuro Ngaoje now has a water point that the community manages themselves. It has been functioning for four years without a breakdown that the community could not fix. The elder who told us that development always stops at the main road attended the opening of the school last September. He said nothing. He stood at the back and watched the children. That is what reaching the unreached looks like. It does not make a good photograph. It does not fit neatly into a quarterly report. But it is the work.",
-        ],
-      },
-    ],
-    meta: { topic: "Access, Exclusion & Field Philosophy", published: "March 10, 2026", length: "~3,200 words", category: "Field Reflection" },
-    toc: [
-      "What 'Unreached' Actually Means",
-      "The Cost of the Last Mile",
-      "Without Barriers — What It Actually Takes",
-      "A Different Way of Counting",
-    ],
-  },
-};
-
-// Default essay body for repeated articles
-const DEFAULT_ESSAY = {
-  sections: [
-    {
-      heading: null,
-      paragraphs: [
-        "In 2014 I thought the biggest barrier to rural development was money. By 2016 I thought it was government. By 2019 I was beginning to suspect it was us — the NGOs, the consultants, the visiting experts — who were sometimes the problem.",
-        "This is the most honest version of a decision in the field that I made in ten years. It is not a comfortable essay to write. It is also, I think, the most useful one I have written.",
-        "Ten years in the field teaches you mostly what doesn't work. The programmes that look good in the proposal but dissolve on contact with reality. The theories of change that survive the workshop but not the village. The partners who were never really partners at all.",
-      ],
-    },
-    {
-      heading: "What I Got Wrong About Money",
-      paragraphs: [
-        "The assumption that more funding equals more impact is the founding myth of the sector. It feels self-evidently true — of course more resources help. But what I have observed, consistently, is that underfunded programmes with deep community buy-in outlast well-funded programmes that communities treat as someone else's project.",
-        "The Gombe water programme we ran in 2016 with a ₦4 million budget failed within eighteen months. The Madagali cooperative we supported in 2018 with a ₦900,000 seed grant is still operating, now with twelve times its original membership.",
-      ],
-    },
-    {
-      heading: "What I Got Right (Eventually)",
-      paragraphs: [
-        "The thing I eventually got right is also the simplest: showing up consistently over a long time and having no agenda except to understand. No deliverable for that visit. No report to write. Just presence.",
-        "Communities know the difference between a visit and a relationship. You cannot fake the latter. And you cannot build it in a 90-day project cycle.",
-      ],
-    },
-  ],
-  meta: { topic: "Field Practice & Reflection", published: "November 28, 2025", length: "~3,000 words", category: "Field Reflection" },
-  toc: ["What I Got Wrong About Money", "What I Got Wrong About Government", "What I Got Wrong About Communities", "What I Got Right (Eventually)"],
-};
-
-// ─── Article data ─────────────────────────────────────────────────────────────
-const articles = [
-  {
-    category: "FIELD REFLECTION",
-    date: "February 20, 2026",
-    readTime: "8 min read",
-    title: "The Borehole Is Not the Point.",
-    excerpt: "Every community we work in already knows what it needs. The borehole, the school, the cooperative — these are just the visible outputs of something much harder to measure: trust...",
-    author: "Chukwudi Nwosu",
-    role: "Head of Field Operations",
-    avatar: graceTitus,
-  },
-  {
-    category: "COMMUNITY LEADERSHIP",
-    date: "December 20, 2025",
-    readTime: "9 min read",
-    title: "Stop Calling Them \"Beneficiaries\".",
-    excerpt: "The word beneficiary is doing a lot of quiet damage in the development sector. It positions communities as passive receivers of other people's decisions. We've been experimenting...",
-    author: "Chukwudi Nwosu",
-    role: "Head of Field Operations",
-    avatar: graceTitus,
-  },
-  {
-    category: "FIELD REFLECTION",
-    date: "November 28, 2025",
-    readTime: "15 min read",
-    title: "Ten Years In the Field. Ten Things I Got Wrong.",
-    excerpt: "In 2014 I thought the biggest barrier to rural development was money. By 2016 I thought it was government. By 2019 I was beginning to suspect it was us — the NGOs, the consultants...",
-    author: "Mrs. Grace Titus",
-    role: "Founder & Executive Director",
-    avatar: graceTitus,
-  },
-  {
-    category: "FOOD SYSTEMS",
-    date: "January 28, 2026",
-    readTime: "10 min read",
-    title: "The Smallholder Farmer Is the Most Important Person in Nigeria.",
-    excerpt: "They produce 80% of the food. They occupy 70% of the farmland. They employ the majority of the rural poor. And they receive less than 4% of formal agricultural credit. This is not a gap.",
-    author: "Aisha Bello",
-    role: "Director of Programmes",
-    avatar: graceTitus,
-  },
-  {
-    category: "AID REFORM",
-    date: "January 16, 2026",
-    readTime: "11 min read",
-    title: "The 90-Day Programme Is a Fiction We Need to Stop Selling to Donors.",
-    excerpt: "We know — because we've measured it — that the most significant community changes begin to show up between 18 and 36 months. Yet most humanitarian funding cycles are 12 months or less.",
-    author: "Chukwudi Nwosu",
-    role: "Head of Field Operations",
-    avatar: graceTitus,
-  },
-  {
-    category: "WATER & CLIMATE",
-    date: "January 9, 2026",
-    readTime: "7 min read",
-    title: "What Happens to a Borehole When the Rains Stop Coming?",
-    excerpt: "Climate change is not a future problem in rural Nigeria — it is the daily reality of the communities we serve. As water tables fall and seasons shift, the infrastructure we've built is already under pressure.",
-    author: "Ibrahim Musa",
-    role: "Head of Water & Sanitation",
-    avatar: graceTitus,
-  },
-  {
-    category: "POLICY & ADVOCACY",
-    date: "February 1, 2026",
-    readTime: "12 min read",
-    title: "Nigeria's Rural Budget Has Been Wrong for Thirty Years. Here's the Evidence.",
-    excerpt: "A deep dive into federal and state agricultural budgets from 1994–2024 reveals a pattern so consistent it can only be described as intentional neglect. We built the data set. Now we're publishing it.",
-    author: "Fatima Yusuf",
-    role: "Director of Partnerships",
-    avatar: graceTitus,
-  },
-  {
-    category: "WOMEN & POWER",
-    date: "February 8, 2026",
-    readTime: "6 min read",
-    title: "She Already Had the Plan. She Just Needed ₦50,000.",
-    excerpt: "The most common thing we hear from women entering our cooperative programme is not 'teach me how.' It's 'finally, someone will listen.' What we think of as economic empowerment is often just removing obstacles.",
-    author: "Ngozi Adeleke",
-    role: "Head of Women's Empowerment",
-    avatar: graceTitus,
-  },
-  {
-    category: "EDUCATION",
-    date: "December 10, 2025",
+    title: "From Homemaker to Businesswoman: Hajja's Kitchen Garden Success",
+    category: "IMPACT STORY",
+    date: "FEBRUARY 27, 2026",
     readTime: "5 min read",
-    title: "What a Child Learns in a Roofless School.",
-    excerpt: "Not mathematics. Not reading. What a child learns in a school with no roof, no teacher, and no books is a lesson about their own worth — about whether the world considers them worth investing in.",
-    author: "Aisha Bello",
-    role: "Director of Programmes",
-    avatar: graceTitus,
+    location: "Jabbi-Lamba, Adamawa State",
+    heroImage: hajjaImage,
+    sections: [
+      {
+        heading: "Cultivating Independence",
+        paragraphs: [
+          "Hajja Adamu, 26, is one of the three wives of Mallam Adamu Aliyu and a devoted mother of five; three boys and two girls. Living in the host community of Jabbi Lamba, Hajja was a stay-at-home wife and mother with no independent source of income.",
+          "That changed when she joined the first cohort of the Kitchen Garden Program under the BMZ Project's Livelihood Unit. The program trains lactating mothers, pregnant women, and caregivers of malnourished children to cultivate vegetables in small home spaces.",
+          "Participants receive practical skills, knowledge, and inputs to grow nutritious vegetables that improve household diets, generate income, and supply essential nutrients for children facing malnutrition.",
+        ],
+      },
+      {
+        heading: "A Thriving Enterprise",
+        paragraphs: [
+          "After her training, Hajja transformed her garden into both a food source and a business. She now cultivates vegetables for her family's consumption and for sale in her community. Beyond maintaining her garden, she has diversified it by adding new vegetable varieties, increasing both her harvest and earnings.",
+          "For over a year, Hajja's vegetable garden has provided steady income and improved her family's nutrition. From a homemaker with no livelihood, she is now a businesswoman, contributing to her household's resilience and inspiring other women in Jabbi Lamba.",
+          "\"I used to wait for everything to be provided. Now I have my own income from my garden. When my children need books or medicine, I don't have to ask; I can provide.\"",
+        ],
+      },
+      {
+        heading: "Program Impact",
+        paragraphs: [
+          "The Kitchen Garden Program strengthens household nutrition and economic resilience by equipping vulnerable women with the tools to grow food, earn income, and combat malnutrition; one backyard at a time.",
+          "The food production at home programme is part of the BMZ project that trains and empowers young women from the ages of 19 to 24 on how to produce food at home. The programme aims at empowering young pregnant women, lactating mothers, and mothers with malnourished children on how to produce their own vegetables for consumption and also for commercial purpose.",
+        ],
+      },
+    ],
+    meta: { topic: "Food Security & Livelihoods", category: "IMPACT STORY" },
   },
-  {
-    category: "FIELD REFLECTION",
-    date: "March 10, 2026",
-    readTime: "14 min read",
-    title: "Reaching the Unreached Without Barriers.",
-    excerpt: "There is a village in Adamawa State called Wuro Ngaoje. It sits 47 kilometres from the nearest tarred road. The community elder told us: 'We have heard about development. It always stops at the main road.' That sentence has stayed with us for eight years...",
-    author: "Mrs. Grace Titus",
-    role: "Founder & Executive Director",
-    avatar: graceTitus,
+  2: {
+    title: "Saving Goats, Saving Futures: Madam Hauwa'u's Story of Hope",
+    category: "IMPACT STORY",
+    date: "FEBRUARY 25, 2026",
+    readTime: "4 min read",
+    location: "Fufore, Adamawa State",
+    heroImage: hauwauImage,
+    sections: [
+      {
+        heading: "A Widow's Burden",
+        paragraphs: [
+          "Madam Hauwa'u Njobdi, 58, bears the weight of both grief and responsibility. After losing her husband several years ago, she became the sole provider for her children. With few income options, she turned to livestock; rearing goats to feed her family, pay school fees, and cover daily needs.",
+          "But rearing goats came with constant fear. Diseases could sweep through her small herd overnight, wiping out the income her children depended on. Veterinary services were far, and vaccines were either unavailable or unaffordable.",
+        ],
+      },
+      {
+        heading: "A Lifesaving Intervention",
+        paragraphs: [
+          "That changed when Madam Hauwa'u benefitted from the Livestock Vaccination Scale-Up Initiative by HARAF, funded by PROPCOM+. The program focuses on expanding access to vaccines in rural communities to improve the overall health of livestock and reduce mortality and morbidity rates.",
+          "Through community-based vaccination campaigns, her goats were vaccinated against common deadly diseases. The result was immediate. Her herd stayed healthy, losses dropped, and her confidence grew.",
+          "With fewer deaths and sick animals, she now sells more goats at better prices and has even started expanding her herd. What was once a fragile safety net is becoming a stable business.",
+        ],
+      },
+      {
+        heading: "A Family's Future Secured",
+        paragraphs: [
+          "\"I used to pray my goats would survive each season, now I know they are protected. This vaccine program did not just save my goats; it saved my family's future.\"",
+          "By scaling up vaccine access for rural livestock farmers, the initiative is reducing livestock deaths, protecting household income, and strengthening food security. For widows like Madam Hauwa'u, healthy animals mean dignity, stability, and hope.",
+          "PROPCOM+ focuses on the scale up of access to vaccines in rural communities of Adamawa State, improving the overall health of livestock and reducing mortality and morbidity rates.",
+        ],
+      },
+    ],
+    meta: { topic: "Livestock & Economic Security", category: "IMPACT STORY" },
   },
-];
-
-// ─── Category colours ─────────────────────────────────────────────────────────
-const CAT_COLORS = {
-  "FIELD REFLECTION":    { bg: "#F3EAD8", text: "#5C4D32" },
-  "COMMUNITY LEADERSHIP":{ bg: "#E8F0FE", text: "#1A4FA0" },
-  "FOOD SYSTEMS":        { bg: "#E8F5E9", text: "#1B5E20" },
-  "AID REFORM":          { bg: "#FDE8E8", text: "#8B1A1A" },
-  "WATER & CLIMATE":     { bg: "#E3F2FD", text: "#0D47A1" },
-  "POLICY & ADVOCACY":   { bg: "#EDE7F6", text: "#4527A0" },
-  "WOMEN & POWER":       { bg: "#FCE4EC", text: "#880E4F" },
-  "EDUCATION":           { bg: "#FFF3E0", text: "#BF360C" },
+  3: {
+    title: "Finding Her Voice: Fatima's Journey at the Adolescents' Corner",
+    category: "IMPACT STORY",
+    date: "FEBRUARY 23, 2026",
+    readTime: "4 min read",
+    location: "Girei, Adamawa State",
+    heroImage: fatimaImage,
+    sections: [
+      {
+        heading: "At a Crossroads",
+        paragraphs: [
+          "Fatima, 19, is an adolescent from Girei community and the third of four children in a family of six. After completing secondary school, she stands at a crossroads common to many young women; weighing marriage, further education, and financial independence.",
+          "For Fatima, building a business feels like the most practical path forward. But before she could plan her next steps, she needed to be healthy and informed.",
+        ],
+      },
+      {
+        heading: "A Safe Space for Young People",
+        paragraphs: [
+          "Through HARAF's work in Girei, Fatima accessed critical health services at a local facility. She benefitted from essential drugs and commodities supplied to the clinic, ensuring she received proper medical care when needed.",
+          "More importantly, she found a safe space at the Adolescents' Corner; a private, confidential setting where young people can speak openly and receive counselling on health, wellbeing, and life choices.",
+          "The counselling sessions gave Fatima clarity. With accurate information and a trusted person to talk to, she could make decisions about her health and future with confidence, not fear.",
+        ],
+      },
+      {
+        heading: "Planning for Tomorrow",
+        paragraphs: [
+          "\"Before, I was shy to ask questions about my body or my choices. At the Adolescents' Corner, I felt safe. They listened to me. Now I understand myself better, and I can plan for my business and my life.\"",
+          "HARAF's support in Girei goes beyond supplying drugs; it creates safe, youth-friendly spaces where adolescents like Fatima can access care and counselling with dignity and privacy. When young people are healthy and informed, they make stronger choices for their future.",
+          "The Youth Learn, Earn and Prosper in the Lake Chad Region project is an initiative funded by the German Federal Ministry for Economic Cooperation and Development (BMZ). In partnership with PLAN International, youth participants receive vocational and technical skills, life-skills education, and entrepreneurship coaching.",
+        ],
+      },
+    ],
+    meta: { topic: "Youth Health & Empowerment", category: "IMPACT STORY" },
+  },
+  4: {
+    title: "Strengthening Adolescent Health Awareness in Mafa & Damboa",
+    category: "FIELD REPORT",
+    date: "JANUARY 2026",
+    readTime: "5 min read",
+    location: "Mafa & Damboa LGAs, Borno State",
+    heroImage: palsImage,
+    sections: [
+      {
+        heading: "Behaviour Change and Communication Sessions",
+        paragraphs: [
+          "In January 2026, HARAF successfully implemented a series of integrated Behaviour Change and Communication (BCC) sessions across Mafa and Damboa LGAs, strengthening adolescent health awareness and promoting positive behavioural outcomes.",
+          "A total of 19 adolescents and youth participated in Drug Abuse Awareness sessions, which highlighted the dangers of substance misuse, drug dependence, and the associated health and social risks. Participants gained practical knowledge that empowered them to make informed decisions, reduce risky behaviours, and adopt healthier lifestyles.",
+        ],
+      },
+      {
+        heading: "Sexual and Reproductive Health Education",
+        paragraphs: [
+          "In addition, 24 adolescents and youth were reached through Sexual and Reproductive Health (SRH) awareness sessions focusing on puberty, menstruation, and hygiene. These sessions enhanced participants' understanding of normal developmental changes and promoted safe hygiene practices, reinforcing dignity and informed health choices among young people.",
+          "Furthermore, 33 adolescents and youth took part in Adolescent Health and Wellbeing sessions that emphasized malaria prevention and its link to sexual and reproductive health. The discussions highlighted the importance of consistent use of preventive measures, early and regular antenatal care (ANC) attendance, and timely health-seeking behaviour.",
+        ],
+      },
+      {
+        heading: "Measurable Outcomes",
+        paragraphs: [
+          "Overall, these interventions significantly strengthened adolescents' knowledge, improved preventive health practices, and expanded access to essential health information and services across the targeted communities.",
+          "The success of these sessions demonstrates the power of community-based health education in transforming young lives and building healthier futures.",
+        ],
+      },
+    ],
+    meta: { topic: "Adolescent Health", category: "FIELD REPORT" },
+  },
+  5: {
+    title: "Youth-Friendly Health Services Reach 2,380 Adolescents",
+    category: "FIELD REPORT",
+    date: "JANUARY 2026",
+    readTime: "4 min read",
+    location: "Adamawa & Borno Communities",
+    heroImage: mobileClinicImage,
+    sections: [
+      {
+        heading: "Expanding Access to Quality Care",
+        paragraphs: [
+          "In January 2026, adolescents and youths from Gerei, Malabu, Jabbi Lamba, Ribadu, Kelari, Alkalari, Semari and Shuwari in Adamawa and Borno communities actively accessed essential Sexual and Reproductive Health (SRH) services at their respective Primary Health Care (PHC) centers.",
+          "Services provided included comprehensive antenatal care, safe delivery and post-natal services, family planning, STI diagnosis and treatment, and counseling.",
+        ],
+      },
+      {
+        heading: "Trained Health Workers Make the Difference",
+        paragraphs: [
+          "These services were delivered by health workers trained in Adolescent and Youth-Friendly Health Services (AYFHS), with support from Plan International and HARAF, ensuring that care was confidential, youth-responsive, and tailored to the specific needs of young people.",
+          "A total of 2,380 individuals (1,818 females and 562 males) were reached during the reporting period, reflecting strengthened access to quality, youth-friendly SRH services across the targeted communities.",
+        ],
+      },
+      {
+        heading: "Sustaining the Momentum",
+        paragraphs: [
+          "The initiative strengthened access to quality healthcare, improved knowledge of maternal health and STI prevention, and empowered adolescents and youths to make informed decisions about their wellbeing.",
+          "Continued collaboration with partners and community stakeholders remains critical to sustaining and expanding youth-friendly health services across the targeted communities.",
+        ],
+      },
+    ],
+    meta: { topic: "Youth-Friendly Health Services", category: "FIELD REPORT" },
+  },
+  6: {
+    title: "PALS Program: Empowering 576 Adolescents and Caregivers",
+    category: "PROGRAM UPDATE",
+    date: "JANUARY 2026",
+    readTime: "5 min read",
+    location: "Adamawa & Borno States",
+    heroImage: palsImage,
+    sections: [
+      {
+        heading: "Community-Driven Selection Process",
+        paragraphs: [
+          "The HARAF PALS team in Adamawa and Borno successfully targeted and selected 576 participants for Cohorts 11 and 12 of the Parenting and Adolescent Life Skills (PALS) program across Malabu, Gurin, Girei, Jabi-Lamba, Kaleri, Simari, Alkaleri, and Shuwari communities.",
+          "The selected participants include 288 adolescents (170 females and 118 males) and 288 caregivers (234 females and 54 males).",
+        ],
+      },
+      {
+        heading: "Transparent and Inclusive Selection",
+        paragraphs: [
+          "The selection process was conducted in close collaboration with community stakeholders and mobilizers, ensuring an inclusive, transparent, and community-driven approach. This process strengthened community ownership, reinforced trust, and promoted active participation while ensuring that eligible adolescents and caregivers were identified based on established vulnerability criteria.",
+          "The exercise also contributed to raising awareness and strengthening community engagement with the PALS program.",
+        ],
+      },
+      {
+        heading: "What Participants Will Learn",
+        paragraphs: [
+          "The selected participants will undergo the 13-week Parenting and Adolescent Life Skills (PALS) sessions, designed to equip adolescents with the knowledge, confidence, and life skills needed to navigate life transitions and make informed decisions.",
+          "At the same time, the program empowers parents and caregivers with practical skills and guidance to effectively support the holistic development, wellbeing, and positive outcomes of their adolescent children.",
+        ],
+      },
+    ],
+    meta: { topic: "Parenting & Life Skills", category: "PROGRAM UPDATE" },
+  },
+  7: {
+    title: "Mobile Health Clinics Bring Care to Hard-to-Reach Communities in Dikwa",
+    category: "FIELD REPORT",
+    date: "JANUARY 2026",
+    readTime: "6 min read",
+    location: "Dikwa LGA, Borno State",
+    heroImage: mobileClinicImage,
+    sections: [
+      {
+        heading: "Reaching the Unreached",
+        paragraphs: [
+          "In January 2026, HARAF, funded by the Nigerian Humanitarian Fund (NHF) project 'Integrated Health, Nutrition to Mitigate Lean Season Vulnerability in Dikwa and Madagali LGAs,' strategically deployed two Mobile Health Teams (MHTs) to Masarmari and Fulatari wards in Dikwa LGA.",
+          "This ensured uninterrupted access to integrated primary healthcare for hard-to-reach and conflict-affected populations.",
+        ],
+      },
+      {
+        heading: "Comprehensive Health Services",
+        paragraphs: [
+          "The teams provided comprehensive outpatient consultations, diagnosis, and treatment for common illnesses, including malaria, acute respiratory infections, diarrheal diseases, and other communicable conditions. Maternal health assessments were conducted, with complicated cases promptly stabilized and referred through established referral pathways.",
+          "Nutrition screening was systematically integrated to enable early detection and referral of suspected MAM and SAM cases, enhancing community-level case management and health outcomes.",
+        ],
+      },
+      {
+        heading: "Impressive Reach",
+        paragraphs: [
+          "A total of 1,463 individuals benefited from mobile health consultations, while 2,361 community members participated in Risk Communication and Community Engagement (RCCE) sessions. These sessions delivered targeted messaging on measles prevention, routine immunization, infection prevention and control, early health-seeking behavior, and Sexual and Reproductive Health (SRH).",
+          "By combining clinical services with proactive health education and engaging community leaders and volunteers, HARAF strengthened trust, participation, and accountability, significantly improving access to essential healthcare and reinforcing preventive health behaviors across the targeted communities.",
+        ],
+      },
+      {
+        heading: "Facility-Based Support Continues",
+        paragraphs: [
+          "The HARAF team also sustained critical support through Facility-Based OPD and SRH Services to Kasugula Primary Health Centre in Dikwa, ensuring uninterrupted access to quality outpatient and Sexual and Reproductive Health (SRH) services for conflict-affected and vulnerable populations.",
+          "A total of 483 individuals accessed facility-based OPD consultations during the reporting period. Services included consultation, diagnosis, and treatment of common illnesses affecting children, women, and men.",
+        ],
+      },
+    ],
+    meta: { topic: "Mobile Health & Nutrition", category: "FIELD REPORT" },
+  },
 };
 
-// ─── Share / copy link button ─────────────────────────────────────────────────
-function CopyLinkBtn() {
-  const [copied, setCopied] = useState(false);
+// Category colors matching your theme
+const CAT_COLORS = {
+  "IMPACT STORY": { bg: "#E8F0FE", text: "#1A4FA0", border: "#D0E0F5" },
+  "FIELD REPORT": { bg: "#FDE8E8", text: "#8B1A1A", border: "#F5D0D0" },
+  "PROGRAM UPDATE": { bg: "#E8F5E9", text: "#1B5E20", border: "#C8E6C9" },
+};
+
+// ──────────────────────────────────────────────────────────────────
+// STORY CARD COMPONENT
+// ──────────────────────────────────────────────────────────────────
+function StoryCard({ story, onClick, catColors }) {
   return (
-    <button
-      onClick={() => { navigator.clipboard.writeText(window.location.href); setCopied(true); setTimeout(() => setCopied(false), 2000); }}
-      className="bg-harafBlue text-white w-10 h-10 sm:w-11 sm:h-11 rounded-lg flex items-center justify-center hover:bg-[#1462a8] hover:scale-105 transition-all"
-      aria-label="Copy link"
-      title={copied ? "Copied!" : "Copy link"}
+    <article
+      onClick={onClick}
+      className="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-[#E2E8F0] transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
     >
-      {copied ? (
-        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
-        </svg>
-      ) : (
-        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-        </svg>
-      )}
-    </button>
+      <div className="relative h-56 overflow-hidden">
+        <img
+          src={story.heroImage}
+          alt={story.title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
+        <span
+          className="absolute top-4 left-4 text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full"
+          style={{ backgroundColor: catColors.bg, color: catColors.text }}
+        >
+          {story.category}
+        </span>
+        <span className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-1 rounded-full">
+          📍 {story.location.split(",")[0]}
+        </span>
+      </div>
+      <div className="p-6">
+        <p className="text-[#8CB4D6] text-[11px] font-semibold tracking-[0.2em] uppercase mb-2">
+          {story.date}
+        </p>
+        <h3 className="text-primary text-xl font-playfair font-bold leading-tight mb-3 group-hover:text-harafBlue transition-colors line-clamp-2">
+          {story.title}
+        </h3>
+        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+          {story.sections[0]?.paragraphs[0]?.substring(0, 120)}...
+        </p>
+        <div className="mt-4 flex items-center text-harafBlue text-sm font-semibold group-hover:gap-2 transition-all gap-1">
+          Read full story <span className="font-serif text-lg leading-none">→</span>
+        </div>
+      </div>
+    </article>
   );
 }
 
-// ─── Full essay reader (modal) ────────────────────────────────────────────────
-function EssayReader({ article, index, onClose }) {
-  const essay   = ESSAY_BODY[index] ?? DEFAULT_ESSAY;
-  const scrollRef = useRef(null);
-  const catStyle  = CAT_COLORS[article.category] || { bg: "#EEF5FC", text: "#1A78C2" };
+// ──────────────────────────────────────────────────────────────────
+// STORY READER MODAL (with visible close button)
+// ──────────────────────────────────────────────────────────────────
+function StoryReader({ story, storyContent, catColors, onClose }) {
+  const [activeSection, setActiveSection] = useState(0);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, []);
 
   useEffect(() => {
-    const handler = (e) => { if (e.key === "Escape") onClose(); };
+    const handler = (e) => {
+      if (e.key === "Escape") onClose();
+    };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [onClose]);
 
-  const share = (platform) => {
-    const url = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent(article.title);
-    const links = {
-      twitter:  `https://twitter.com/intent/tweet?url=${url}&text=${text}`,
-      facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-      whatsapp: `https://wa.me/?text=${text}%20${url}`,
-    };
-    if (links[platform]) window.open(links[platform], "_blank");
+  const scrollToSection = (index) => {
+    setActiveSection(index);
+    const element = document.getElementById(`section-${index}`);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
+
+  const tocItems = storyContent.sections
+    .map((section, idx) => ({ heading: section.heading, index: idx }))
+    .filter(item => item.heading !== null);
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-[#f5f6f7] overflow-y-auto"
-      style={{ animation: "readerIn 0.32s cubic-bezier(0.22,1,0.36,1) both" }}
-      ref={scrollRef}
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto"
+      style={{
+        backgroundColor: "rgba(8, 25, 45, 0.85)",
+        backdropFilter: "blur(12px)",
+      }}
+      onClick={onClose}
     >
-      {/* Top bar */}
-      <div className="sticky top-0 z-20 bg-[#f5f6f7]/90 backdrop-blur-sm border-b border-gray-200">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-8 py-3 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3 min-w-0">
+      <div
+        className="relative w-full max-w-5xl my-8 mx-4 bg-white rounded-2xl shadow-2xl overflow-hidden"
+        style={{ animation: "modalPop 0.3s cubic-bezier(0.34,1.46,0.64,1) both" }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Top color bar */}
+        <div className="h-1.5" style={{ backgroundColor: catColors.text }} />
+
+        {/* CLOSE BUTTON - Pushed down to avoid header */}
+        <button
+          onClick={onClose}
+          className="fixed z-30 w-10 h-10 rounded-full bg-gray-900/80 backdrop-blur-sm hover:bg-gray-900 shadow-lg flex items-center justify-center text-white hover:scale-105 transition-all duration-200 border border-white/20"
+          style={{
+            top: "90px",
+            right: "calc(50% - 600px + 20px)",
+          }}
+          aria-label="Close"
+        >
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        {/* Hero Image */}
+        <div className="relative h-64 md:h-96 overflow-hidden">
+          <img
+            src={storyContent.heroImage}
+            alt={storyContent.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
             <span
-              className="text-[10px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-full flex-shrink-0"
-              style={{ background: catStyle.bg, color: catStyle.text }}
+              className="inline-block text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-3"
+              style={{ backgroundColor: catColors.bg, color: catColors.text }}
             >
-              {article.category}
+              {storyContent.category}
             </span>
-            <span className="text-gray-400 text-xs hidden sm:block truncate">{article.title}</span>
-          </div>
-          <button
-            onClick={onClose}
-            className="flex-shrink-0 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-harafBlue transition-colors bg-white border border-gray-200 hover:border-harafBlue px-4 py-2 rounded-lg group"
-          >
-            <svg className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to Ideas
-          </button>
-        </div>
-      </div>
-
-      {/* Hero title band */}
-      <div className="bg-white border-b border-gray-100 px-4 sm:px-8 py-10 sm:py-14">
-        <div className="max-w-3xl mx-auto">
-
-          {/* Back button — sits above the title, clearly visible */}
-          <button
-            onClick={onClose}
-            className="group inline-flex items-center gap-2 text-harafBlue font-dm-sans font-bold text-xs uppercase tracking-widest mb-8 hover:gap-3 transition-all"
-          >
-            <span className="w-7 h-7 rounded-full border-2 border-harafBlue/30 group-hover:border-harafBlue flex items-center justify-center transition-colors">
-              <svg className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
-              </svg>
-            </span>
-            Back to Ideas
-          </button>
-
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-gray-400 text-xs">{article.date}</span>
-            <span className="text-gray-300">·</span>
-            <span className="text-gray-400 text-xs">{article.readTime}</span>
-          </div>
-          <h1 className="font-playfair font-bold text-primary text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
-            {article.title}
-          </h1>
-          <div className="flex items-center gap-3">
-            <img 
-              src={article.avatar} 
-              alt={article.author} 
-              className="w-11 h-11 rounded-full object-cover grayscale" 
-              width="44" 
-              height="44" 
-              loading="lazy" 
-            />
-            <div>
-              <p className="font-dm-sans font-bold text-sm text-primary">{article.author}</p>
-              <p className="font-dm-sans text-[11px] text-orange-700 uppercase tracking-tight font-medium">{article.role}</p>
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-playfair font-bold leading-tight max-w-3xl">
+              {storyContent.title}
+            </h1>
+            <div className="flex flex-wrap gap-4 mt-3 text-sm text-white/80">
+              <span>{storyContent.date}</span>
+              <span>•</span>
+              <span>{storyContent.readTime}</span>
+              <span>•</span>
+              <span>📍 {storyContent.location}</span>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Body */}
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 py-12 sm:py-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
-
-        {/* Share bar — vertical on desktop, horizontal strip on mobile */}
-        <div className="col-span-1 lg:col-span-1 flex flex-row lg:flex-col items-center justify-start gap-4 lg:gap-6 lg:pt-2">
-          <p className="text-[10px] tracking-[0.4em] text-gray-400 font-bold uppercase lg:rotate-[-90deg] lg:mb-2">
-            SHARE
-          </p>
-          <button onClick={() => share("twitter")} aria-label="Share on X"
-            className="bg-harafBlue text-white w-10 h-10 sm:w-11 sm:h-11 rounded-lg flex items-center justify-center hover:bg-[#1462a8] hover:scale-105 transition-all">
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </button>
-          <button onClick={() => share("facebook")} aria-label="Share on Facebook"
-            className="bg-harafBlue text-white w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center hover:bg-[#1462a8] hover:scale-105 transition-all">
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24h11.495v-9.294H9.694V11.08h3.126V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.31h3.587l-.467 3.626h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
-            </svg>
-          </button>
-          <button onClick={() => share("whatsapp")} aria-label="Share on WhatsApp"
-            className="bg-harafBlue text-white w-10 h-10 sm:w-11 sm:h-11 rounded-lg flex items-center justify-center hover:bg-[#1462a8] hover:scale-105 transition-all">
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-          </button>
-          <CopyLinkBtn />
-        </div>
-
-        {/* Article body */}
-        <div className="col-span-1 lg:col-span-7 font-serif text-[#4a3f38] leading-[1.85] text-[16px] sm:text-[17px]">
-          {essay.sections.map((section, si) => (
-            <div key={si}>
-              {section.heading && (
-                <div className="mt-12 mb-1">
-                  <p className="text-harafBlue text-[13px] font-dm-sans font-bold tracking-[0.2em] uppercase">
-                    {section.heading}
-                  </p>
-                  <div className="h-px w-full bg-blue-200 mt-2 mb-6" />
-                </div>
-              )}
-              {section.paragraphs.map((para, pi) => (
-                <p
-                  key={pi}
-                  className={`mt-8 ${si === 0 && pi === 0
-                    ? "first-letter:text-[72px] first-letter:float-left first-letter:mr-3 first-letter:leading-none first-letter:text-harafBlue first-letter:font-playfair first-letter:font-bold"
-                    : ""}`}
-                >
-                  {para}
-                </p>
-              ))}
-            </div>
-          ))}
-        </div>
-
-        {/* Right sidebar */}
-        <div className="col-span-1 lg:col-span-4 space-y-10">
-
-          {/* About this essay */}
-          <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
-            <h3 className="text-[11px] tracking-[0.3em] text-harafBlue font-dm-sans font-bold uppercase mb-4">
-              About This Essay
-            </h3>
-            <div className="space-y-2.5 font-dm-sans text-sm text-gray-600">
-              <p><span className="font-bold text-primary">Topic:</span> {essay.meta.topic}</p>
-              <p><span className="font-bold text-primary">Published:</span> {essay.meta.published}</p>
-              <p><span className="font-bold text-primary">Length:</span> {essay.meta.length}</p>
-              <p><span className="font-bold text-primary">Category:</span> {essay.meta.category}</p>
-            </div>
-          </div>
-
-          {/* In this essay */}
-          <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
-            <h3 className="text-[11px] tracking-[0.3em] text-harafBlue font-dm-sans font-bold uppercase mb-4">
-              In This Essay
-            </h3>
-            <ul className="space-y-2.5">
-              {essay.toc.map((item, i) => (
-                <li key={i} className="font-dm-sans text-sm text-gray-600 hover:text-harafBlue cursor-pointer transition-colors flex items-center gap-2">
-                  <span className="text-harafBlue/40 text-xs">→</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Share buttons */}
-          <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
-            <h3 className="text-[11px] tracking-[0.3em] text-harafBlue font-dm-sans font-bold uppercase mb-4">
-              Share This Essay
-            </h3>
-            <div className="grid grid-cols-2 gap-2.5">
-              {[
-                { label: "TWITTER/X",  action: () => share("twitter") },
-                { label: "FACEBOOK",   action: () => share("facebook") },
-                { label: "WHATSAPP",   action: () => share("whatsapp") },
-                { label: "COPY LINK",  action: () => navigator.clipboard.writeText(window.location.href) },
-              ].map(({ label, action }) => (
-                <button
-                  key={label}
-                  onClick={action}
-                  className="border border-blue-200 bg-blue-50 hover:bg-blue-100 hover:scale-[1.02] active:scale-[0.98] transition-all text-harafBlue font-dm-sans font-bold text-[11px] tracking-widest uppercase py-2.5 px-3 rounded-lg"
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Author card */}
-          <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
-            <h3 className="text-[11px] tracking-[0.3em] text-harafBlue font-dm-sans font-bold uppercase mb-4">
-              Written By
-            </h3>
-            <div className="flex items-center gap-3">
-              <img 
-                src={article.avatar} 
-                alt={article.author} 
-                className="w-12 h-12 rounded-full object-cover grayscale flex-shrink-0" 
-                width="48" 
-                height="48" 
-                loading="lazy" 
-              />
-              <div>
-                <p className="font-dm-sans font-bold text-sm text-primary">{article.author}</p>
-                <p className="font-dm-sans text-[11px] text-orange-700 uppercase tracking-tight font-medium mt-0.5">{article.role}</p>
+        {/* Content Area */}
+        <div className="flex flex-col lg:flex-row">
+          {/* Table of Contents Sidebar */}
+          {tocItems.length > 0 && (
+            <aside className="lg:w-72 bg-[#F8FAFE] border-r border-[#E2E8F0] p-6 lg:sticky lg:top-0 lg:self-start lg:max-h-screen lg:overflow-y-auto">
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
+                IN THIS STORY
+              </p>
+              <nav className="space-y-2">
+                {tocItems.map((item) => (
+                  <button
+                    key={item.index}
+                    onClick={() => scrollToSection(item.index)}
+                    className={`block w-full text-left text-sm py-2 px-3 rounded-lg transition-all ${
+                      activeSection === item.index
+                        ? "bg-white shadow-sm font-semibold"
+                        : "text-gray-600 hover:bg-white/50"
+                    }`}
+                    style={{
+                      color: activeSection === item.index ? catColors.text : undefined,
+                      borderLeft: activeSection === item.index ? `3px solid ${catColors.text}` : "3px solid transparent",
+                    }}
+                  >
+                    {item.heading}
+                  </button>
+                ))}
+              </nav>
+              <div className="mt-8 pt-6 border-t border-[#E2E8F0]">
+                <p className="text-xs text-gray-400">Published</p>
+                <p className="text-sm font-medium">{storyContent.date}</p>
+                <p className="text-xs text-gray-400 mt-3">Topic</p>
+                <p className="text-sm font-medium">{storyContent.meta.topic}</p>
+                <p className="text-xs text-gray-400 mt-3">Location</p>
+                <p className="text-sm font-medium">{storyContent.location}</p>
               </div>
+            </aside>
+          )}
+
+          {/* Main Content */}
+          <div className="flex-1 px-6 py-8 md:px-10 md:py-10">
+            {storyContent.sections.map((section, idx) => (
+              <div key={idx} id={`section-${idx}`} className="mb-8 scroll-mt-20">
+                {section.heading && (
+                  <h2 className="text-2xl md:text-3xl font-playfair font-bold text-primary mb-4">
+                    {section.heading}
+                  </h2>
+                )}
+                {section.paragraphs.map((para, pIdx) => {
+                  if (para.startsWith('"') || para.includes("–")) {
+                    return (
+                      <p key={pIdx} className="text-gray-700 leading-relaxed mb-4 italic border-l-4 pl-4" style={{ borderLeftColor: catColors.text }}>
+                        {para}
+                      </p>
+                    );
+                  }
+                  return (
+                    <p key={pIdx} className="text-gray-700 leading-relaxed mb-4">
+                      {para}
+                    </p>
+                  );
+                })}
+              </div>
+            ))}
+
+            {/* Footer */}
+            <div className="mt-10 pt-6 border-t border-[#E2E8F0]">
+              <button
+                onClick={onClose}
+                className="group flex items-center gap-2.5 bg-harafBlue hover:bg-[#1462a8] transition-all text-white font-dm-sans font-bold text-xs tracking-[0.18em] uppercase rounded-xl px-6 py-3"
+              >
+                <svg className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to All Stories
+              </button>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* ── Bottom back button ── */}
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 pb-16 pt-4">
-        <div className="border-t border-gray-200 pt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div>
-            <p className="font-dm-sans text-[11px] text-gray-400 uppercase tracking-widest mb-1">Done reading?</p>
-            <p className="font-playfair font-bold text-primary text-lg">Explore more ideas from the field.</p>
-          </div>
-          <button
-            onClick={onClose}
-            className="group flex items-center gap-2.5 bg-harafBlue hover:bg-[#1462a8] active:scale-[0.99] transition-all text-white font-dm-sans font-bold text-xs tracking-[0.18em] uppercase rounded-xl px-7 py-3.5 shadow-[0_4px_18px_rgba(26,120,194,0.25)]"
-          >
-            <svg className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to All Ideas
-          </button>
         </div>
       </div>
 
       <style>{`
-        @keyframes readerIn {
-          from { opacity: 0; transform: translateY(24px); }
-          to   { opacity: 1; transform: translateY(0); }
+        @keyframes modalPop {
+          from { opacity: 0; transform: scale(0.96) translateY(20px); }
+          to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .line-clamp-3 {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .scroll-mt-20 {
+          scroll-margin-top: 5rem;
+        }
+        @media (max-width: 1280px) {
+          .fixed.z-30 {
+            right: 20px !important;
+          }
         }
       `}</style>
     </div>
   );
 }
 
-// ─── Article card ─────────────────────────────────────────────────────────────
-function ArticleCard({ article, index, onClick }) {
-  const catStyle = CAT_COLORS[article.category] || { bg: "#EEF5FC", text: "#1A78C2" };
+// ──────────────────────────────────────────────────────────────────
+// STORIES DATA FIELD (cards preview)
+// ──────────────────────────────────────────────────────────────────
+const storiesData = [
+  {
+    id: 1,
+    title: "Breaking the Silence: Rosemary's Journey to Menstrual Health Education",
+    category: "IMPACT STORY",
+    date: "FEBRUARY 26, 2026",
+    readTime: "4 min read",
+    location: "Modire, Yolde Pate, Yola South, Adamawa State",
+    heroImage: rosemaryImage,
+    sections: STORY_CONTENT[0].sections,
+  },
+  {
+    id: 2,
+    title: "From Homemaker to Businesswoman: Hajja's Kitchen Garden Success",
+    category: "IMPACT STORY",
+    date: "FEBRUARY 27, 2026",
+    readTime: "5 min read",
+    location: "Jabbi-Lamba, Adamawa State",
+    heroImage: hajjaImage,
+    sections: STORY_CONTENT[1].sections,
+  },
+  {
+    id: 3,
+    title: "Saving Goats, Saving Futures: Madam Hauwa'u's Story of Hope",
+    category: "IMPACT STORY",
+    date: "FEBRUARY 25, 2026",
+    readTime: "4 min read",
+    location: "Fufore, Adamawa State",
+    heroImage: hauwauImage,
+    sections: STORY_CONTENT[2].sections,
+  },
+  {
+    id: 4,
+    title: "Finding Her Voice: Fatima's Journey at the Adolescents' Corner",
+    category: "IMPACT STORY",
+    date: "FEBRUARY 23, 2026",
+    readTime: "4 min read",
+    location: "Girei, Adamawa State",
+    heroImage: fatimaImage,
+    sections: STORY_CONTENT[3].sections,
+  },
+  {
+    id: 5,
+    title: "Strengthening Adolescent Health Awareness in Mafa & Damboa",
+    category: "FIELD REPORT",
+    date: "JANUARY 2026",
+    readTime: "5 min read",
+    location: "Mafa & Damboa LGAs, Borno State",
+    heroImage: palsImage,
+    sections: STORY_CONTENT[4].sections,
+  },
+  {
+    id: 6,
+    title: "Youth-Friendly Health Services Reach 2,380 Adolescents",
+    category: "FIELD REPORT",
+    date: "JANUARY 2026",
+    readTime: "4 min read",
+    location: "Adamawa & Borno Communities",
+    heroImage: mobileClinicImage,
+    sections: STORY_CONTENT[5].sections,
+  },
+  {
+    id: 7,
+    title: "PALS Program: Empowering 576 Adolescents and Caregivers",
+    category: "PROGRAM UPDATE",
+    date: "JANUARY 2026",
+    readTime: "5 min read",
+    location: "Adamawa & Borno States",
+    heroImage: palsImage,
+    sections: STORY_CONTENT[6].sections,
+  },
+  {
+    id: 8,
+    title: "Mobile Health Clinics Bring Care to Hard-to-Reach Communities in Dikwa",
+    category: "FIELD REPORT",
+    date: "JANUARY 2026",
+    readTime: "6 min read",
+    location: "Dikwa LGA, Borno State",
+    heroImage: mobileClinicImage,
+    sections: STORY_CONTENT[7].sections,
+  },
+];
+
+// ──────────────────────────────────────────────────────────────────
+// MAIN COMPONENT
+// ──────────────────────────────────────────────────────────────────
+export default function ImpactStoriesPage() {
+  const [openStoryId, setOpenStoryId] = useState(null);
+  const [filterCategory, setFilterCategory] = useState("all");
+
+  const categories = ["all", "IMPACT STORY", "FIELD REPORT", "PROGRAM UPDATE"];
+
+  const filteredStories = filterCategory === "all"
+    ? storiesData
+    : storiesData.filter(story => story.category === filterCategory);
+
+  const openStory = storiesData.find(s => s.id === openStoryId);
+  const openStoryContent = openStoryId ? STORY_CONTENT[openStoryId - 1] : null;
+
   return (
-    <div
-      onClick={() => onClick(index)}
-      className="bg-[#F8FBFF] border border-blue-50/50 p-8 flex flex-col h-full w-full hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 cursor-pointer group"
-    >
-      <div className="mb-5">
-        <span
-          className="px-4 py-1.5 rounded-full text-[10px] font-bold tracking-[0.15em] uppercase"
-          style={{ background: catStyle.bg, color: catStyle.text }}
-        >
-          {article.category}
-        </span>
-      </div>
-
-      <div className="flex items-center gap-2 text-gray-400 text-xs font-medium mb-4 uppercase tracking-wider">
-        <span>{article.date}</span>
-        <span>•</span>
-        <span>{article.readTime}</span>
-      </div>
-
-      <h3 className="text-[20px] leading-tight font-playfair font-bold text-[#1a1a1a] mb-4 group-hover:text-harafBlue transition-colors">
-        {article.title}
-      </h3>
-
-      <p className="text-gray-600 leading-relaxed text-[15px] mb-8 flex-grow font-dm-sans">
-        {article.excerpt}
-      </p>
-
-      <div className="pt-5 border-t border-gray-100">
-        <div className="flex items-center gap-3 mb-5">
-          <img 
-            src={article.avatar} 
-            alt={article.author} 
-            className="w-10 h-10 rounded-full object-cover grayscale" 
-            width="40" 
-            height="40" 
-            loading="lazy" 
-          />
-          <div>
-            <p className="text-sm font-bold text-gray-800 leading-none font-dm-sans">{article.author}</p>
-            <p className="text-[11px] text-orange-700 font-medium mt-1 uppercase tracking-tight font-dm-sans">{article.role}</p>
+    <>
+      <section className="w-full py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Header Section */}
+          <div className="text-center mb-12 md:mb-16">
+            <span className="text-harafBlue text-sm tracking-[0.2em] font-dm-sans font-bold uppercase mb-4 inline-block">
+              IMPACT STORIES
+            </span>
+            <h1 className="text-primary text-4xl md:text-5xl lg:text-6xl font-playfair font-bold leading-tight max-w-4xl mx-auto">
+              Real Lives, <br className="hidden sm:block" />Real Change
+            </h1>
+            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+              Stories of resilience, transformation, and hope from the communities we serve across northern Nigeria.
+            </p>
           </div>
-        </div>
 
-        <div className="flex items-center gap-2 text-harafBlue text-xs font-bold uppercase tracking-widest group-hover:gap-3 transition-all font-dm-sans">
-          Read Essay
-          <svg width="18" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
-          </svg>
-        </div>
-      </div>
-    </div>
-  );
-}
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setFilterCategory(cat)}
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all capitalize ${
+                  filterCategory === cat
+                    ? "bg-harafBlue text-white shadow-md"
+                    : "bg-[#EEF5FC] text-harafBlue hover:bg-[#D8E8F0]"
+                }`}
+              >
+                {cat === "all" ? "All Stories" : cat.replace("_", " ")}
+              </button>
+            ))}
+          </div>
 
-// ─── Main export ──────────────────────────────────────────────────────────────
-export default function IdeaCard() {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  return (
-    <div>
-      <section className="bg-white py-20 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="flex flex-wrap justify-center gap-6">
-          {articles.map((art, index) => (
-            <div key={index} className="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] flex">
-              <ArticleCard
-                article={art}
-                index={index}
-                onClick={setOpenIndex}
+          {/* Stories Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredStories.map((story) => (
+              <StoryCard
+                key={story.id}
+                story={story}
+                onClick={() => setOpenStoryId(story.id)}
+                catColors={CAT_COLORS[story.category]}
               />
+            ))}
+          </div>
+
+          {filteredStories.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-500">No stories found in this category.</p>
             </div>
-          ))}
+          )}
+
+          {/* Footer Link */}
+          <div className="flex justify-start border-b-2 border-harafYellow pb-2 max-w-[200px] mt-16">
+            <Link
+              to="/news"
+              className="text-[#6B4C32] font-dm-sans text-sm font-bold tracking-wider uppercase flex items-center hover:text-primary transition-colors"
+            >
+              MORE FIELD REPORTS <span className="ml-2 font-serif text-lg leading-none">→</span>
+            </Link>
+          </div>
+
         </div>
       </section>
 
-      {/* Quote band */}
-      <div className="bg-harafBlue w-full py-12 px-6">
-        <h2 className="text-white text-xl sm:text-2xl font-bold italic font-playfair text-center leading-relaxed">
-          "The communities we serve are not waiting to be saved.<br className="hidden sm:block" />
-          They are waiting for systems to stop blocking them."
-        </h2>
-        <div className="text-harafYellow text-[13px] font-bold tracking-[0.2em] uppercase text-center mt-4 font-dm-sans">
-          Featured Essay
-        </div>
-      </div>
-
-      {/* Essay reader — full screen takeover */}
-      {openIndex !== null && (
-        <EssayReader
-          article={articles[openIndex]}
-          index={openIndex}
-          onClose={() => setOpenIndex(null)}
+      {/* Story Reader Modal */}
+      {openStoryId !== null && openStoryContent && (
+        <StoryReader
+          story={openStory}
+          storyContent={openStoryContent}
+          catColors={CAT_COLORS[openStory.category]}
+          onClose={() => setOpenStoryId(null)}
         />
       )}
-    </div>
+    </>
   );
 }

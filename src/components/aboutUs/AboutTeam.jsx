@@ -7,20 +7,20 @@ import fatimaYusuf from '../../assets/fatimaYusuf.jpg';
 const teamData = [
   {
     image: graceTitus,
-    name: "Mrs. Grace Titus",
+    name: "Mrs. Galaxy Thami",
     role: "FOUNDER & EXECUTIVE DIRECTOR",
     description: "Former development economist turned field activist. Has spent over a decade building community-first programmes across rural Nigeria."
   },
   {
     image: emekaOkafor,
-    name: "Emeka Okafor",
-    role: "DIRECTOR OF PROGRAMMES",
+    name: "Daniel Akila",
+    role: "DIRECTOR OF GRANTS",
     description: "Public health specialist with 12 years of experience designing rural health and nutrition interventions across West Africa."
   },
   {
     image: fatimaYusuf,
-    name: "Fatima Yusuf",
-    role: "DIRECTOR OF PARTNERSHIPS & FUNDRAISING",
+    name: "Abel Bake",
+    role: "HEAD OF PROGRAMMES",
     description: "Former UNICEF partnerships coordinator. Has secured over ₦800 million in programme funding for HARAF since joining in 2019."
   }
 ];
@@ -59,14 +59,7 @@ const AboutTeam = () => {
         </div>
 
         {/* Footer Link */}
-        <div className="mt-12 flex justify-start">
-          <a href="#" className="flex items-center space-x-2 text-primary text-sm font-dm-sans font-bold tracking-widest uppercase hover:text-harafBlue transition-colors group">
-            <span>VIEW FULL TEAM DIRECTORY</span>
-            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-               <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
-        </div>
+        
       </div>
     </section>
   );

@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Essay from './pages/Essay';
 import ContactPage from './pages/ContactUs';
 import PressMedia from './pages/PressMedia';
+import CareerPage from './pages/Career';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/essay" element={<Essay />} />
           <Route path="/contact-us" element={<ContactPage />} />
           <Route path="/press-media" element={<PressMedia />} />
+          <Route path="/career" element={<CareerPage />} />
         </Routes>
       </div>
       <Footer />
