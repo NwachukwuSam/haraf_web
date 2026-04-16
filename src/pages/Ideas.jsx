@@ -11,7 +11,6 @@ function Ideas() {
       <IdeasHero />
       <FeaturedEssay />
       <IdeaCard />
-      <AuthorsSection />
       <NewsletterSignup/>
       <PitchEssay/>
     </div>

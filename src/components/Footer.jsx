@@ -84,8 +84,8 @@ function Footer() {
               <ul className="space-y-4 font-dm-sans text-[14px]" style={{ color: 'rgba(235, 244, 252, 0.55)' }}>
                 <li><Link to="/donate" className="hover:text-harafYellow transition-colors">Donate</Link></li>
                 <li><Link to="/contact-us" className="hover:text-harafYellow transition-colors">Volunteer</Link></li>
-                <li><Link to="/contact_us" className="hover:text-harafYellow transition-colors">Partner With Us</Link></li>
-                <li><Link to="donate" className="hover:text-harafYellow transition-colors">Corporate Giving</Link></li>
+                <li><Link to="/contact-us" className="hover:text-harafYellow transition-colors">Partner With Us</Link></li>
+                <li><Link to="/donate" className="hover:text-harafYellow transition-colors">Corporate Giving</Link></li>
                 <li><Link to="/donate" className="hover:text-harafYellow transition-colors">In Memoriam Giving</Link></li>
               </ul>
             </div>

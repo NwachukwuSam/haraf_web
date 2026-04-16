@@ -68,7 +68,7 @@ const AboutStory = () => {
             <div className="flex items-center space-x-4">
               <div className="w-10 h-[1.5px] bg-[#5D4037]" />
               <p className="text-[#5D4037] text-xs font-dm-sans font-bold tracking-[0.1em] uppercase">
-                MRS. GRACE TITUS, FOUNDER & EXECUTIVE DIRECTOR
+                MRS. GALAXY THAMI, FOUNDER & EXECUTIVE DIRECTOR
               </p>
             </div>
           </div>
