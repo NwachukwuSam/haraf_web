@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import anniversaryImage from '../../assets/haraf.JPG';
-import maryamStoryImage from '../../assets/delivery.JPEG';
+import maryamStoryImage from '../../assets/delivery.jpeg';
 import healthEducationImage from '../../assets/announcementImage.jpg';
 
 // ──────────────────────────────────────────────────────────────────
