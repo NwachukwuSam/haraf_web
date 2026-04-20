@@ -34,10 +34,10 @@ const programmeData = [
     tagBg: "rgba(107, 79, 160, 0.15)",
     tagColor: "#6B4FA0",
     title: "Every Child Deserves a Classroom.",
-    challenge: "Over 10 million children are out of school in Nigeria — the highest number in the world. In rural communities, schools are often dilapidated, understaffed, and inaccessible. Girls are disproportionately affected, withdrawn early for domestic duties or marriage.",
-    response: "We rehabilitate school buildings, supply learning materials, train and incentivise teachers, and fund scholarships for children — especially girls — who would otherwise age out of education unnoticed.",
-    testimonial: "HARAF rebuilt our school and brought back our teacher. For the first time, my daughter has a desk to sit at and a book to read from.",
-    testimonialAuthor: "HAJIYA RAMATU, PARENT, NIGER STATE",
+    challenge: "Nigeria has over 10 million children out of school; the highest number globally. For millions in Borno, Adamawa, and Yobe states, the barrier isn’t just distance. It’s poverty. Families facing crisis cannot afford books, uniforms, or fees. Girls are the first to be left behind, pulled into domestic labor or early marriage when education becomes a cost families cannot bear.",
+    response: "We remove the cost of learning. HARAF supplies essential learning materials; books, stationery, and funds full sponsorships that cover school fees and related expenses for crisis-affected children, especially girls. By lifting the financial burden, we keep children in classrooms and give them a chance to finish what conflict interrupted: their education.",
+    testimonial: "I thought school had ended for me after we were displaced. But HARAF gave me books, a uniform, and paid my fees. Now I am back in class. I want to be a teacher.",
+    testimonialAuthor: "Aisha M., 14, sponsorship beneficiary | Adamawa State",
     testimonialBg: "#FDFAF6",
     isReversed: false
   },
@@ -50,7 +50,7 @@ const programmeData = [
     title: "Medicine Where It's Never Reached.",
     challenge: "The nearest hospital is often 3–6 hours away for most rural Nigerian communities. Maternal and child mortality rates in rural areas are three times higher than in urban centres. Preventable diseases — malaria, cholera, malnutrition — remain the leading killers simply because care never arrives.",
     response: "Our mobile clinic model brings primary healthcare, maternal services, immunisation, and health education directly to remote communities on a regular monthly schedule — free of charge, every time.",
-    testimonial: "I almost lost my baby because the hospital was too far. The HARAF nurse came to my village and saved us both. I named my son Emmanuel — God with us.",
+    testimonial: "For the first time, I felt like I was in good hands, the midwives were kind, and the facility was clean. I didn’t have to worry about anything. It was completely different from my previous deliveries",
     testimonialAuthor: "BLESSING O., ADAMAWA STATE",
     testimonialBg: "#FDFAF6",
     isReversed: true

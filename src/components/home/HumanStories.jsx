@@ -11,9 +11,9 @@ const storiesData = [
   },
   {
     id: 2,
-    location: 'YOBE STATE',
-    quote: 'The women’s cooperative changed everything for me. I learned to sew, started a business, and now I employ three others.',
-    author: 'Chidinma O.',
+    location: 'SOKOTO STATE',
+    quote: 'I felt supported every step of the way, the knowledge I gained and the Mama Kits I received made all the difference for me and my babies.”',
+    author: 'Aisha Aminu)',
   },
   {
     id: 3,
