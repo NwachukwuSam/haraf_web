@@ -5,8 +5,8 @@ import climateSmart from '../../assets/branchOneImage.jpg';
 import ruralFood from '../../assets/branchTwoImage.jpg';
 import safeWater from '../../assets/menstralHygn.jpeg';
 import womensEmpow from '../../assets/womenEco.jpeg';
-import healthOutreach from '../../assets/branchFiveImage.jpg';
-import ruralSchools from '../../assets/ruralSchoolsAndScholarshipFund.png';
+import healthOutreach from '../../assets/health.jpg';
+import ruralSchools from '../../assets/sch.jpeg';
 
 import pathSvg from '../../assets/path.svg';
 import branchOne from '../../assets/branchOne.svg';
@@ -21,7 +21,7 @@ const pillarsData = [
     image: climateSmart,
     tag: 'ENVIRONMENT',
     title: 'Climate-Smart Agriculture',
-    description: 'We train farmers in sustainable land use to protect livelihoods against the growing threat of climate change.',
+    description: 'We train farmers on sustainable land use to protect livelihoods against the growing threat of climate change.',
   },
   {
     id: 2,
