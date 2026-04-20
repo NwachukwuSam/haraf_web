@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import anniversaryImage from '../../assets/fieldReportImage.jpg';
+import anniversaryImage from '../../assets/haraf.jpg';
 import maryamStoryImage from '../../assets/ImpactStoryImage.jpg';
 import healthEducationImage from '../../assets/announcementImage.jpg';
 

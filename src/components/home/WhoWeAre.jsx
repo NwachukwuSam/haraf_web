@@ -106,7 +106,7 @@ function WhoWeAre() {
                 {/* Year badge — overlapping */}
                 <div className="absolute -bottom-4 -right-4 bg-harafBlue rounded-2xl px-4 py-3 z-20"
                   style={{ boxShadow: '0 8px 24px rgba(26,120,194,0.5)' }}>
-                  <p className="font-playfair font-bold text-white text-xl leading-none">12+</p>
+                  <p className="font-playfair font-bold text-white text-xl leading-none">10+</p>
                   <p className="font-dm-sans text-blue-200 text-[10px] uppercase tracking-wide mt-0.5">Years</p>
                 </div>
               </div>
