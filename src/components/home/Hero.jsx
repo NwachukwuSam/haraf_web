@@ -16,14 +16,13 @@ function Hero() {
   const navigate = useNavigate();
   const [currentImage, setCurrentImage] = useState(0);
 
-// Auto-slide every 4 seconds
-useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrentImage((prev) => (prev === 4 ? 0 : prev + 1));
-  }, 4000);
-  
-  return () => clearInterval(interval);
-}, []);
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentImage((prev) => (prev === 4 ? 0 : prev + 1));
+      }, 4000);
+      
+      return () => clearInterval(interval);
+    }, []);
 
   return (
     <>
