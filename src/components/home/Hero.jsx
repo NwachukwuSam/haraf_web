@@ -1,7 +1,7 @@
 import React from 'react';
 import worldMap from '../../assets/WorldMap.svg';
 import heroImage1 from '../../assets/loveImage.jpg';
-import hero from '../../assets/announcementImage.jpg';
+//import hero from '../../assets/announcementImage.jpg';
 import heroImage3 from '../../assets/headlineImage6.jpg';
 import heroImage4 from '../../assets/laugh.jpg';
 import heroImage5 from '../../assets/we.jpg';
@@ -209,7 +209,7 @@ function Hero() {
                     display: 'flex',
                   }}
                 >
-                  {[heroImage1, hero, heroImage3, heroImage4, heroImage5].map((img, idx) => (
+                  {[heroImage1, heroImage3, heroImage4, heroImage5].map((img, idx) => (
                     <img 
                       key={idx}
                       src={img} 
