@@ -1,13 +1,29 @@
 import React from 'react';
 import worldMap from '../../assets/WorldMap.svg';
-import heroImage from '../../assets/loveImage.jpg';
+import heroImage1 from '../../assets/loveImage.jpg';
+import heroImage2 from '../../assets/haraf.jpg';
+import heroImage3 from '../../assets/headlineImage6.jpg';
+import heroImage4 from '../../assets/laugh.jpg';
+import heroImage5 from '../../assets/we.jpg';
+
 import p1 from '../../assets/heroSubImage1.jpg';
 import p2 from '../../assets/heroSubImage2.jpg';
 import p3 from '../../assets/heroSubImage3.jpg';
 import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 function Hero() {
   const navigate = useNavigate();
+  const [currentImage, setCurrentImage] = useState(0);
+
+// Auto-slide every 4 seconds
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentImage((prev) => (prev === 4 ? 0 : prev + 1));
+  }, 4000);
+  
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <>
@@ -103,7 +119,7 @@ function Hero() {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-harafBlue" />
                 </span>
                 <span className="text-harafBlue font-dm-sans font-bold text-[11px] uppercase tracking-[0.2em]">
-                  Serving rural communities since 2012
+                  Serving rural communities since 2016
                 </span>
               </div>
             </div>
@@ -150,112 +166,163 @@ function Hero() {
            
 
           </div>
+          
+            {/* ── RIGHT: Image & floating chips ──────────────────── */}
+            <div className="h-img w-full lg:w-[48%] flex items-center justify-center lg:justify-end relative"
+              style={{ minHeight: 460 }}>
 
-          {/* ── RIGHT: Image & floating chips ──────────────────── */}
-          <div className="h-img w-full lg:w-[48%] flex items-center justify-center lg:justify-end relative"
-            style={{ minHeight: 460 }}>
-
-            {/* Dot grid decoration — top left of the image zone */}
-            <div className="absolute top-2 left-0 pointer-events-none z-0"
-              style={{
-                backgroundImage: 'radial-gradient(circle, #1A78C230 1.4px, transparent 1.4px)',
-                backgroundSize: '16px 16px',
-                width: 100, height: 100,
-              }}
-            />
-
-            {/* Pale blue rectangle behind */}
-            <div className="absolute right-0 rounded-3xl z-0"
-              style={{
-                top: '6%', width: '85%', height: '88%',
-                background: 'linear-gradient(145deg, #EEF5FC, #F4EDE4)',
-                boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.8)',
-              }}
-            />
-
-            {/* Heart-masked main image */}
-            <div className="relative z-10"
-              style={{
-                width:  'clamp(220px, 33vw, 390px)',
-                height: 'clamp(220px, 33vw, 390px)',
-                WebkitMaskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z'/%3E%3C/svg%3E\")",
-                WebkitMaskRepeat: 'no-repeat', WebkitMaskPosition: 'center', WebkitMaskSize: 'contain',
-                maskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z'/%3E%3C/svg%3E\")",
-                maskRepeat: 'no-repeat', maskPosition: 'center', maskSize: 'contain',
-                filter: 'drop-shadow(0 20px 40px rgba(10,61,107,0.22))',
-              }}
-            >
-              <img 
-                src={heroImage} 
-                alt="HARAF rural community outreach"
-                className="w-full h-full object-cover object-[25%_center]" 
-                width="390" 
-                height="390" 
-                fetchpriority="high" 
-                loading="eager" 
+              {/* Dot grid decoration — top left of the image zone */}
+              <div className="absolute top-2 left-0 pointer-events-none z-0"
+                style={{
+                  backgroundImage: 'radial-gradient(circle, #1A78C230 1.4px, transparent 1.4px)',
+                  backgroundSize: '16px 16px',
+                  width: 100, height: 100,
+                }}
               />
-            </div>
 
-            {/* Pulse ring */}
-            <div className="absolute z-0 rounded-full border-2 border-harafBlue/15 pointer-events-none"
-              style={{
-                top: '50%', left: '50%',
-                width: 'clamp(240px, 36vw, 420px)',
-                height: 'clamp(240px, 36vw, 420px)',
-                animation: 'pulseRing 2.8s ease-out 1.2s infinite',
-              }}
-            />
+              {/* Pale blue rectangle behind */}
+              <div className="absolute right-0 rounded-3xl z-0"
+                style={{
+                  top: '6%', width: '85%', height: '88%',
+                  background: 'linear-gradient(145deg, #EEF5FC, #F4EDE4)',
+                  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.8)',
+                }}
+              />
 
-            {/* Chip 1 — Clean Water */}
-            <div className="h-c1 absolute top-[12%] left-[2%] sm:left-[0%] z-20"
-              style={{ animation: 'heroFadeUp 0.6s ease 0.8s both, floatA 4.5s ease-in-out 1.5s infinite' }}>
-              <div className="bg-white rounded-2xl px-4 py-3 flex items-center gap-3 border border-[#D8E8F0]"
-                style={{ boxShadow: '0 8px 30px rgba(26,120,194,0.12)' }}>
-                <div className="w-10 h-10 rounded-xl bg-[#EEF5FC] flex items-center justify-center text-xl flex-shrink-0">💧</div>
-                <div>
-                  <p className="font-playfair font-bold text-primary text-sm leading-tight">Livelihood Empowerment</p>
-                  <p className="font-dm-sans text-[#8CB4D6] text-[10px] mt-0.5">50,000+ Youths</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Chip 2 — Education */}
-            <div className="h-c2 absolute bottom-[12%] right-[0%] sm:right-[2%] z-20"
-              style={{ animation: 'heroFadeUp 0.6s ease 0.95s both, floatB 4s ease-in-out 2s infinite' }}>
-              <div className="bg-white rounded-2xl px-4 py-3 flex items-center gap-3 border border-[#F0E8D8]"
-                style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.10)' }}>
-                <div className="w-10 h-10 rounded-xl bg-[#FEF3CD] flex items-center justify-center text-xl flex-shrink-0">📖</div>
-                <div>
-                  <p className="font-playfair font-bold text-primary text-sm leading-tight">Education</p>
-                  <p className="font-dm-sans text-[#8CB4D6] text-[10px] mt-0.5">5,600 children</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Chip 3 — Community count badge */}
-            <div className="h-c3 absolute top-[5%] right-[8%] sm:right-[12%] z-20"
-              style={{ animation: 'heroFadeUp 0.6s ease 1.1s both' }}>
-              <div className="bg-harafBlue rounded-2xl px-3.5 py-2.5 flex items-center gap-2.5"
-                style={{ boxShadow: '0 6px 20px rgba(26,120,194,0.4)' }}>
-                <div className="flex -space-x-1.5">
-                  {[p1, p2].map((s, i) => (
+              {/* Heart-masked image carousel */}
+              <div className="relative z-10"
+                style={{
+                  width: 'clamp(220px, 33vw, 390px)',
+                  height: 'clamp(220px, 33vw, 390px)',
+                  WebkitMaskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z'/%3E%3C/svg%3E\")",
+                  WebkitMaskRepeat: 'no-repeat', WebkitMaskPosition: 'center', WebkitMaskSize: 'contain',
+                  maskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z'/%3E%3C/svg%3E\")",
+                  maskRepeat: 'no-repeat', maskPosition: 'center', maskSize: 'contain',
+                  filter: 'drop-shadow(0 20px 40px rgba(10,61,107,0.22))',
+                  overflow: 'hidden',
+                }}
+              >
+                {/* Carousel Container */}
+                <div 
+                  className="w-full h-full transition-transform duration-500 ease-out"
+                  style={{ 
+                    transform: `translateX(-${currentImage * 100}%)`,
+                    display: 'flex',
+                  }}
+                >
+                  {[heroImage1, heroImage2, heroImage3, heroImage4, heroImage5].map((img, idx) => (
                     <img 
-                      key={i} 
-                      src={s} 
-                      alt="" 
-                      className="w-6 h-6 rounded-full border-2 border-harafBlue object-cover" 
-                      width="24" 
-                      height="24" 
-                      loading="eager" 
-                      fetchpriority="high"
+                      key={idx}
+                      src={img} 
+                      alt={`HARAF rural community outreach ${idx + 1}`}
+                      className="w-full h-full object-cover object-[25%_center] flex-shrink-0" 
+                      width="390" 
+                      height="390" 
+                      fetchpriority={idx === 0 ? "high" : "low"}
+                      loading={idx === 0 ? "eager" : "lazy"}
                     />
                   ))}
                 </div>
-                <span className="font-dm-sans font-bold text-white text-[11px] whitespace-nowrap">+10,000 families</span>
               </div>
-            </div>
 
-          </div>
+              {/* Carousel Navigation Dots */}
+              <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
+                {[0, 1, 2, 3, 4].map((idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentImage(idx)}
+                    className={`transition-all duration-300 rounded-full ${
+                      currentImage === idx 
+                        ? 'w-8 h-2 bg-harafBlue' 
+                        : 'w-2 h-2 bg-harafBlue/40 hover:bg-harafBlue/60'
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+
+              {/* Optional: Previous/Next Buttons */}
+              <button
+                onClick={() => setCurrentImage((prev) => (prev === 0 ? 4 : prev - 1))}
+                className="absolute left-[-40px] top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-300"
+                aria-label="Previous image"
+              >
+                <svg className="w-5 h-5 text-harafBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              
+              <button
+                onClick={() => setCurrentImage((prev) => (prev === 4 ? 0 : prev + 1))}
+                className="absolute right-[-40px] top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-300"
+                aria-label="Next image"
+              >
+                <svg className="w-5 h-5 text-harafBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              {/* Pulse ring */}
+              <div className="absolute z-0 rounded-full border-2 border-harafBlue/15 pointer-events-none"
+                style={{
+                  top: '50%', left: '50%',
+                  width: 'clamp(240px, 36vw, 420px)',
+                  height: 'clamp(240px, 36vw, 420px)',
+                  animation: 'pulseRing 2.8s ease-out 1.2s infinite',
+                }}
+              />
+
+              {/* Chip 1 — Clean Water */}
+              <div className="h-c1 absolute top-[12%] left-[2%] sm:left-[0%] z-20"
+                style={{ animation: 'heroFadeUp 0.6s ease 0.8s both, floatA 4.5s ease-in-out 1.5s infinite' }}>
+                <div className="bg-white rounded-2xl px-4 py-3 flex items-center gap-3 border border-[#D8E8F0]"
+                  style={{ boxShadow: '0 8px 30px rgba(26,120,194,0.12)' }}>
+                  <div className="w-10 h-10 rounded-xl bg-[#EEF5FC] flex items-center justify-center text-xl flex-shrink-0">💧</div>
+                  <div>
+                    <p className="font-playfair font-bold text-primary text-sm leading-tight">Livelihood Empowerment</p>
+                    <p className="font-dm-sans text-[#8CB4D6] text-[10px] mt-0.5">50,000+ Youths</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Chip 2 — Education */}
+              <div className="h-c2 absolute bottom-[12%] right-[0%] sm:right-[2%] z-20"
+                style={{ animation: 'heroFadeUp 0.6s ease 0.95s both, floatB 4s ease-in-out 2s infinite' }}>
+                <div className="bg-white rounded-2xl px-4 py-3 flex items-center gap-3 border border-[#F0E8D8]"
+                  style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.10)' }}>
+                  <div className="w-10 h-10 rounded-xl bg-[#FEF3CD] flex items-center justify-center text-xl flex-shrink-0">📖</div>
+                  <div>
+                    <p className="font-playfair font-bold text-primary text-sm leading-tight">Education</p>
+                    <p className="font-dm-sans text-[#8CB4D6] text-[10px] mt-0.5">5,600 children</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Chip 3 — Community count badge */}
+              <div className="h-c3 absolute top-[5%] right-[8%] sm:right-[12%] z-20"
+                style={{ animation: 'heroFadeUp 0.6s ease 1.1s both' }}>
+                <div className="bg-harafBlue rounded-2xl px-3.5 py-2.5 flex items-center gap-2.5"
+                  style={{ boxShadow: '0 6px 20px rgba(26,120,194,0.4)' }}>
+                  <div className="flex -space-x-1.5">
+                    {[p1, p2].map((s, i) => (
+                      <img 
+                        key={i} 
+                        src={s} 
+                        alt="" 
+                        className="w-6 h-6 rounded-full border-2 border-harafBlue object-cover" 
+                        width="24" 
+                        height="24" 
+                        loading="eager" 
+                        fetchpriority="high"
+                      />
+                    ))}
+                  </div>
+                  <span className="font-dm-sans font-bold text-white text-[11px] whitespace-nowrap">+10,000 families</span>
+                </div>
+              </div>
+
+</div>
+
         </div>
 
       </div>

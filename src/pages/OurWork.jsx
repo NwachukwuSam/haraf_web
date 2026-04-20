@@ -4,30 +4,17 @@ import WorkSection from '../components/ourWork/WorkSection.jsx';
 import WorkInquiry from '../components/ourWork/WorkInquiry.jsx';
 
 // Assets
-import branchThreeImage from '../assets/branchThreeImage.jpg';
+import branchThreeImage from '../assets/vaccine.jpg';
 import branchTwoImage from '../assets/branchTwoImage.jpg';
-import ruralSchoolsAndScholarshipFund from '../assets/ruralSchoolsAndScholarshipFund.png';
-import branchFiveImage from '../assets/branchFiveImage.jpg';
+import ruralSchoolsAndScholarshipFund from '../assets/sch.jpeg';
+import branchFiveImage from '../assets/health.jpg';
 import branchFourImage from '../assets/branchFourImage.jpg';
 import branchOneImage from '../assets/branchOneImage.jpg';
 
 const programmeData = [
+  
   {
     number: "01",
-    image: branchThreeImage,
-    tag: "CLEAN WATER & SANITATION",
-    tagBg: "rgba(26, 120, 194, 0.15)",
-    tagColor: "#1A78C2",
-    title: "Safe Water for Every Household.",
-    challenge: "Over 60% of rural Nigerian communities still lack access to clean, safe drinking water. Women and children walk an average of 5km daily to collect water from rivers and ponds shared with livestock — water that carries disease, costs time, and robs children of school hours.",
-    response: "We drill boreholes, install hand pumps, and build community water governance systems that ensure every point keeps running long after our team moves on. We don't just build infrastructure — we build the human capacity to manage it.",
-    testimonial: "Before the borehole, I woke at 4am every morning to fetch water before school. Now I sleep until 6am like a normal child.",
-    testimonialAuthor: "SADIYA, AGE 13 · YOBE STATE",
-    testimonialBg: "#EBF4FC",
-    isReversed: false
-  },
-  {
-    number: "02",
     image: branchTwoImage,
     tag: "FOOD SECURITY & NUTRITION",
     tagBg: "rgba(46, 158, 72, 0.15)",
@@ -41,7 +28,7 @@ const programmeData = [
     isReversed: true
   },
   {
-    number: "03",
+    number: "02",
     image: ruralSchoolsAndScholarshipFund,
     tag: "EDUCATION & LEARNING",
     tagBg: "rgba(107, 79, 160, 0.15)",
@@ -55,7 +42,7 @@ const programmeData = [
     isReversed: false
   },
   {
-    number: "04",
+    number: "03",
     image: branchFiveImage,
     tag: "HEALTHCARE & WELLNESS",
     tagBg: "rgba(232, 41, 58, 0.15)",
@@ -69,7 +56,7 @@ const programmeData = [
     isReversed: true
   },
   {
-    number: "05",
+    number: "04",
     image: branchFourImage,
     tag: "WOMEN'S ECONOMIC EMPOWERMENT",
     tagBg: "rgba(232, 86, 122, 0.15)",
@@ -83,7 +70,7 @@ const programmeData = [
     isReversed: false
   },
   {
-    number: "06",
+    number: "05",
     image: branchOneImage,
     tag: "CLIMATE-SMART AGRICULTURE",
     tagBg: "rgba(46, 158, 72, 0.15)",
@@ -95,7 +82,21 @@ const programmeData = [
     testimonialAuthor: "Rakiya Mohammed., BORNO STATE",
     testimonialBg: "#FDFAF6",
     isReversed: true
-  }
+  },
+  {
+    number: "06",
+    image: branchThreeImage,
+    tag: "LIVESTOCK HEALTH & VETERINARY SERVICES",
+    tagBg: "rgba(26, 120, 194, 0.15)",
+    tagColor: "#1A78C2",
+    title: "Livestock Vaccination and Farmer Capacity Strengthening in Adamawa State.",
+    challenge: "In many rural communities across Adamawa State, livestock farmers face recurring outbreaks of preventable animal diseases due to low vaccination coverage and limited access to veterinary services. These diseases reduce productivity, cause significant financial losses, and threaten household livelihoods. Many farmers lack the knowledge and resources to properly manage animal health, leading to avoidable deaths and weakened food security.",
+    response: "We deliver coordinated livestock vaccination campaigns while strengthening farmers’ capacity through hands-on training and extension support. By working directly with communities, we promote disease prevention, proper animal care practices, and sustainable herd management. Beyond vaccinations, we empower farmers with the knowledge and systems needed to protect their livestock, improve productivity, and build long-term resilience.",
+    testimonial: "Before the vaccinations, I used to lose many of my goats every year. Now my animals are healthy, and I no longer fear sudden losses. I can plan and grow my farm with confidence.",
+    testimonialAuthor: "SADIA, AGE 43 · YOBE STATE",
+    testimonialBg: "#EBF4FC",
+    isReversed: false
+  },
 ];
 
 function OurWork() {
