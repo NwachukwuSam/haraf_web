@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import graceTitus from '../../assets/graceTitus.jpg';
 
 const FeaturedEssay = () => {
   const navigate = useNavigate();
@@ -54,7 +55,7 @@ const FeaturedEssay = () => {
           {/* Author Info */}
           <div className="flex items-center gap-4 mb-6">
             <img 
-              src="https://i.pravatar.cc/150?u=grace" 
+              src={graceTitus} 
               alt="Mrs. Grace Titus" 
               className="w-12 h-12 rounded-full border-2 border-[#FFDD00]/20"
               width="48"
@@ -62,7 +63,7 @@ const FeaturedEssay = () => {
               loading="lazy"
             />
             <div>
-              <p className="text-base font-bold leading-none">Mrs. Grace Titus</p>
+              <p className="text-base font-bold leading-none">Mrs. Galaxy Thami</p>
               <p className="text-[11px] text-blue-200/70 font-medium mt-1 uppercase tracking-tight">
                 Founder & Executive Director
               </p>

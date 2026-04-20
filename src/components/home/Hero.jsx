@@ -1,6 +1,6 @@
 import React from 'react';
 import worldMap from '../../assets/WorldMap.svg';
-import heroImage from '../../assets/heroImage.jpg';
+import heroImage from '../../assets/loveImage.jpg';
 import p1 from '../../assets/heroSubImage1.jpg';
 import p2 from '../../assets/heroSubImage2.jpg';
 import p3 from '../../assets/heroSubImage3.jpg';
@@ -251,7 +251,7 @@ function Hero() {
                     />
                   ))}
                 </div>
-                <span className="font-dm-sans font-bold text-white text-[11px] whitespace-nowrap">+14,000 families</span>
+                <span className="font-dm-sans font-bold text-white text-[11px] whitespace-nowrap">+10,000 families</span>
               </div>
             </div>
 

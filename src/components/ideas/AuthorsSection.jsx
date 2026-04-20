@@ -2,7 +2,7 @@ import React from 'react';
 
 const authors = [
   {
-    name: "Mrs. Grace Titus",
+    name: "Mrs. Galaxy Thami",
     role: "Founder & Executive Director",
     essays: 14,
     mostRead: "Why Giving Aid Is the Wrong Frame",

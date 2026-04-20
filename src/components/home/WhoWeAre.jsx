@@ -7,11 +7,11 @@ import bottomLeftEclipse from '../../assets/mamaBaby.jpeg';
 
 const PILLARS = [
   { icon: '💧', label: 'ANC & PNC' },
-  { icon: '🌾', label: 'Food Security' },
-  { icon: '📚', label: 'Education' },
-  { icon: '🏥', label: 'Healthcare' },
-  { icon: '👩‍💼', label: 'Livelihoods' },
-  { icon: '🤝', label: 'Peace Building' },
+  { icon: '🌾', label: 'Menstrual Hygiene and Dignity' },
+  { icon: '📚', label: 'Food Security' },
+  { icon: '🏥', label: 'Education' },
+  { icon: '👩‍💼', label: 'Mobile Health care' },
+  { icon: '🤝', label: 'Livelihood Empowerment' },
 ];
 
 function WhoWeAre() {
@@ -180,10 +180,9 @@ function WhoWeAre() {
               {/* Mission body */}
               <p className="font-dm-sans text-[#B0C4D4] leading-[1.85] mb-6"
                 style={{ fontSize: 'clamp(0.9rem, 1.2vw, 1.05rem)' }}>
-                We are committed to ensuring basic informed and technologically inclined
-                non-formal and formal education for the less privileged — promoting peaceful
-                co-existence, strengthening capacity for self-help, delivering relief in
-                emergencies, and addressing discrimination in all its forms.
+                We are a non-profit organization committed to empowering girls, women, children, 
+                and youths, by providing access to livelihood opportunities and SHR/Health services,
+                ensuring quality education through integrated and inclusive programs.
               </p>
 
               {/* Pull quote */}
