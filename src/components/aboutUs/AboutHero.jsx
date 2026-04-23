@@ -20,9 +20,14 @@ const AboutHero = () => {
           <p className="text-harafYellow text-sm font-dm-sans font-bold tracking-[0.2em] uppercase mb-4">
             OUR STORY
           </p>
-          <h1 className="text-white text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-playfair font-black leading-tight mb-8">
-            We Are HARAF.
-          </h1>
+         <div className="text-white relative">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-playfair font-black">
+              We Are HARAF.
+            </h1>
+            <span className='text-xl absolute -mt-1 font-dm-sans bg-zinc-600 p-1'>
+              HOPE AND RURAL AID FOUNDATION
+            </span>
+          </div> <br />
           <p className="text-white text-lg md:text-xl xl:text-[22px] font-cormorant italic leading-relaxed max-w-xl">
            Rooted in the heart of rural Nigeria, where stories are written in earth and resilience
           </p>

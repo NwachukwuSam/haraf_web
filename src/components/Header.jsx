@@ -35,7 +35,7 @@ function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[60] w-full flex items-center justify-between px-6 md:px-8 xl:px-16 py-4 border-b border-b-[rgba(26,120,194,0.12)] bg-[#F8FAFC] font-dm-sans" style={{ height: '88px' }}>
+      <header className="fixed top-0 left-0 right-0 z-[60] h-{} w-full flex items-center justify-between px-6 md:px-8 xl:px-16 py-4 border-b border-b-[rgba(26,120,194,0.12)] bg-[#F8FAFC] font-dm-sans" style={{ height: '80px' }}>
         <div className="flex items-center">
           <Link to="/">
             <div className='flex space-x-2 items-center'>

@@ -1,20 +1,133 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import worldMap from '../../assets/WorldMap.svg';
 import middleEclipse from '../../assets/ourMissionMiddleEclipse.jpg';
 import topRightEclipse from '../../assets/ourMissionTopRightEclipse.jpg';
 import bottomLeftEclipse from '../../assets/mamaBaby.jpeg';
 
+// Import or define images for each pillar
+import ancImage from '../../assets/anc-pnc.webp';
+import menstrualImage from '../../assets/menstrual-hygiene.webp';
+import foodImage from '../../assets/food-security.jpg';
+import educationImage from '../../assets/school.JPEG';
+import mobileImage from '../../assets/loveImage.JPG';
+import livelihoodImage from '../../assets/heroSubImage3.jpg';
+
 const PILLARS = [
-  { icon: '💧', label: 'ANC & PNC' },
-  { icon: '🌾', label: 'Menstrual Hygiene and Dignity' },
-  { icon: '📚', label: 'Food Security' },
-  { icon: '🏥', label: 'Education' },
-  { icon: '👩‍💼', label: 'Mobile Health care' },
-  { icon: '🤝', label: 'Livelihood Empowerment' },
+  { icon: '💧', label: 'ANC & PNC', key: 'anc' },
+  { icon: '🌾', label: 'Menstrual Hygiene and Dignity', key: 'menstrual' },
+  { icon: '📚', label: 'Food Security', key: 'food' },
+  { icon: '🏥', label: 'Education', key: 'education' },
+  { icon: '👩‍💼', label: 'Mobile Health care', key: 'mobile' },
+  { icon: '🤝', label: 'Livelihood Empowerment', key: 'livelihood' },
 ];
 
+const PILLAR_CONTENT = {
+  anc: {
+    title: 'ANC & PNC (Antenatal and Postnatal Care)',
+    image: ancImage,
+    content: `At HARAF, maternal and newborn health is approached as a continuum of care, not a one-time intervention. The organization recognizes that preventable maternal and neonatal deaths are often the result of delayed care-seeking, weak referral systems, and limited access to skilled providers—especially in underserved and rural communities.
+
+Program Strategy: HARAF deploys a community-to-facility model that ensures women are identified early in pregnancy, enrolled into antenatal care systems, supported through safe delivery, and monitored during the critical postnatal period. Community Health Volunteers (CHVs) and frontline workers are trained to conduct household-level tracking, ensuring no pregnant woman is left behind.
+
+Core Interventions: Early pregnancy identification and ANC enrollment campaigns, routine antenatal services (screenings, immunization, nutrition counseling), birth preparedness planning (including emergency transport mapping), skilled birth attendance advocacy and facility linkage, postnatal follow-ups (0–48 hours, 7 days, 6 weeks), detection and referral of complications (e.g., preeclampsia, infections).
+
+Systems Strengthening: HARAF collaborates with local health authorities to improve data tracking and reporting systems, strengthen referral pathways between communities and facilities, and support training and supervision of midwives and health workers.
+
+Long-Term Impact: Sustained reduction in maternal and neonatal mortality, improved health-seeking behavior among women, stronger primary healthcare systems.`,
+  },
+  menstrual: {
+    title: 'Menstrual Hygiene and Dignity',
+    image: menstrualImage,
+    content: `HARAF treats menstrual health not just as a hygiene issue, but as a critical intersection of gender equality, education, and human rights. In many communities, menstruation remains surrounded by stigma, misinformation, and silence—leading to school absenteeism, reduced confidence, and social exclusion.
+
+Program Philosophy: Every girl deserves to manage her menstruation with dignity, safety, and confidence. HARAF's approach combines product access, education, and cultural transformation.
+
+Core Interventions: Distribution of menstrual hygiene kits (including reusable, eco-friendly options), school-based menstrual health education sessions, establishment of "safe spaces" for adolescent girls, training of peer educators and community champions, engagement with parents, teachers, and religious leaders to shift harmful norms, improvement of WASH facilities in schools and communities.
+
+Behavioral Change Approach: HARAF uses storytelling, peer learning, and community dialogue to normalize conversations around menstruation, break myths and misconceptions, and promote positive hygiene practices.
+
+Long-Term Impact: Increased school attendance and retention among girls, improved self-esteem and participation, reduced stigma and gender-based discrimination.`,
+  },
+  food: {
+    title: 'Food Security',
+    image: foodImage,
+    content: `HARAF addresses food insecurity through a dual approach: immediate relief and long-term resilience building. The organization understands that hunger is both a humanitarian issue and a structural challenge linked to poverty, climate change, and limited agricultural capacity.
+
+Program Strategy: HARAF integrates nutrition-sensitive and livelihood-driven interventions to ensure households not only access food but can sustainably produce it.
+
+Core Interventions: Emergency food assistance for vulnerable populations, community-based management of acute malnutrition (CMAM), nutrition education for pregnant women and caregivers, agricultural support (seeds, tools, irrigation techniques), promotion of climate-smart and regenerative farming practices, household kitchen gardens and small livestock support.
+
+Resilience Building: HARAF empowers communities to diversify food sources, improve storage and preservation techniques, and adapt to climate variability.
+
+Long-Term Impact: Reduced malnutrition and stunting rates, increased household food self-sufficiency, strengthened local agricultural economies.`,
+  },
+  education: {
+    title: 'Education',
+    image: educationImage,
+    content: `Education is central to HARAF's mission of unlocking human potential and driving generational transformation. The organization prioritizes inclusive access, especially for marginalized groups such as girls, out-of-school children, and conflict-affected populations.
+
+Program Strategy: HARAF adopts a holistic education model that addresses access, quality, and retention simultaneously.
+
+Core Interventions: Enrollment drives and back-to-school campaigns, provision of learning materials and scholarships, support for non-formal and alternative education pathways, teacher training and capacity development, digital literacy and 21st-century skills programs, school infrastructure support (where needed).
+
+Equity Focus: Special emphasis is placed on girl-child education, inclusive education for children with disabilities, and reintegration of out-of-school children.
+
+Long-Term Impact: Improved literacy and numeracy outcomes, reduced dropout rates, creation of a skilled and empowered generation.`,
+  },
+  mobile: {
+    title: 'Mobile Healthcare',
+    image: mobileImage,
+    content: `HARAF bridges healthcare access gaps by bringing services directly to communities through mobile and outreach-based delivery models. This is particularly critical in areas where distance, cost, and infrastructure limit access to care.
+
+Program Strategy: Healthcare is decentralized—moving from static facilities to people-centered outreach systems.
+
+Core Interventions: Mobile clinic deployments to underserved areas, routine immunization and vaccination campaigns, screening for communicable and non-communicable diseases, maternal and child health services, health education and awareness campaigns, integration of digital health tools for tracking and follow-up.
+
+Access Innovation: HARAF leverages data-driven mapping to identify underserved communities, partnerships with local health systems, and community mobilization to ensure high service uptake.
+
+Long-Term Impact: Increased healthcare coverage, early disease detection and reduced complications, reduced health disparities across regions.`,
+  },
+  livelihood: {
+    title: 'Livelihood Empowerment',
+    image: livelihoodImage,
+    content: `HARAF's livelihood program is designed to move individuals and households from dependency to productivity and economic independence. It focuses on equipping beneficiaries with the skills, tools, and networks needed to thrive in a competitive and evolving economy.
+
+Program Strategy: The program combines skills development, enterprise support, and financial inclusion.
+
+Core Interventions: Vocational and technical skills training (tailored to market demand), entrepreneurship development and business incubation, access to startup kits, grants, or micro-financing, formation of savings and loan groups (VSLA models), financial literacy and business management training, market linkage and value chain integration.
+
+Target Groups: Youth (especially unemployed graduates and school leavers), women (with focus on economic inclusion), vulnerable households.
+
+Long-Term Impact: Increased income and financial stability, reduced poverty and vulnerability, growth of local enterprises and economies.`,
+  },
+};
+
 function WhoWeAre() {
+  const [selectedPillar, setSelectedPillar] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handlePillarClick = (pillar) => {
+    const content = PILLAR_CONTENT[pillar.key];
+    if (content) {
+      setSelectedPillar(content);
+      setIsModalOpen(true);
+      document.body.style.overflow = '';
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedPillar(null);
+    document.body.style.overflow = 'unset';
+  };
+
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
+
   return (
     <>
       <style>{`
@@ -30,9 +143,33 @@ function WhoWeAre() {
           0%, 100% { transform: translateY(0px); }
           50%       { transform: translateY(-6px); }
         }
+        @keyframes modalFadeIn {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+        @keyframes modalSlideUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
         .wwa-left  { animation: wwaSlideIn 0.8s ease 0.1s both; }
         .wwa-right { animation: wwaFadeUp  0.8s ease 0.3s both; }
         .wwa-pill  { animation: wwaFadeUp  0.5s ease var(--d, 0s) both; }
+        
+        /* Custom scrollbar for modal */
+        .modal-scroll::-webkit-scrollbar {
+          width: 6px;
+        }
+        .modal-scroll::-webkit-scrollbar-track {
+          background: rgba(255,255,255,0.05);
+          border-radius: 3px;
+        }
+        .modal-scroll::-webkit-scrollbar-thumb {
+          background: #1E78C2;
+          border-radius: 3px;
+        }
+        .modal-scroll::-webkit-scrollbar-thumb:hover {
+          background: #155a96;
+        }
       `}</style>
 
       <div className="relative w-full overflow-hidden bg-[#0A1929]">
@@ -196,16 +333,17 @@ function WhoWeAre() {
                 </cite>
               </blockquote>
 
-              {/* Programme pills */}
+              {/* Programme pills - NOW CLICKABLE */}
               <div className="flex flex-wrap gap-2 mb-10">
-                {PILLARS.map(({ icon, label }, i) => (
-                  <span
+                {PILLARS.map(({ icon, label, key }, i) => (
+                  <button
                     key={label}
-                    className="wwa-pill flex items-center gap-1.5 bg-white/[0.06] border border-white/10 text-white/70 font-dm-sans text-[11px] px-3 py-1.5 rounded-full hover:bg-harafBlue/20 hover:border-harafBlue/40 hover:text-white transition-all cursor-default"
+                    onClick={() => handlePillarClick({ icon, label, key })}
+                    className="wwa-pill flex items-center gap-1.5 bg-white/[0.06] border border-white/10 text-white/70 font-dm-sans text-[11px] px-3 py-1.5 rounded-full hover:bg-harafBlue/20 hover:border-harafBlue/40 hover:text-white transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-harafBlue/50"
                     style={{ '--d': `${0.4 + i * 0.07}s` } }
                   >
                     <span>{icon}</span> {label}
-                  </span>
+                  </button>
                 ))}
               </div>
 
@@ -227,6 +365,121 @@ function WhoWeAre() {
 
         </div>
       </div>
+
+      {/* ── MODAL ──────────────────────────────────────────────────────── */}
+      {isModalOpen && selectedPillar && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 pt-28"
+          style={{ animation: 'modalFadeIn 0.2s ease' }}
+          onClick={handleBackdropClick}
+        >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/90 backdrop-blur-md" />
+          
+          {/* Modal Container */}
+          <div 
+            className="relative z-10 w-full max-w-4xl max-h-[85vh] bg-gradient-to-br from-[#0A1929] to-[#0F2236] rounded-2xl overflow-hidden shadow-2xl border border-white/20"
+            style={{ animation: 'modalSlideUp 0.3s ease' }}
+          >
+            {/* Header with Image Banner */}
+            <div className="relative">
+              {/* Banner Image */}
+              <div className="relative h-48 md:h-64 overflow-hidden">
+                {selectedPillar.image ? (
+                  <img 
+                    src={selectedPillar.image} 
+                    alt={selectedPillar.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-r from-harafBlue/30 to-purple-500/30" />
+                )}
+                {/* Dark overlay for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1929] via-black/50 to-transparent" />
+                
+                {/* Close button - positioned absolute for clean look */}
+                <button
+                  onClick={closeModal}
+                  className="absolute top-4 right-4 z-20 text-white/80 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full backdrop-blur-sm bg-black/30"
+                  aria-label="Close"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                
+                {/* Title overlay - NOW VISIBLE */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 pb-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-8 h-0.5 bg-harafYellow" />
+                    <span className="text-harafYellow text-xs font-dm-sans font-bold uppercase tracking-wider">
+                      Program Overview
+                    </span>
+                  </div>
+                  <h3 className="font-playfair font-bold text-white text-2xl md:text-3xl lg:text-4xl leading-tight">
+                    {selectedPillar.title}
+                  </h3>
+                </div>
+              </div>
+            </div>
+            
+            {/* Content - Scrollable */}
+            <div className="modal-scroll overflow-y-auto p-6 md:p-8" style={{ maxHeight: 'calc(90vh - 320px)' }}>
+              <div className="prose prose-invert prose-sm max-w-none">
+                {selectedPillar.content.split('\n\n').map((paragraph, idx) => {
+                  // Check if paragraph starts with a bold heading pattern
+                  const boldMatch = paragraph.match(/^([A-Z][A-Za-z\s/]+?):\s*(.*)$/s);
+                  if (boldMatch) {
+                    return (
+                      <div key={idx} className="mb-6">
+                        <h4 className="font-playfair font-bold text-harafBlue text-lg mb-2 border-l-3 border-harafBlue pl-3">
+                          {boldMatch[1]}
+                        </h4>
+                        <p className="font-dm-sans text-[#B0C4D4] leading-relaxed text-base">
+                          {boldMatch[2]}
+                        </p>
+                      </div>
+                    );
+                  }
+                  // Check for bullet points or lists
+                  if (paragraph.includes('•')) {
+                    return (
+                      <div key={idx} className="mb-4">
+                        <p className="font-dm-sans text-[#B0C4D4] leading-relaxed text-base">
+                          {paragraph.split('•').map((item, itemIdx) => {
+                            if (itemIdx === 0) return item;
+                            return (
+                              <span key={itemIdx} className="block ml-4 mb-1">
+                                <span className="text-harafBlue mr-2">•</span>
+                                {item.trim()}
+                              </span>
+                            );
+                          })}
+                        </p>
+                      </div>
+                    );
+                  }
+                  return (
+                    <p key={idx} className="font-dm-sans text-[#B0C4D4] leading-relaxed mb-5 text-base">
+                      {paragraph}
+                    </p>
+                  );
+                })}
+              </div>
+            </div>
+            
+            {/* Footer */}
+            <div className="bg-[#0A1929]/95 backdrop-blur-sm border-t border-white/10 px-6 py-4 flex justify-end gap-3">
+              <button
+                onClick={closeModal}
+                className="px-6 py-2.5 bg-harafBlue hover:bg-harafBlue/80 text-white font-dm-sans font-bold text-sm rounded-lg transition-all transform hover:scale-105"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
