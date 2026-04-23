@@ -9,8 +9,8 @@ import bottomLeftEclipse from '../../assets/mamaBaby.jpeg';
 import ancImage from '../../assets/anc-pnc.webp';
 import menstrualImage from '../../assets/menstrual-hygiene.webp';
 import foodImage from '../../assets/food-security.jpg';
-import educationImage from '../../assets/school.JPEG';
-import mobileImage from '../../assets/loveImage.JPG';
+import educationImage from '../../assets/school.jpeg';
+import mobileImage from '../../assets/loveImage.jpg';
 import livelihoodImage from '../../assets/heroSubImage3.jpg';
 
 const PILLARS = [
