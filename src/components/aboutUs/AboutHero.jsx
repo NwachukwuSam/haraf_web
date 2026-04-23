@@ -24,7 +24,7 @@ const AboutHero = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-playfair font-black">
               We Are HARAF.
             </h1>
-            <span className='text-xl absolute -mt-1 font-dm-sans bg-zinc-600 p-1'>
+            <span className='text-lg absolute -mt-1 font-dm-sans'>
               HOPE AND RURAL AID FOUNDATION
             </span>
           </div> <br />
