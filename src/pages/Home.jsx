@@ -1,6 +1,4 @@
 import React from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import Hero from '../components/home/Hero'
 import WhoWeAre from '../components/home/WhoWeAre'
 import Impact from '../components/home/Impact'
@@ -11,6 +9,7 @@ import Partners from '../components/home/Partners'
 import JoinMovement from '../components/home/JoinMovement'
 import LatestNews from '../components/home/LatestNews'
 import ContactForm from '../components/home/ContactForm'
+import NewsletterSignup from '../components/essay/NewsletterSignup'
 
 function Home() {
   return (
@@ -25,7 +24,7 @@ function Home() {
         <Partners />
         <JoinMovement />
         <LatestNews />
-        <ContactForm />
+       <NewsletterSignup/>
       </main>
     </div>
   )
