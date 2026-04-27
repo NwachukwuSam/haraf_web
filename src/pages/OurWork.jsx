@@ -6,7 +6,7 @@ import WorkInquiry from '../components/ourWork/WorkInquiry.jsx';
 // Assets
 import branchThreeImage from '../assets/vaccine.jpg';
 import branchTwoImage from '../assets/branchTwoImage.jpg';
-import ruralSchoolsAndScholarshipFund from '../assets/sch.jpeg';
+import ruralSchoolsAndScholarshipFund from '../assets/sch.png';
 import branchFiveImage from '../assets/health.jpg';
 import branchFourImage from '../assets/branchFourImage.jpg';
 import branchOneImage from '../assets/branchOneImage.jpg';

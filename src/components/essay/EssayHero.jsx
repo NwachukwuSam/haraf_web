@@ -63,7 +63,7 @@ export default function EssayHero() {
 
             <div>
               <p className="font-semibold text-white">
-                Mrs. Grace Titus
+                Mrs. Galaxy Thami
               </p>
 
               <p className="text-blue-200 text-sm">

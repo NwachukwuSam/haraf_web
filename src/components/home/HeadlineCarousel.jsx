@@ -1,14 +1,17 @@
 import React, { useEffect, useRef } from 'react';
 import headlineImage1 from '../../assets/headlineImage1.jpg';
 import headlineImage2 from '../../assets/headlineImage2.jpg';
-import headlineImage3 from '../../assets/headlineImage3.jpg';
+import headlineImage3 from '../../assets/heroLove3.png';
 import headlineImage4 from '../../assets/headlineImage4.jpg';
 import headlineImage5 from '../../assets/headlineImage5.jpg';
 import headlineImage6 from '../../assets/headlineImage6.jpg';
+import headlineImage7 from '../../assets/heroLove.png';
+import headlineImage8 from '../../assets/heroLove2.png';
 
 const images = [
   headlineImage1, headlineImage2, headlineImage3,
   headlineImage4, headlineImage5, headlineImage6,
+  headlineImage7, headlineImage8
 ];
 
 // Duplicate the array for a seamless loop
@@ -27,9 +30,6 @@ const HeadlineCarousel = () => {
       
       scrollPos -= speed;
       
-      // When the first set of images has fully passed, reset
-      // Each image is 280px + 24px gap = 304px (Mobile)
-      // md: 400px + 32px gap = 432px (Desktop)
       const itemWidth = window.innerWidth < 768 ? 304 : 432;
       const resetPoint = -(itemWidth * images.length);
       

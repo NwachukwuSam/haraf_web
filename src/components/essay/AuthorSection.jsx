@@ -22,7 +22,7 @@ export default function AuthorSection() {
 
           <div>
             <p className="font-semibold text-lg">
-              Mrs. Grace Titus
+              Mrs. Galaxy Thami
             </p>
 
             <p className="text-blue-600 text-sm">
