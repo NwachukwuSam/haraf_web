@@ -51,91 +51,117 @@ export default function EssayWriteUp() {
         {/* ARTICLE TEXT */}
         <div className="col-span-1 lg:col-span-7 font-serif text-[#4a3f38] leading-relaxed text-[16px] sm:text-[17px]">
 
+          {/* Title Section */}
+          <div className="mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2c3e50] font-sans leading-tight mb-4">
+              Built on Resolve, Growing Through Service: My Reflection on Capacity Building at HARAF
+            </h1>
+            <p className="text-blue-600 text-base sm:text-lg font-medium mt-2">
+              By Galaxy Thami, Founder & Executive Director, HARAF
+            </p>
+            <div className="h-px w-16 bg-blue-300 mt-6"></div>
+          </div>
+
+          {/* Drop cap first paragraph */}
           <p className="first-letter:text-6xl sm:first-letter:text-[80px] first-letter:float-left first-letter:mr-4 first-letter:leading-none first-letter:text-blue-600">
-
-            In the summer of 2019, I sat in a meeting room in Abuja with twelve
-            representatives from international donor organisations, each of whom
-            had flown in from a different continent to discuss rural poverty in
-            Nigeria. Not one of them had ever spent a night in a rural Nigerian
-            community. I remember thinking: this is the frame. This is exactly
-            the problem.
+            I founded HARAF on three things: determination, hard work, and a deep, restless passion for humanitarian service. 
+            I started with a conviction that crisis-affected people in Borno, Adamawa, and Yobe States deserved a faster, more 
+            dignified response; and that we could be the ones to deliver it if we were willing to outwork the problem.  
+            In those early days of emergency response, the needs were overwhelming. Displaced families arriving with nothing. 
+            Communities cut off by insecurity. Coordination meetings where decisions had to be made in minutes, not weeks. 
+            I learned quickly that passion gets you to the field, but only capacity keeps you effective once you're there.
           </p>
 
-          <p className="mt-10">
+          {/* Frederick Douglass quote */}
+          <div className="mt-10 pl-6 border-l-4 border-blue-400 italic text-gray-600">
+            <p className="text-lg">
+              "If there is no struggle, there is no progress."
+            </p>
+            <p className="text-sm mt-1 text-gray-500">— Frederick Douglass</p>
+          </div>
 
-            The word "beneficiary" entered the development sector’s vocabulary
-            sometime in the 1970s, borrowed from the legal world of trusts and
-            wills. A beneficiary, in that context, is someone who receives
-            something they did not earn — a windfall, an inheritance, a gift from
-            someone with more.
-            The word carries within it an assumption of passivity. You do not
-            work to become a beneficiary. You simply are one.
+          <p className="mt-6">
+            HARAF was born in struggle, and it is through struggle that we keep progressing; by building our people as we respond.  
+            Emergency response leaves no room for delay. When floods sweep through communities in Adamawa, when conflict displaces 
+            thousands overnight in Borno, when sudden arrivals overwhelm camps in Yobe, our staff must think clearly under pressure, 
+            adapt instantly, and act decisively. That level of readiness isn't accidental. It is trained. It is practiced. It is built, 
+            one staff member at a time.
           </p>
 
-          <p className="mt-10">
-
-            When we apply this word to communities — living, breathing, working,
-             striving communities of human beings — we make a category error so 
-             fundamental that it shapes every decision that follows. Who decides
-              what they need? Who designs the programme? Who evaluates success? 
-              The answer, in almost every case, is not the "beneficiary." And
-               this is not an accident. It is the logic of the frame.
+          <p className="mt-6">
+            That is why capacity building at HARAF is not a workshop we schedule after the emergency. It is the emergency response. 
+            Every deployment is a classroom. Every rapid assessment is a test of judgment. Every post-distribution monitoring exercise 
+            is a chance to sharpen how we listen.
           </p>
 
-          <p className="mt-10">
+          {/* Vince Lombardi quote */}
+          <div className="mt-10 pl-6 border-l-4 border-blue-400 italic text-gray-600">
+            <p className="text-lg">
+              "The only place success comes before work is in the dictionary."
+            </p>
+            <p className="text-sm mt-1 text-gray-500">— Vince Lombardi</p>
+          </div>
 
-            I have watched this play out in our own work at HARAF in ways that
-             were uncomfortable to confront. In our early years, we were guilty
-              of the same thing. We came with plans. We came with timelines. 
-              We came with deliverables and logframes and reporting templates.
-               And we presented them to communities as though we were doing them
-                a favour simply by showing up.
+          <p className="mt-6">
+            Our teams work, they learn, and then they work again; better.  
+            I've watched a program assistant become a field lead because we trusted him to coordinate a sudden influx in a transit site. 
+            I've seen a security focal point turn into a community negotiator because he understood that access is earned through 
+            relationships, not just clearances. I've seen drivers become first responders because we trained them in basic first aid 
+            and protection principles. This is what I mean when I say we don't just hire staff; we grow humanitarians.
           </p>
 
-          <p className="mt-10 text-blue-400">
-            The Language We Use Is the Policy We Make
+          {/* HARAF's approach section */}
+          <p className="mt-10 text-blue-600 font-semibold text-lg">
+            HARAF's Approach to Growth
           </p>
-          <div className="h-0.5 w-full bg-blue-200 mt-1"></div>
+          <div className="h-0.5 w-full bg-blue-200 mt-1 mb-6"></div>
 
-          <p className="mt-10">
-           There is a concept in linguistics called the Sapir-Whorf hypothesis — 
-            the idea that the language we use shapes the reality we perceive. 
-            I am not a linguist, and I am not making a purely academic argument.
-             I am saying something more practical: the words we use in the development
-              sector determine what we see, what we measure, and ultimately what we build.
-               And right now, the words are wrong.
-          </p>
-
-          <p className="mt-10">
-          Consider how differently a programme feels when it is designed for 
-          "community members" versus designed for "beneficiaries." The first 
-          implies that the people involved have a stake in the outcome — that they
-           belong to something, and that their belonging gives them voice.
-            The second implies they are fortunate to be included at all. 
-            These are not subtle distinctions. They ripple through everything:
-             who sits in the design meetings, whose feedback is weighted, who gets
-              to say when a programme has succeeded.
+          <p className="mt-2">
+            HARAF's approach to growth is deliberate. First, we build for uncertainty. Crisis response in the BAY states demands 
+            staff who can plan and pivot in the same breath. So, we train in scenario planning, adaptive management, and 
+            decision-making under stress. Second, we break silos. An emergency does not respect departments. A finance officer 
+            needs to grasp why speed of cash transfer matters when markets are collapsing. When we learn across functions, we 
+            respond as one. Third, we measure growth in lives reached, not certificates earned. If a training does not make us 
+            faster, safer, or more accountable to crisis-affected people, we redesign it.
           </p>
 
-           <p className="mt-10 text-blue-400">
-            The Evidence we're Building      
-          </p>
-          <div className="h-0.5 w-full bg-blue-200 mt-1"></div>
+          {/* Peter Drucker quote */}
+          <div className="mt-10 pl-6 border-l-4 border-blue-400 italic text-gray-600">
+            <p className="text-lg">
+              "We now accept the fact that learning is a lifelong process of keeping abreast of change."
+            </p>
+            <p className="text-sm mt-1 text-gray-500">— Peter Drucker</p>
+          </div>
 
-          <p className="mt-10">
-             None of this is easy. Changing language inside large 
-             institutions is slow, political work. Donors have reporting
-              templates that use the word "beneficiary." Governments have
-               policies that use it. We ourselves have ten years of documents
-                that use it.
+          <p className="mt-6">
+            In the BAY states, change is the only constant. New displacements. New access constraints. New coordination structures. 
+            If HARAF staff stop learning, we stop being useful. I will not let that happen on my watch.
           </p>
 
-          <p className="mt-10">
-             But I believe — and our field experience increasingly supports 
-             this — that the communities we work with change faster, sustain
-              more, and build more when they are approached as partners rather 
-              than recipients. The evidence is not merely anecdotal. We have been 
-              tracking it. We will publish it.
+          <p className="mt-6">
+            I founded HARAF because I believed hard work and determination could turn compassion into action. I still believe it. 
+            But now I also know this: sustained action requires sustained growth. My role as Founder and Executive Director is 
+            to make sure every HARAF staff member has the tools, mentorship, and space to become the kind of responder I would 
+            trust with my own family.
+          </p>
+
+          <p className="mt-6">
+            Our mission is urgent, but our investment in people is long-term. The same determination that drove me to register 
+            HARAF is the determination I ask from each colleague; to learn relentlessly, to lead humbly, and to treat every 
+            emergency as both a duty and a discipline. Because the people of Borno, Adamawa, and Yobe are not waiting for 
+            perfect conditions. They are waiting for us. And we will meet them prepared, principled, and growing.
+          </p>
+
+          {/* Aristotle quote */}
+          <div className="mt-12 pt-4 border-t border-blue-100">
+            <p className="text-xl italic text-gray-700">
+              "Excellence is never an accident. It is always the result of high intention, sincere effort, and intelligent execution."
+            </p>
+            <p className="text-sm mt-2 text-gray-500">— Aristotle</p>
+          </div>
+
+          <p className="mt-8 font-medium text-blue-700">
+            That is how HARAF began. That is how we will endure.
           </p>
 
         </div>
@@ -146,78 +172,79 @@ export default function EssayWriteUp() {
 
           {/* ABOUT THIS ESSAY */}
           <div>
-
             <h3 className="text-xs tracking-[0.3em] text-blue-600 mb-4">
               ABOUT THIS ESSAY
             </h3>
-
             <div className="text-gray-700 text-sm space-y-3">
-              <p><strong>Topic:</strong> Language & Framing in Development</p>
-              <p><strong>Published:</strong> March 1, 2026</p>
-              <p><strong>Length:</strong> ~2,400 words</p>
-              <p><strong>Category:</strong> Aid Reform</p>
+              <p><strong>Author:</strong> Galaxy Thami</p>
+              <p><strong>Role:</strong> Founder & Executive Director, HARAF</p>
+              <p><strong>Topic:</strong> Capacity Building & Humanitarian Response</p>
+              <p><strong>Published:</strong> March 2026</p>
+              <p><strong>Region:</strong> Borno, Adamawa & Yobe States (BAY)</p>
             </div>
-
           </div>
-
 
           {/* IN THIS ESSAY */}
           <div>
-
             <h3 className="text-xs tracking-[0.3em] text-blue-600 mb-4">
               IN THIS ESSAY
             </h3>
-
             <ul className="space-y-3 text-gray-700 text-sm">
-
               <li className="hover:text-blue-600 cursor-pointer">
-                → The Language We Use
+                → Founding HARAF: Determination & Service
               </li>
-
               <li className="hover:text-blue-600 cursor-pointer">
-                → What Communities Told Us
+                → Why Capacity Building IS Emergency Response
               </li>
-
               <li className="hover:text-blue-600 cursor-pointer">
-                → Three Words That Work Better
+                → Growing Humanitarians: Real Stories
               </li>
-
               <li className="hover:text-blue-600 cursor-pointer">
-                → The Evidence We're Building
+                → HARAF's Three Pillars of Growth
               </li>
-
+              <li className="hover:text-blue-600 cursor-pointer">
+                → Sustaining Action Through Learning
+              </li>
             </ul>
-
           </div>
 
+          {/* KEY QUOTES */}
+          <div>
+            <h3 className="text-xs tracking-[0.3em] text-blue-600 mb-4">
+              KEY QUOTES
+            </h3>
+            <div className="space-y-4 text-sm text-gray-600 italic">
+              <p className="border-l-2 border-blue-300 pl-3">
+                "If there is no struggle, there is no progress."
+              </p>
+              <p className="border-l-2 border-blue-300 pl-3">
+                "The only place success comes before work is in the dictionary."
+              </p>
+              <p className="border-l-2 border-blue-300 pl-3">
+                "Excellence is never an accident."
+              </p>
+            </div>
+          </div>
 
           {/* SHARE BUTTONS */}
           <div>
-
             <h3 className="text-xs tracking-[0.3em] text-blue-600 mb-4">
               SHARE THIS ESSAY
             </h3>
-
             <div className="grid grid-cols-2 gap-3">
-
               <button className="border-blue-200 border bg-blue-100 p-3 text-sm hover:bg-blue-200 hover:scale-105 transition-all duration-200">
                 TWITTER/X
               </button>
-
               <button className="border-blue-200 border bg-blue-100 p-3 text-sm hover:bg-blue-200 hover:scale-105 transition-all duration-200">
                 INSTAGRAM
               </button>
-
               <button className="border-blue-200 border bg-blue-100 p-3 text-sm hover:bg-blue-200 hover:scale-105 transition-all duration-200">
                 WHATSAPP
               </button>
-
               <button className="border-blue-200 border bg-blue-100 p-3 text-sm hover:bg-blue-200 hover:scale-105 transition-all duration-200">
                 COPY LINK
               </button>
-
             </div>
-
           </div>
 
         </div>
@@ -225,5 +252,5 @@ export default function EssayWriteUp() {
       </div>
 
     </div>
-  )
+  );
 }

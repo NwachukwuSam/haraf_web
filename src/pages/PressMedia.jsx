@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 const imageModules = import.meta.glob('../assets/Haraf/Haraf (*).jpg', { eager: true });
 
-const ALL_IMAGES = Array.from({ length: 204 }, (_, i) => {
+const ALL_IMAGES = Array.from({ length: 129 }, (_, i) => {
   const num = i + 1;
   const key = `../assets/Haraf/Haraf (${num}).jpg`;
   const mod = imageModules[key];
@@ -291,7 +291,7 @@ export default function PressMedia() {
               </p>
               <h1 className="font-playfair font-bold text-white leading-[1.06] mb-5">
                 <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Ten Years.</span>
-                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl italic text-harafBlue/80">204 Moments.</span>
+                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl italic text-harafBlue/80">Countless Moments.</span>
                 <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl">One Story.</span>
               </h1>
               <p className="font-cormorant italic text-white/50 text-lg sm:text-xl max-w-xl leading-relaxed mb-8">
@@ -304,7 +304,7 @@ export default function PressMedia() {
               style={{ animation: 'heroReveal 0.7s ease 0.2s both' }}
             >
               <div>
-                <p className="font-playfair font-bold text-white text-3xl">204</p>
+                <p className="font-playfair font-bold text-white text-3xl">129</p>
                 <p className="font-dm-sans text-white/40 text-xs uppercase tracking-widest mt-0.5">Photographs</p>
               </div>
               <div>

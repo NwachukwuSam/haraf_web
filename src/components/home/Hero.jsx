@@ -3,26 +3,32 @@ import worldMap from '../../assets/WorldMap.svg';
 import heroImage1 from '../../assets/loveImage.jpg';
 import heroImage2 from '../../assets/haraf.JPG';
 import heroImage3 from '../../assets/headlineImage6.jpg';
-import heroImage4 from '../../assets/laugh.jpg';
-import heroImage5 from '../../assets/we.jpg';
+import heroImage4 from '../../assets/heroLove.png';
+import heroImage5 from '../../assets/heroLove2.png';
+import heroImage6 from '../../assets/heroLove3.png';
 
 import p1 from '../../assets/heroSubImage1.jpg';
 import p2 from '../../assets/heroSubImage2.jpg';
 import p3 from '../../assets/heroSubImage3.jpg';
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef  } from 'react';
+import { useCounter } from '../UseCounter';
 
 function Hero() {
   const navigate = useNavigate();
   const [currentImage, setCurrentImage] = useState(0);
+  const youthsCount = useCounter(50000, 3000);
+  const childrenCount = useCounter(5600, 2500);
+  const familiesCount = useCounter(10000, 2500);
 
     useEffect(() => {
       const interval = setInterval(() => {
         setCurrentImage((prev) => (prev === 4 ? 0 : prev + 1));
-      }, 4000);
+      }, 6000);
       
       return () => clearInterval(interval);
-    }, []);
+    }, [])
+
 
   return (
     <>
@@ -209,7 +215,7 @@ function Hero() {
                     display: 'flex',
                   }}
                 >
-                  {[heroImage1, heroImage2, heroImage3, heroImage4, heroImage5].map((img, idx) => (
+                  {[heroImage1, heroImage2, heroImage3, heroImage4, heroImage5, heroImage6].map((img, idx) => (
                     <img 
                       key={idx}
                       src={img} 
@@ -279,7 +285,7 @@ function Hero() {
                   <div className="w-10 h-10 rounded-xl bg-[#EEF5FC] flex items-center justify-center text-xl flex-shrink-0">💧</div>
                   <div>
                     <p className="font-playfair font-bold text-primary text-sm leading-tight">Livelihood Empowerment</p>
-                    <p className="font-dm-sans text-[#8CB4D6] text-[10px] mt-0.5">50,000+ Youths</p>
+                    <p className="font-dm-sans text-[#8CB4D6] text-[10px] mt-0.5">{youthsCount.toLocaleString()}+ Youths</p>
                   </div>
                 </div>
               </div>
@@ -292,7 +298,7 @@ function Hero() {
                   <div className="w-10 h-10 rounded-xl bg-[#FEF3CD] flex items-center justify-center text-xl flex-shrink-0">📖</div>
                   <div>
                     <p className="font-playfair font-bold text-primary text-sm leading-tight">Education</p>
-                    <p className="font-dm-sans text-[#8CB4D6] text-[10px] mt-0.5">5,600 children</p>
+                    <p className="font-dm-sans text-[#8CB4D6] text-[10px] mt-0.5">{childrenCount.toLocaleString()} +children</p>
                   </div>
                 </div>
               </div>
@@ -316,11 +322,10 @@ function Hero() {
                       />
                     ))}
                   </div>
-                  <span className="font-dm-sans font-bold text-white text-[11px] whitespace-nowrap">+10,000 families</span>
+                  <span className="font-dm-sans font-bold text-white text-[11px] whitespace-nowrap">+{familiesCount.toLocaleString()} +families</span>
                 </div>
               </div>
-
-</div>
+        </div>
 
         </div>
 

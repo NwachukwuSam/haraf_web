@@ -18,7 +18,6 @@ function AboutUs() {
       <AboutHero />
       <AboutStory />
       <AboutValues />
-      <AboutTeam />
       <AboutAccountability />
       <AboutMap />
       <AboutCTA />
