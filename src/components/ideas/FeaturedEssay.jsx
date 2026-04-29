@@ -41,17 +41,16 @@ const FeaturedEssay = () => {
 
           {/* Title */}
           <h1 className="text-2xl md:text-4xl font-serif italic font-bold leading-[1.1] mb-8">
-            Why "Giving Aid" Is the Wrong Frame — And What We Should Say Instead.
+            Why HARAF’s Humanitarian Work Is Transforming Lives in Nigeria — And Building Hope for Tomorrow.
           </h1>
 
           {/* Excerpt */}
           <p className="text-blue-10/80 text-lg leading-relaxed mb-10 font-light opacity-90">
-            The language of aid — donors, recipients, beneficiaries — encodes a power 
-            dynamic that quietly undermines everything we claim to be doing. After ten 
-            years in the field, I'm convinced the words we use are part of the problem. 
-            And changing them is harder than drilling a borehole.
+            HARAF’s humanitarian efforts across Nigeria continue to bring meaningful change where it matters most. Through support in education, livelihoods, food security, health, and community development, HARAF is helping vulnerable families move from survival to stability.
           </p>
-
+          <p className="text-blue-10/80 text-lg leading-relaxed mb-10 font-light opacity-90">
+            By working closely with communities, HARAF ensures that people are not seen as recipients of aid, but as partners in progress. Every intervention is designed to strengthen resilience, empower local voices, and create lasting solutions that improve lives for generations to come.
+          </p>
           {/* Author Info */}
           <div className="flex items-center gap-4 mb-6">
             <img 
@@ -91,8 +90,7 @@ const FeaturedEssay = () => {
         <div className="lg:mt-32 relative flex-1">
           <div className="border-l-4 border-[#FFDD00]/60 pl-8">
             <blockquote className="text-3xl md:text-2xl font-serif italic font-medium leading-snug text-blue-100 opacity-90">
-              “The word beneficiary is doing a lot of quiet damage in the development sector. 
-              It positions communities as passive receivers of other people's decisions.”
+              “True impact is not only measured by what is given, but by the dignity restored, opportunities created, and futures rebuilt in communities.”
             </blockquote>
           </div>
         </div>
