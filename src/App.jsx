@@ -10,6 +10,8 @@ import Essay from './pages/Essay';
 import ContactPage from './pages/ContactUs';
 import PressMedia from './pages/PressMedia';
 import CareerPage from './pages/Career';
+import Reports from './pages/Reports';
+import NotAvailable from './pages/NotAvailable';
 
 function App() {
 
@@ -28,6 +30,8 @@ function App() {
           <Route path="/contact-us" element={<ContactPage />} />
           <Route path="/press-media" element={<PressMedia />} />
           <Route path="/career" element={<CareerPage />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="*" element={<NotAvailable />} />
         </Routes>
       </div>
       <Footer />

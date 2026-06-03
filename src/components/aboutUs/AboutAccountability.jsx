@@ -60,12 +60,14 @@ const AboutAccountability = () => {
 
           <div className="space-y-6 flex lg:block flex-col items-center ">
             <button className="bg-harafYellow  text-navyDark font-dm-sans font-medium text-sm tracking-widest uppercase px-6 py-4 flex items-center space-x-3 hover:opacity-90 transition-opacity">
-              <span>DOWNLOAD OUR 2025 ANNUAL REPORT</span>
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M12 5v14M5 12l7 7 7-7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <a href="/reports" className="inline-flex items-center space-x-2">
+                <span>Visit our Resource Library</span>
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 5v14M5 12l7 7 7-7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
             </button>
-            <a href="#" className="inline-flex items-center space-x-2 text-sm font-dm-sans font-medium tracking-widest  uppercase hover:text-white transition-colors group relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:bg-white">
+            <a href="/reports" className="inline-flex items-center space-x-2 text-sm font-dm-sans font-medium tracking-widest  uppercase hover:text-white transition-colors group relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:bg-white">
               <span>VIEW ALL PAST REPORTS</span>
               <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
